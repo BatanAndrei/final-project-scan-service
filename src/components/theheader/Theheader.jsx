@@ -9,11 +9,11 @@ const Theheader = () => {
             <div className={styles.logo}>
                 <LogoComponent />
             </div>
-            <div className={styles.navigationPages}>
-                <a><h2></h2></a>
-                <a><h2></h2></a>
-                <a><h2></h2></a>
-            </div>
+            <ul className={styles.navigationPages}>
+                <li className={styles.list}><a className={styles.link} href='/'>Главная</a></li>
+                <li className={styles.list}><a className={styles.link} href='/rate'>Тарифы</a></li>
+                <li className={styles.list}><a className={styles.link} href='/faq'>FAQ</a></li>
+            </ul>
             <div className={styles.userInfo}></div>
         </header>
     )

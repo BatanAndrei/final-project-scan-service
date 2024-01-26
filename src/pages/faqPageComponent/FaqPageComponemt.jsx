@@ -1,7 +1,10 @@
+import styles from './faqPageComponent.module.css';
+
+
 const FaqPageComponent = () => {
     return (
         <>
-            <h1>FAQ</h1>
+            <h2 className={styles.faqTextPosition}>FAQ</h2>
         </>
     )
 };

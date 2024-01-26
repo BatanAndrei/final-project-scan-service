@@ -5,4 +5,14 @@
 .app {
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
+
+.main {
+    max-height: 2867px;
+}
+
+
+
+
+
