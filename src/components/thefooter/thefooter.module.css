@@ -12,11 +12,24 @@
 .logo {
     width: 141px;
     height: 137px;
-    border: 1px solid white;
 }
 
 .contactInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
     width: 200px;
     height: 137px;
-    border: 1px solid white;
+}
+
+.contactInfoModify {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+.marginTop {
+    margin-top: 25px;
 }
