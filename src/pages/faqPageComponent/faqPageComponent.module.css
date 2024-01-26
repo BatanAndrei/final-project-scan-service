@@ -1,3 +1,8 @@
 .faqTextPosition {
-    margin: 50px 0px 0px 700px;
+    margin: 150px 0px 0px 700px;
+}
+
+.faq {
+    width: 1440px;
+    height: 500px;
 }
