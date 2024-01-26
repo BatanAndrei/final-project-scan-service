@@ -1,5 +1,6 @@
 import styles from './theheader.module.css';
-import LogoComponent from '../../iconComponnents/logoComponent/LogoComponent';
+import LogoHeader from '../../iconComponnents/logoHeader/LogoHeader';
+import { Link } from 'react-router-dom';
 
 
 const Theheader = () => {
@@ -7,12 +8,12 @@ const Theheader = () => {
     return (
         <header className={styles.headerContainer}>
             <div className={styles.logo}>
-                <LogoComponent />
+                <LogoHeader />
             </div>
             <ul className={styles.navigationPages}>
-                <li className={styles.list}><a className={styles.link} href='/'>Главная</a></li>
-                <li className={styles.list}><a className={styles.link} href='/rate'>Тарифы</a></li>
-                <li className={styles.list}><a className={styles.link} href='/faq'>FAQ</a></li>
+                <li className={styles.list}><Link className={styles.link} to='/'>Главная</Link></li>
+                <li className={styles.list}><Link className={styles.link} to='/rate'>Тарифы</Link></li>
+                <li className={styles.list}><Link className={styles.link} to='/faq'>FAQ</Link></li>
             </ul>
             <div className={styles.userInfo}></div>
         </header>

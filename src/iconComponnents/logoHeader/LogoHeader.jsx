@@ -1,4 +1,4 @@
- const LogoComponent = () => {
+const LogoHeader = () => {
 
     return (
         <>
@@ -15,6 +15,6 @@
     )
 };
 
-export default LogoComponent;
+export default LogoHeader;
 
 

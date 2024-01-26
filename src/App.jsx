@@ -1,6 +1,6 @@
 import './App.css';
 import Theheader from './components/theheader/Theheader';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import HomePageComponent from '../src/pages/homePageComponent/HomePageComponent';
 import TariffPageComponent from '../src/pages/tariffPageComponent/TariffPageComponent';
 import FaqPageComponent from '../src/pages/faqPageComponent/FaqPageComponemt';

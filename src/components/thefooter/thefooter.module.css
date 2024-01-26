@@ -1,8 +1,22 @@
-.footer {
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 60px 0px 60px;
     margin: auto;
     width: 1440px;
     height: 137px;
     background-color: #029491;
     margin-bottom: 100px;
-    
+}
+
+.logo {
+    width: 141px;
+    height: 137px;
+    border: 1px solid white;
+}
+
+.contactInfo {
+    width: 200px;
+    height: 137px;
+    border: 1px solid white;
 }
