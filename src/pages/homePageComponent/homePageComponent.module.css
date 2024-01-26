@@ -4,3 +4,19 @@
     border: 1px solid;
     margin: auto;
 }
+
+.blockTitleAboutSite {
+    margin: 24px auto;
+    width: 1320px;
+    height: 620px;
+    border: 1px solid;
+}
+
+.textTitle {
+    font-family: 'Ferry', sans-serif;
+    margin-left: 60px;
+    font-weight: 900;
+    font-size: 45px;
+    line-height: 54px;
+
+}

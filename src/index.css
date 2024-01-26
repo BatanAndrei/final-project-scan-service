@@ -1,8 +1,17 @@
+@font-face {
+  font-family: 'Inter';
+  src: url('./fonts/Inter-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Ferry';
+  src: url('./fonts/ferry_black.otf');
+}
 
 body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Inter',
-      sans-serif;
+   /*  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Ferry',
+      sans-serif; */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
