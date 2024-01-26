@@ -4,6 +4,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import HomePageComponent from '../src/pages/homePageComponent/HomePageComponent';
 import TariffPageComponent from '../src/pages/tariffPageComponent/TariffPageComponent';
 import FaqPageComponent from '../src/pages/faqPageComponent/FaqPageComponemt';
+import Thefooter from '../src/components/thefooter/Thefooter';
 
 function App() {
     return (
@@ -16,6 +17,7 @@ function App() {
                     <Route path='/faq' element={<FaqPageComponent />} />
                 </Routes>
             </main>
+            <Thefooter />
         </div>
     );
 }
