@@ -1,0 +1,21 @@
+.buttonModify {
+    width: 65px;
+    height: 26px;
+    background-color: #7CE3E1;
+    border-radius: 5px;
+    border: none;
+    color: #000000;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.buttonModify:hover {
+    width: 65px;
+    height: 26px;
+    font-size: 15px;
+    background-color: #04c1be;
+    color: #121212;
+}
+
+

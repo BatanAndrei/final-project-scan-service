@@ -44,3 +44,8 @@
 .link:hover {
     text-decoration: underline;
 }
+
+.userInfo {
+    display: flex;
+    justify-content: flex-end;
+}

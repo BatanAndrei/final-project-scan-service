@@ -1,6 +1,7 @@
 import styles from './theheader.module.css';
 import LogoHeader from '../../iconComponnents/logoHeader/LogoHeader';
 import { Link } from 'react-router-dom';
+import RegistrationPanelLogin from '../registrationPanelLogin/RegistrationPanelLogin';
 
 
 const Theheader = () => {
@@ -15,7 +16,9 @@ const Theheader = () => {
                 <li className={styles.list}><Link className={styles.link} to='/rate'>Тарифы</Link></li>
                 <li className={styles.list}><Link className={styles.link} to='/faq'>FAQ</Link></li>
             </ul>
-            <div className={styles.userInfo}></div>
+            <div className={styles.userInfo}>
+                <RegistrationPanelLogin />
+            </div>
         </header>
     )
 };
