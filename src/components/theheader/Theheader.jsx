@@ -1,5 +1,5 @@
 import styles from './theheader.module.css';
-import LogoComponent from '../iconComponnents/logoComponent/LogoComponent';
+import LogoComponent from '../../iconComponnents/logoComponent/LogoComponent';
 
 
 const Theheader = () => {
