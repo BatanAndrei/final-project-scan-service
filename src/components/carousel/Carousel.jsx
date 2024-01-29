@@ -11,7 +11,7 @@ function Arrow(props) {
     return (
         <div
             className={className+' '+styles.arrow}
-            style={{ ...style, display: "block", background: "#a9a9a9" }}//
+            style={{ ...style, display: "block", background: "#a9a9a9" }}
             onClick={onClick}
         />
     );
@@ -52,4 +52,4 @@ export default function SimpleSlider() {
             </div>
         </Slider>
     );
-  }
+}

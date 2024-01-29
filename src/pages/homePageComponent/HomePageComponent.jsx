@@ -1,5 +1,6 @@
 import styles from './homePageComponent.module.css';
 import imageAboutSite from '../../Images/imageAboutSite.jpg';
+import pictureUnderCarousel from '../../Images/pictureUnderCarousel.jpg';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonReqData } from '../../dataVariables/variables';
 import SimpleSlider from '../../components/carousel/Carousel';
@@ -26,7 +27,9 @@ const HomePageComponent = () => {
                 <div className={styles.blockCarousel}>
                     <SimpleSlider />
                 </div>
-                <div className={styles.blockPictureUnderCarousel}></div>
+                <div className={styles.blockPictureUnderCarousel}>
+                    <img src={pictureUnderCarousel} alt='Картинка о сайте'></img>
+                </div>
                 <h2 className={styles.textTitle}>НАШИ ТАРИФЫ</h2>
                 <div className={styles.blockTariffs}></div>
             </div>
