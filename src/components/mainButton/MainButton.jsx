@@ -1,11 +1,9 @@
 import styles from './mainButton.module.css';
 
 
-const MainButton = () => {
+const MainButton = ({nameButtonReqData}) => {
     return (
-        <>
-            <button>Запросить данные</button>
-        </>
+        <button className={styles.button}>{nameButtonReqData}</button>
     )
 };
 

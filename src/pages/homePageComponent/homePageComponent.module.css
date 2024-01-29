@@ -9,7 +9,6 @@
     margin: 24px auto;
     width: 1320px;
     height: 620px;
-    border: 1px solid;
 }
 
 .textTitle {
@@ -63,4 +62,14 @@
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 20px;
+}
+
+.buttonModifyReqData button {
+    margin-top: 70px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    width: 335px;
+    height: 59px;
+    font-weight: 500;
+    font-size: 22px;
 }

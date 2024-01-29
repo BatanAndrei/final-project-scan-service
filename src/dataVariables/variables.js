@@ -1,0 +1,1 @@
+export const nameButtonReqData = 'Запросить данные'

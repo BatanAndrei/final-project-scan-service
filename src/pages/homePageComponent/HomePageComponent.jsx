@@ -1,9 +1,12 @@
 import styles from './homePageComponent.module.css';
 import imageAboutSite from '../../Images/imageAboutSite.jpg';
-import MainButton from '../../components/mainButton/MainButton';
+import MainButton from '../../components/mainButton/mainButton';
+import { nameButtonReqData } from '../../dataVariables/variables';
 
 
 const HomePageComponent = () => {
+
+
     return (
         <>
             <div className={styles.homeContainer}>
@@ -11,7 +14,9 @@ const HomePageComponent = () => {
                     <div className={styles.mainAboutSiteText}>
                         <h1 className={styles.titleMainAboutSite}>сервис по поиску<br/> публикаций<br/> о компании<br/> по его инн</h1>
                         <h2 className={styles.subtitleMainAboutSite}>Комплексный анализ публикаций, получение данных<br/> в формате PDF на электронную почту.</h2>
-                        <MainButton />
+                        <div className={styles.buttonModifyReqData}>
+                            <MainButton nameButtonReqData={nameButtonReqData} />
+                        </div>
                     </div>
                     <div className={styles.mainAboutSitePicture}>
                         <img src={imageAboutSite} alt='Картинка о сайте'></img>
