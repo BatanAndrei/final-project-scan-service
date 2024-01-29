@@ -1,0 +1,25 @@
+.marginItem {
+    margin: 0px 15px 0px 15px;
+}
+
+.cardInfo {
+    width: 400px;
+    height: 225px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.arrow {
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    opacity: 1;
+}
+
+.arrow::before {
+    opacity: 1;
+}
+
+
+
+

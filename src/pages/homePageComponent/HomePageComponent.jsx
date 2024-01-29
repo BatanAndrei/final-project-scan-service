@@ -2,10 +2,10 @@ import styles from './homePageComponent.module.css';
 import imageAboutSite from '../../Images/imageAboutSite.jpg';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonReqData } from '../../dataVariables/variables';
+import SimpleSlider from '../../components/carousel/Carousel';
 
 
 const HomePageComponent = () => {
-
 
     return (
         <>
@@ -23,7 +23,9 @@ const HomePageComponent = () => {
                     </div>
                 </div>
                 <h2 className={styles.textTitle}>ПОЧЕМУ ИМЕННО МЫ</h2>
-                <div className={styles.blockCarousel}></div>
+                <div className={styles.blockCarousel}>
+                    <SimpleSlider />
+                </div>
                 <div className={styles.blockPictureUnderCarousel}></div>
                 <h2 className={styles.textTitle}>НАШИ ТАРИФЫ</h2>
                 <div className={styles.blockTariffs}></div>
