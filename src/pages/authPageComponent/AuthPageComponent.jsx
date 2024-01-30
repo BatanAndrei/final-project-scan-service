@@ -34,12 +34,12 @@ const AuthPageComponent = () => {
                         </div>
                         <h3><Link className={styles.link}>Восстановить пароль</Link></h3>
                         <h3 className={styles.loginVia}>Войти через:</h3>
-                        <div className={styles.blockLoginLinks}>
-                            <button className={styles.button}><img src={linkViaGoogle} alt='ссылка на вход через:'></img></button>
-                            <button className={styles.button}><img src={linkViaFacebook} alt='ссылка на вход через:'></img></button>
-                            <button className={styles.button}><img src={linkViaYandex} alt='ссылка на вход через:'></img></button>
-                        </div>
                     </form>
+                    <div className={styles.blockLoginLinks}>
+                        <button className={styles.button}><img src={linkViaGoogle} alt='ссылка на вход через:'></img></button>
+                        <button className={styles.button}><img src={linkViaFacebook} alt='ссылка на вход через:'></img></button>
+                        <button className={styles.button}><img src={linkViaYandex} alt='ссылка на вход через:'></img></button>
+                    </div>
                 </div>
             </div>
         </div>
