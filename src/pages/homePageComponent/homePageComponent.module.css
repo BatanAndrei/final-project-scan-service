@@ -33,10 +33,83 @@
 }
 
 .blockTariffs {
+    display: flex;
+    justify-content: space-between;
     margin: 70px 0px 118px 60px;
     width: 1320px;
     height: 540px;
-    border: 1px solid;
+}
+
+.tariffItem {
+    width: 415px;
+    height: 540px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0px #dadada;
+}
+
+.beginner {
+    background-color: #FFB64F;
+}
+.pro {
+    background-color: #7CE3E1;
+}
+.business {
+    background-color: #000000;
+}
+
+.headTariffItem {
+    padding: 0px 0px 0px 20px;
+    display: flex;
+    justify-content: space-between;
+    width: 415px;
+    height: 132px;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.titleTariffItem {
+    width: 300px;
+    height: 132px;
+}
+
+.nameTariffText {
+    margin-top: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+}
+
+.descriptionTariffText {
+    margin-top: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.colorBusiness {
+    color: white;
+}
+
+.headTariffItemIcon {
+    width: 105px;
+    height: 132px;
+}
+
+.marginIconLamp {
+    margin: 15px 0px 0px 0px;
+}
+
+.marginIconLaptop {
+    margin: 25px 0px 0px 0px;
+}
+
+.marginIconTarget {
+    margin: 0px 0px 0px 0px;
+}
+
+.mainTariffItem {
+    width: 415px;
+    height: 408px;
+    border-radius: 0px 0px 10px 10px;
 }
 
 .mainAboutSiteText {
@@ -76,3 +149,4 @@
 .buttonModifyReqData button:hover {
     font-size: 23px;
 }
+

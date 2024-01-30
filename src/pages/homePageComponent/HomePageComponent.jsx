@@ -4,6 +4,9 @@ import pictureUnderCarousel from '../../Images/pictureUnderCarousel.jpg';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonReqData } from '../../dataVariables/variables';
 import SimpleSlider from '../../components/carousel/Carousel';
+import lamp from '../../Images/lamp.png';
+import target from '../../Images/target.png';
+import laptop from '../../Images/laptop.png';
 
 
 const HomePageComponent = () => {
@@ -32,7 +35,42 @@ const HomePageComponent = () => {
                 </div>
                 <h2 className={styles.textTitle}>НАШИ ТАРИФЫ</h2>
                 <div className={styles.blockTariffs}>
-                    
+                    <div className={styles.tariffItem}>
+                        <div className={styles.headTariffItem+' '+styles.beginner}>
+                            <div className={styles.titleTariffItem}>
+                                <h2 className={styles.nameTariffText}>Beginner</h2>
+                                <h3 className={styles.descriptionTariffText}>Для небольшого исследования</h3>
+                            </div>
+                            <div className={styles.headTariffItemIcon}>
+                                <img className={styles.marginIconLamp} src={lamp}></img>
+                            </div>
+                        </div>
+                        <div className={styles.mainTariffItem}></div>
+                    </div>
+                    <div className={styles.tariffItem}>
+                        <div className={styles.headTariffItem+' '+styles.pro}>
+                            <div className={styles.titleTariffItem}>
+                                <h2 className={styles.nameTariffText}>Pro</h2>
+                                <h3 className={styles.descriptionTariffText}>Для HR и фрилансеров</h3>
+                            </div>
+                            <div className={styles.headTariffItemIcon}>
+                                <img className={styles.marginIconTarget} src={target}></img>
+                            </div>
+                        </div>
+                        <div className={styles.mainTariffItem}></div>
+                    </div>
+                    <div className={styles.tariffItem}>
+                        <div className={styles.headTariffItem+' '+styles.business}>
+                            <div className={styles.titleTariffItem}>
+                                <h2 className={styles.nameTariffText+' '+styles.colorBusiness}>Business</h2>
+                                <h3 className={styles.descriptionTariffText+' '+styles.colorBusiness}>Для корпоративных клиентов</h3>
+                            </div>
+                            <div className={styles.headTariffItemIcon}>
+                                <img className={styles.marginIconLaptop} src={laptop}></img>
+                            </div>
+                        </div>
+                        <div className={styles.mainTariffItem}></div>
+                    </div>
                 </div>
             </div>
         </>
