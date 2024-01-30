@@ -43,6 +43,7 @@
     height: 59px;
     font-weight: 500;
     font-size: 22px;
+    background-color: #5970FF;
 }
 
 .buttonModifyReqData button:hover {
@@ -187,7 +188,7 @@
 }
 
 .tariffIncludes {
-    margin: 65px 0px 10px 0px;
+    margin: 60px 0px 10px 0px;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -207,6 +208,36 @@
 .positionGalka {
     position: relative;
     top: 3px;
+}
+
+.buttonModifyMoreDetail button {
+    margin: 50px 0px 0px 0px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    width: 355px;
+    height: 59px;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: #5970FF;
+}
+
+.buttonModifyMoreDetail button:hover {
+    font-size: 21px;
+}
+
+.buttonModifyPersonalArea button {
+    margin: 50px 0px 0px 0px;
+    font-family: 'Inter', sans-serif;
+    color: black;
+    width: 355px;
+    height: 59px;
+    font-weight: 400;
+    font-size: 20px;
+    background-color: #D2D2D2;
+}
+
+.buttonModifyPersonalArea button:hover {
+    font-size: 21px;
 }
 
 

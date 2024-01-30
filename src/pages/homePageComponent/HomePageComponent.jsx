@@ -2,12 +2,13 @@ import styles from './homePageComponent.module.css';
 import imageAboutSite from '../../Images/imageAboutSite.jpg';
 import pictureUnderCarousel from '../../Images/pictureUnderCarousel.jpg';
 import MainButton from '../../components/mainButton/mainButton';
-import { nameButtonReqData } from '../../dataVariables/variables';
+import { nameButtonReqData, nameButtonMoreDetail, nameButtonPersonalArea } from '../../dataVariables/variables';
 import SimpleSlider from '../../components/carousel/Carousel';
 import lamp from '../../Images/lamp.png';
 import target from '../../Images/target.png';
 import laptop from '../../Images/laptop.png';
-import galochka from '../../Images/galochka.png';
+import galochka from '../../Images/galochka.png'; 
+
 
 
 const HomePageComponent = () => {
@@ -20,7 +21,7 @@ const HomePageComponent = () => {
                         <h1 className={styles.titleMainAboutSite}>сервис по поиску<br/> публикаций<br/> о компании<br/> по его инн</h1>
                         <h2 className={styles.subtitleMainAboutSite}>Комплексный анализ публикаций, получение данных<br/> в формате PDF на электронную почту.</h2>
                         <div className={styles.buttonModifyReqData}>
-                            <MainButton nameButtonReqData={nameButtonReqData} />
+                            <MainButton name={nameButtonReqData} />
                         </div>
                     </div>
                     <div className={styles.mainAboutSitePicture}>
@@ -56,6 +57,9 @@ const HomePageComponent = () => {
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Безлимитная история запросов</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Безопасная сделка</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Поддержка 24/7</h3>
+                            <div className={styles.buttonModifyPersonalArea}>
+                                <MainButton name={nameButtonPersonalArea} />
+                            </div>
                         </div>
                     </div>
                     <div className={styles.tariffItem}>
@@ -78,6 +82,9 @@ const HomePageComponent = () => {
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Все пункты тарифа Beginner</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Экспорт истории</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Рекомендации по приоритетам</h3>
+                            <div className={styles.buttonModifyMoreDetail}>
+                                <MainButton name={nameButtonMoreDetail} />
+                            </div>
                         </div>
                     </div>
                     <div className={styles.tariffItem}>
@@ -100,6 +107,9 @@ const HomePageComponent = () => {
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Все пункты тарифа Pro</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Безлимитное количество запросов</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Приоритетная поддержка</h3>
+                            <div className={styles.buttonModifyMoreDetail}>
+                                <MainButton name={nameButtonMoreDetail} />
+                            </div>
                         </div>
                     </div>
                 </div>

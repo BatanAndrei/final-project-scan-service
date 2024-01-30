@@ -1,9 +1,9 @@
 import styles from './mainButton.module.css';
 
 
-const MainButton = ({nameButtonReqData}) => {
+const MainButton = ({name}) => {
     return (
-        <button className={styles.button}>{nameButtonReqData}</button>
+        <button className={styles.button}>{name}</button>
     )
 };
 
