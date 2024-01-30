@@ -37,7 +37,7 @@ const HomePageComponent = () => {
                 </div>
                 <h2 className={styles.textTitleBlockName}>НАШИ ТАРИФЫ</h2>
                 <div className={styles.blockTariffs}>
-                    <div className={styles.tariffItem}>
+                    <div className={styles.tariffItem+' '+styles.selectedTariffBeginer}>
                         <div className={styles.headTariffItem+' '+styles.beginner}>
                             <div className={styles.titleTariffItem}>
                                 <h2 className={styles.nameTariffText}>Beginner</h2>
@@ -62,7 +62,7 @@ const HomePageComponent = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.tariffItem}>
+                    <div className={styles.tariffItem+' '+styles.selectedTariffPro}>
                         <div className={styles.headTariffItem+' '+styles.pro}>
                             <div className={styles.titleTariffItem}>
                                 <h2 className={styles.nameTariffText}>Pro</h2>
@@ -87,7 +87,7 @@ const HomePageComponent = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.tariffItem}>
+                    <div className={styles.tariffItem+' '+styles.selectedTariffBusiness}>
                         <div className={styles.headTariffItem+' '+styles.business}>
                             <div className={styles.titleTariffItem}>
                                 <h2 className={styles.nameTariffText+' '+styles.colorBusiness}>Business</h2>

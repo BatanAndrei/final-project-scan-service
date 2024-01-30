@@ -240,4 +240,16 @@
     font-size: 21px;
 }
 
+.selectedTariffBeginer {
+    border: 2px solid #FFB64F;
+}
+
+.selectedTariffPro {
+    border: 2px solid #7CE3E1;
+}
+
+.selectedTariffBusiness {
+    border: 2px solid;
+}
+
 
