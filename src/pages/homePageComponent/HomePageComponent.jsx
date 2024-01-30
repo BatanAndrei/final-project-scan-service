@@ -45,7 +45,11 @@ const HomePageComponent = () => {
                                 <img className={styles.marginIconLamp} src={lamp}></img>
                             </div>
                         </div>
-                        <div className={styles.mainTariffItem}></div>
+                        <div className={styles.mainTariffItem}>
+                            <div className={styles.containerBadge}>
+                                <div className={styles.badge}>Текущий тариф</div>
+                            </div>
+                        </div>
                     </div>
                     <div className={styles.tariffItem}>
                         <div className={styles.headTariffItem+' '+styles.pro}>
