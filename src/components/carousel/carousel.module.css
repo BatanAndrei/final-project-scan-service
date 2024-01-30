@@ -1,5 +1,5 @@
 .marginItem {
-    margin: 5px 15px 19px 15px;
+    margin: 5px 15px 19px 23px;
 }
 
 .cardInfo {
@@ -25,6 +25,10 @@
     opacity: 1;
     font-size: 48px;
     font-weight: bold;
+}
+
+.slick-prev {
+    left: -14px;
 }
 
 .paragraf {
