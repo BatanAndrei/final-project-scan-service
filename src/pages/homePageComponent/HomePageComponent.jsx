@@ -7,6 +7,7 @@ import SimpleSlider from '../../components/carousel/Carousel';
 import lamp from '../../Images/lamp.png';
 import target from '../../Images/target.png';
 import laptop from '../../Images/laptop.png';
+import galochka from '../../Images/galochka.png';
 
 
 const HomePageComponent = () => {
@@ -42,7 +43,7 @@ const HomePageComponent = () => {
                                 <h3 className={styles.descriptionTariffText}>Для небольшого исследования</h3>
                             </div>
                             <div className={styles.headTariffItemIcon}>
-                                <img className={styles.marginIconLamp} src={lamp}></img>
+                                <img className={styles.marginIconLamp} src={lamp} alt='лампочка'></img>
                             </div>
                         </div>
                         <div className={styles.mainTariffItem}>
@@ -50,6 +51,11 @@ const HomePageComponent = () => {
                                 <div className={styles.badge}>Текущий тариф</div>
                             </div>
                             <h2 className={styles.price}>799 ₽ &ensp;<span className={styles.priceСrossed}>1 200 ₽</span></h2>
+                            <h3 className={styles.paymentMethod+' '+styles.styleTextMainDesc}>или 150 ₽/мес. при рассрочке на 24 мес.</h3>
+                            <h3 className={styles.tariffIncludes}>В тариф входит:</h3>
+                            <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Безлимитная история запросов</h3>
+                            <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Безопасная сделка</h3>
+                            <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Поддержка 24/7</h3>
                         </div>
                     </div>
                     <div className={styles.tariffItem}>
@@ -59,7 +65,7 @@ const HomePageComponent = () => {
                                 <h3 className={styles.descriptionTariffText}>Для HR и фрилансеров</h3>
                             </div>
                             <div className={styles.headTariffItemIcon}>
-                                <img className={styles.marginIconTarget} src={target}></img>
+                                <img className={styles.marginIconTarget} src={target} alt='мишень'></img>
                             </div>
                         </div>
                         <div className={styles.mainTariffItem}>
@@ -67,6 +73,11 @@ const HomePageComponent = () => {
                                 <div className={styles.badge}>Текущий тариф</div>
                             </div>
                             <h2 className={styles.price}>1 299 ₽ &ensp;<span className={styles.priceСrossed}>2 600 ₽</span></h2>
+                            <h3 className={styles.paymentMethod+' '+styles.styleTextMainDesc}>или 279 ₽/мес. при рассрочке на 24 мес.</h3>
+                            <h3 className={styles.tariffIncludes}>В тариф входит:</h3>
+                            <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Все пункты тарифа Beginner</h3>
+                            <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Экспорт истории</h3>
+                            <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Рекомендации по приоритетам</h3>
                         </div>
                     </div>
                     <div className={styles.tariffItem}>
@@ -76,7 +87,7 @@ const HomePageComponent = () => {
                                 <h3 className={styles.descriptionTariffText+' '+styles.colorBusiness}>Для корпоративных клиентов</h3>
                             </div>
                             <div className={styles.headTariffItemIcon}>
-                                <img className={styles.marginIconLaptop} src={laptop}></img>
+                                <img className={styles.marginIconLaptop} src={laptop} alt='ноутбук'></img>
                             </div>
                         </div>
                         <div className={styles.mainTariffItem}>
@@ -84,6 +95,11 @@ const HomePageComponent = () => {
                                 <div className={styles.badge}>Текущий тариф</div>
                             </div>
                             <h2 className={styles.price}>2 379 ₽ &ensp;<span className={styles.priceСrossed}>3 700 ₽</span></h2>
+                            <h3 className={styles.paymentMethod}>&ensp;</h3>
+                            <h3 className={styles.tariffIncludes}>В тариф входит:</h3>
+                            <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Все пункты тарифа Pro</h3>
+                            <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Безлимитное количество запросов</h3>
+                            <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Приоритетная поддержка</h3>
                         </div>
                     </div>
                 </div>

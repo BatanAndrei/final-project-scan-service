@@ -145,14 +145,14 @@
 }
 
 .mainTariffItem {
-    padding-left: 30px;
+    padding-left: 20px;
     width: 415px;
     height: 408px;
     border-radius: 0px 0px 10px 10px;
 }
 
 .containerBadge {
-    margin: 12px 10px 0px 241px;
+    margin: 12px 10px 0px 251px;
     width: 134px;
     height: 24px;
 }
@@ -181,3 +181,32 @@
     color: #000000;
     opacity: 50%;
 }
+
+.paymentMethod {
+    margin: 10px 0px 0px 0px;
+}
+
+.tariffIncludes {
+    margin: 65px 0px 10px 0px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #000000;
+}
+
+.styleTextMainDesc {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.marginListInclude {
+    margin: 5px 0px 0px 0px;
+}
+
+.positionGalka {
+    position: relative;
+    top: 3px;
+}
+
+
