@@ -188,7 +188,7 @@
 }
 
 .tariffIncludes {
-    margin: 60px 0px 10px 0px;
+    margin: 55px 0px 10px 0px;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -211,7 +211,7 @@
 }
 
 .buttonModifyMoreDetail button {
-    margin: 50px 0px 0px 0px;
+    margin: 45px 0px 0px 0px;
     font-family: 'Inter', sans-serif;
     color: white;
     width: 355px;
@@ -226,7 +226,7 @@
 }
 
 .buttonModifyPersonalArea button {
-    margin: 50px 0px 0px 0px;
+    margin: 45px 0px 0px 0px;
     font-family: 'Inter', sans-serif;
     color: black;
     width: 355px;
