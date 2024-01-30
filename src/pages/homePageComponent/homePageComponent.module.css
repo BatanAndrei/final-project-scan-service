@@ -11,7 +11,45 @@
     height: 620px;
 }
 
-.textTitle {
+.mainAboutSiteText {
+    width: 725px;
+    height: 620px;
+}
+
+.mainAboutSitePicture {
+    width: 595px;
+    height: 620px;
+}
+
+.titleMainAboutSite {
+    margin: 0;
+    font-family: 'Ferry', sans-serif;
+    font-weight: 900;
+    font-size: 60px;
+}
+
+.subtitleMainAboutSite {
+    margin-top: 20px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.buttonModifyReqData button {
+    margin-top: 70px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    width: 335px;
+    height: 59px;
+    font-weight: 500;
+    font-size: 22px;
+}
+
+.buttonModifyReqData button:hover {
+    font-size: 23px;
+}
+
+.textTitleBlockName {
     font-family: 'Ferry', sans-serif;
     margin: 109px 0px 0px 60px;
     font-weight: 900;
@@ -131,41 +169,15 @@
     background-color: #3BA5E0;
 }
 
-.mainAboutSiteText {
-    width: 725px;
-    height: 620px;
-}
-
-.mainAboutSitePicture {
-    width: 595px;
-    height: 620px;
-}
-
-.titleMainAboutSite {
-    margin: 0;
-    font-family: 'Ferry', sans-serif;
-    font-weight: 900;
-    font-size: 60px;
-}
-
-.subtitleMainAboutSite {
-    margin-top: 20px;
+.price {
+    margin: 3px 0px 0px 0px;
     font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 20px;
-}
-
-.buttonModifyReqData button {
-    margin-top: 70px;
-    font-family: 'Inter', sans-serif;
-    color: white;
-    width: 335px;
-    height: 59px;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 30px;
 }
 
-.buttonModifyReqData button:hover {
-    font-size: 23px;
+.priceСrossed {
+    text-decoration: line-through;
+    color: #000000;
+    opacity: 50%;
 }
-

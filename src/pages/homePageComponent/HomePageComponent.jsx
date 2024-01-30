@@ -26,14 +26,14 @@ const HomePageComponent = () => {
                         <img src={imageAboutSite} alt='Картинка о сайте'></img>
                     </div>
                 </div>
-                <h2 className={styles.textTitle}>ПОЧЕМУ ИМЕННО МЫ</h2>
+                <h2 className={styles.textTitleBlockName}>ПОЧЕМУ ИМЕННО МЫ</h2>
                 <div className={styles.blockCarousel}>
                     <SimpleSlider />
                 </div>
                 <div className={styles.blockPictureUnderCarousel}>
                     <img src={pictureUnderCarousel} alt='Картинка о сайте'></img>
                 </div>
-                <h2 className={styles.textTitle}>НАШИ ТАРИФЫ</h2>
+                <h2 className={styles.textTitleBlockName}>НАШИ ТАРИФЫ</h2>
                 <div className={styles.blockTariffs}>
                     <div className={styles.tariffItem}>
                         <div className={styles.headTariffItem+' '+styles.beginner}>
@@ -49,6 +49,7 @@ const HomePageComponent = () => {
                             <div className={styles.containerBadge}>
                                 <div className={styles.badge}>Текущий тариф</div>
                             </div>
+                            <h2 className={styles.price}>799 ₽ &ensp;<span className={styles.priceСrossed}>1 200 ₽</span></h2>
                         </div>
                     </div>
                     <div className={styles.tariffItem}>
@@ -61,7 +62,12 @@ const HomePageComponent = () => {
                                 <img className={styles.marginIconTarget} src={target}></img>
                             </div>
                         </div>
-                        <div className={styles.mainTariffItem}></div>
+                        <div className={styles.mainTariffItem}>
+                            <div className={styles.containerBadge}>
+                                <div className={styles.badge}>Текущий тариф</div>
+                            </div>
+                            <h2 className={styles.price}>1 299 ₽ &ensp;<span className={styles.priceСrossed}>2 600 ₽</span></h2>
+                        </div>
                     </div>
                     <div className={styles.tariffItem}>
                         <div className={styles.headTariffItem+' '+styles.business}>
@@ -73,7 +79,12 @@ const HomePageComponent = () => {
                                 <img className={styles.marginIconLaptop} src={laptop}></img>
                             </div>
                         </div>
-                        <div className={styles.mainTariffItem}></div>
+                        <div className={styles.mainTariffItem}>
+                            <div className={styles.containerBadge}>
+                                <div className={styles.badge}>Текущий тариф</div>
+                            </div>
+                            <h2 className={styles.price}>2 379 ₽ &ensp;<span className={styles.priceСrossed}>3 700 ₽</span></h2>
+                        </div>
                     </div>
                 </div>
             </div>
