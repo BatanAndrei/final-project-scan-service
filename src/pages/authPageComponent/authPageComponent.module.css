@@ -1,0 +1,45 @@
+.containerAuthPage {
+    display: flex;
+    justify-content: space-between;
+    width: 1440px;
+    height: 672px;
+    margin: auto;
+    padding: 0px 141px 0px 60px;
+}
+
+.infoForSubscription {
+    width: 730px;
+    height: 672px;
+}
+
+.formForAuth {
+    width: 510px;
+    height: 672px;
+}
+
+.titleInfo {
+    margin: 69px 0px 0px 0px;
+    font-family: 'Ferry', sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.positionPicture {
+    margin: 10px 0px 0px 112px;
+}
+
+.zamok {
+    position: relative;
+    margin-top: 10px;
+    z-index: 1;
+}
+
+.containerForm {
+    position: relative;
+    top: -40px;
+    left: 45px;
+    width: 429px;
+    height: 523px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0px #C7C7C7;
+}

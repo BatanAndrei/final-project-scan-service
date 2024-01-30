@@ -5,6 +5,7 @@ import HomePageComponent from '../src/pages/homePageComponent/HomePageComponent'
 import TariffPageComponent from '../src/pages/tariffPageComponent/TariffPageComponent';
 import FaqPageComponent from '../src/pages/faqPageComponent/FaqPageComponemt';
 import Thefooter from '../src/components/thefooter/Thefooter';
+import AuthPageComponent from '../src/pages/authPageComponent/AuthPageComponent';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                     <Route path='/' element={<HomePageComponent />} />
                     <Route path='/rate' element={<TariffPageComponent />} />
                     <Route path='/faq' element={<FaqPageComponent />} />
+                    <Route path='/auth' element={<AuthPageComponent />} />
                 </Routes>
             </main>
             <Thefooter />
