@@ -3,11 +3,14 @@ import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Slider from "react-slick";
 import styles from './carousel.module.css';
+import glass from '../../Images/glass.png';
+import watch from '../../Images/watch.png';
+import protection from '../../Images/protection.png';
 
 
 function Arrow(props) {
     const { className, style, onClick } = props;
-    console.log(className)
+    
     return (
         <div
             className={className+' '+styles.arrow}
@@ -42,13 +45,19 @@ export default function SimpleSlider() {
     return (
         <Slider {...settings}>
             <div className={styles.marginItem}>
-                <div className={styles.cardInfo}></div>
+                <div className={styles.cardInfo}>
+                    <img src={watch}></img>
+                </div>
             </div>
             <div className={styles.marginItem}>
-                <div className={styles.cardInfo}></div>
+                <div className={styles.cardInfo}>
+                    <img src={glass}></img>
+                </div>
             </div>
             <div className={styles.marginItem}>
-                <div className={styles.cardInfo}></div>
+                <div className={styles.cardInfo}>
+                    <img src={protection}></img>
+                </div>
             </div>
         </Slider>
     );
