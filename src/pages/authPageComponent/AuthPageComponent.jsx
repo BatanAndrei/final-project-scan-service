@@ -12,7 +12,12 @@ const AuthPageComponent = () => {
             </div>
             <div className={styles.formForAuth}>
                 <img className={styles.zamok} src={zamok}></img>
-                <div className={styles.containerForm}></div>
+                <div className={styles.containerForm}>
+                    <div className={styles.headerForm}>
+                        <button className={styles.loginTab}>Войти</button>
+                        <button className={styles.registerTab}>Зарегистрироваться</button>
+                    </div>
+                </div>
             </div>
         </div>
     )
