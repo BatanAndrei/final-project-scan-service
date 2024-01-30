@@ -1,5 +1,5 @@
 .marginItem {
-    margin: 0px 15px 0px 15px;
+    margin: 5px 15px 19px 15px;
 }
 
 .cardInfo {
@@ -24,6 +24,12 @@
     left: -4px;
     opacity: 1;
     font-size: 48px;
+}
+
+.paragraf {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
 }
 
 

@@ -47,16 +47,19 @@ export default function SimpleSlider() {
             <div className={styles.marginItem}>
                 <div className={styles.cardInfo}>
                     <img src={watch}></img>
+                    <p className={styles.paragraf}>Высокая и оперативная скорость<br/> обработки заявки</p>
                 </div>
             </div>
             <div className={styles.marginItem}>
                 <div className={styles.cardInfo}>
                     <img src={glass}></img>
+                    <p className={styles.paragraf}>Огромная комплексная база<br/> данных, обеспечивающая<br/> объективный ответ на запрос</p>
                 </div>
             </div>
             <div className={styles.marginItem}>
                 <div className={styles.cardInfo}>
                     <img src={protection}></img>
+                    <p className={styles.paragraf}>Защита конфеденциальных сведений,<br/> не подлежащих разглашению по<br/> федеральному законодательству</p>
                 </div>
             </div>
         </Slider>

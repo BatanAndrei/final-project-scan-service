@@ -31,7 +31,9 @@ const HomePageComponent = () => {
                     <img src={pictureUnderCarousel} alt='Картинка о сайте'></img>
                 </div>
                 <h2 className={styles.textTitle}>НАШИ ТАРИФЫ</h2>
-                <div className={styles.blockTariffs}></div>
+                <div className={styles.blockTariffs}>
+                    
+                </div>
             </div>
         </>
     )
