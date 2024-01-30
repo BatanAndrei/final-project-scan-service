@@ -7,7 +7,7 @@ import LoginButton from '../loginButton/LoginButton';
 const RegistrationPanelLogin = () => {
     return (
         <>
-            <h2 className={styles.textMargin}><Link className={styles.link} to=''>Зарегистрироваться</Link></h2>
+            <h2 className={styles.textMargin}><Link className={styles.link}>Зарегистрироваться</Link></h2>
             <div className={styles.verticalOr}>
                 <VeryicalOrHeader />
             </div>

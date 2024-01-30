@@ -48,7 +48,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    margin: 0px 25px 0px 25px;
+    margin: 0px 25px 40px 25px;
     width: 379px;
     height: 60px;
 }
@@ -77,4 +77,77 @@
     font-size: 16px;
     cursor: pointer;
     border-bottom: 2px solid #C7C7C7;
+}
+
+.titleInput {
+    margin: 20px 0px 0px 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    color: #C7C7C7;
+    font-size: 16px;
+}
+
+.input {
+    margin: 15px 0px 0px 25px;
+    width: 379px;
+    height: 43px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #C7C7C7;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #C7C7C7;
+}
+
+.buttonModifyLogin button {
+    margin: 30px 0px 0px 25px;
+    width: 379px;
+    height: 59px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    background-color: #5970FF;
+    color: white;
+    cursor: pointer;
+}
+
+.buttonModifyLogin button:hover {
+    font-size: 24px;
+}
+
+.link {
+    margin: 15px 0px 0px 139px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #5970FF;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.loginVia {
+    margin: 30px 0px 0px 25px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #949494;
+}
+
+.blockLoginLinks {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0px 0px 25px;
+    width: 308px;
+    height: 31px;
+}
+
+.button {
+    padding: 0px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
 }
