@@ -12,6 +12,7 @@
 }
 
 .titleBlockSearch {
+    margin-left: 7px;
     width: 872px;
     height: 211px;
 }
@@ -31,7 +32,7 @@
 
 .formFillData {
     display: flex;
-    padding: 21px 39px 32px 44px;
+    padding: 0px 39px 32px 44px;
     width: 872px;
     height: 543px;
     border-radius: 10px;
@@ -41,6 +42,60 @@
 .inputSelectFilds {
     width: 383px;
     height: 447px;
+    border: 1px solid;
+}
+
+.lableText {
+    font-family: 'Inter', sans-serif;
+    margin: 30px 0px 0px 0px;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.inputINN {
+    margin: 20px 0px 0px 0px;
+    border-radius: 1px;
+    box-shadow: 0 0 20px 0px #dadada;
+    border: 1px solid #C7C7C7;
+    outline: none;
+    width: 242px;
+    height: 43px;
+    display: block;
+    text-align: left;
+}
+
+::placeholder {
+    text-align: center;
+}
+
+.select {
+    padding-left: 22px;
+    margin: 20px 0px 0px 0px;
+    border-radius: 1px;
+    box-shadow: 0 0 20px 0px #dadada;
+    border: 1px solid #C7C7C7;
+    outline: none;
+    width: 242px;
+    height: 43px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    appearance: none;
+    background: url('../../Images/arrowForSelect.png');
+    background-repeat: no-repeat, repeat;
+    background-position: right .7em top 50%, 0 0;
+    cursor: pointer;
+}
+
+.option {
+    cursor: pointer;
+    border-radius: 1px;
+}
+
+.checkboxButtonSearch {
+    margin-top: 21px;
+    width: 406px;
+    height: 475px;
     border: 1px solid;
 }
 
