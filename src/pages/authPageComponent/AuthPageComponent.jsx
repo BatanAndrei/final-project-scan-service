@@ -32,7 +32,7 @@ const AuthPageComponent = () => {
                         <div className={styles.buttonModifyLogin}>
                             <MainButton name={nameButtonLogin} />
                         </div>
-                        <h3><Link className={styles.link} to=''>Восстановить пароль</Link></h3>
+                        <h3><Link className={styles.link} to='#'>Восстановить пароль</Link></h3>
                         <h3 className={styles.loginVia}>Войти через:</h3>
                     </form>
                     <div className={styles.blockLoginLinks}>
