@@ -12,17 +12,15 @@ const SearchPageComponent = () => {
                     <h1 className={styles.textTitle}>Найдите необходимые<br/> данные в пару кликов.</h1>
                     <h2 className={styles.textSubTitle}>Задайте параметры поиска.<br/> Чем больше заполните, тем точнее поиск</h2>
                 </div>
-                <div className={styles.areaEnterSearchData}>
-                    <div className={styles.fieldsDataSearch}>
-                        <form className={styles.formFill}>
-                            <div className={styles.inputSelectFilds}>
-                                <div className={styles.mainFields}></div>
-                                <div className={styles.dateFields}></div>
-                            </div>
-                            <div className={styles.checkboxButtonSearch}></div>
-                        </form>
+                <form className={styles.formFillData}>
+                    <div className={styles.inputSelectFilds}>
+                        <div className={styles.mainFields}></div>
+                        <div className={styles.dateFields}></div>
                     </div>
-                </div>
+                    <div className={styles.checkboxButtonSearch}>
+                        
+                    </div>
+                </form>
             </div>
             <div className={styles.blockImages}>
                 <img className={styles.documentImg} src={documentPng}></img>

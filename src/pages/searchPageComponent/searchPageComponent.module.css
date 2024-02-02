@@ -29,16 +29,19 @@
     font-size: 20px;
 }
 
-.areaEnterSearchData {
+.formFillData {
+    display: flex;
+    padding: 21px 39px 32px 44px;
     width: 872px;
-    height: 548px;
+    height: 543px;
     border-radius: 10px;
-    box-shadow: 0 0 20px 0px;
-    opacity: 0.2;
+    box-shadow: 0 0 20px 0px #dadada;
 }
 
-.formFill {
-    display: flex;
+.inputSelectFilds {
+    width: 383px;
+    height: 447px;
+    border: 1px solid;
 }
 
 .blockImages {

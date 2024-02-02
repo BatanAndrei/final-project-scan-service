@@ -38,7 +38,7 @@ const HomePageComponent = () => {
                 </div>
                 <h2 className={styles.textTitleBlockName}>НАШИ ТАРИФЫ</h2>
                 <div className={styles.blockTariffs}>
-                    <div className={styles.tariffItem+' '+styles.selectedTariffBeginer}>
+                    <div className={styles.tariffItem}>
                         <div className={styles.headTariffItem+' '+styles.beginner}>
                             <div className={styles.titleTariffItem}>
                                 <h2 className={styles.nameTariffText}>Beginner</h2>
@@ -48,7 +48,7 @@ const HomePageComponent = () => {
                                 <img className={styles.marginIconLamp} src={lamp} alt='лампочка'></img>
                             </div>
                         </div>
-                        <div className={styles.mainTariffItem}>
+                        <div className={styles.mainTariffItem+' '+styles.selectedTariffBeginer}>
                             <div className={styles.containerBadge}>
                                 <div className={styles.badge}>Текущий тариф</div>
                             </div>
@@ -63,7 +63,7 @@ const HomePageComponent = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.tariffItem+' '+styles.selectedTariffPro}>
+                    <div className={styles.tariffItem}>
                         <div className={styles.headTariffItem+' '+styles.pro}>
                             <div className={styles.titleTariffItem}>
                                 <h2 className={styles.nameTariffText}>Pro</h2>
@@ -73,7 +73,7 @@ const HomePageComponent = () => {
                                 <img className={styles.marginIconTarget} src={target} alt='мишень'></img>
                             </div>
                         </div>
-                        <div className={styles.mainTariffItem}>
+                        <div className={styles.mainTariffItem+' '+styles.selectedTariffPro}>
                             <div className={styles.containerBadge}>
                                 <div className={styles.badge}>Текущий тариф</div>
                             </div>
@@ -88,7 +88,7 @@ const HomePageComponent = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={styles.tariffItem+' '+styles.selectedTariffBusiness}>
+                    <div className={styles.tariffItem}>
                         <div className={styles.headTariffItem+' '+styles.business}>
                             <div className={styles.titleTariffItem}>
                                 <h2 className={styles.nameTariffText+' '+styles.colorBusiness}>Business</h2>
@@ -98,7 +98,7 @@ const HomePageComponent = () => {
                                 <img className={styles.marginIconLaptop} src={laptop} alt='ноутбук'></img>
                             </div>
                         </div>
-                        <div className={styles.mainTariffItem}>
+                        <div className={styles.mainTariffItem+' '+styles.selectedTariffBusiness}>
                             <div className={styles.containerBadge}>
                                 <div className={styles.badge}>Текущий тариф</div>
                             </div>
