@@ -1,4 +1,4 @@
-const VeryicalOrHeader = () => {
+const PipelineHeader = () => {
     return (
         <>
             <svg width="2" height="26" viewBox="0 0 2 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -8,4 +8,4 @@ const VeryicalOrHeader = () => {
     )
 };
 
-export default VeryicalOrHeader;
+export default PipelineHeader;
