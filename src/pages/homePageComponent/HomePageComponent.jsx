@@ -7,7 +7,8 @@ import SimpleSlider from '../../components/carousel/Carousel';
 import lamp from '../../Images/lamp.png';
 import target from '../../Images/target.png';
 import laptop from '../../Images/laptop.png';
-import galochka from '../../Images/galochka.png'; 
+import galochka from '../../Images/galochka.png';
+import { Link } from 'react-router-dom'; 
 
 
 
@@ -21,7 +22,7 @@ const HomePageComponent = () => {
                         <h1 className={styles.titleMainAboutSite}>сервис по поиску<br/> публикаций<br/> о компании<br/> по его инн</h1>
                         <h2 className={styles.subtitleMainAboutSite}>Комплексный анализ публикаций, получение данных<br/> в формате PDF на электронную почту.</h2>
                         <div className={styles.buttonModifyReqData}>
-                            <MainButton name={nameButtonReqData} />
+                            <Link to='/search'><MainButton name={nameButtonReqData} /></Link>
                         </div>
                     </div>
                     <div className={styles.mainAboutSitePicture}>
@@ -58,7 +59,7 @@ const HomePageComponent = () => {
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Безопасная сделка</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Поддержка 24/7</h3>
                             <div className={styles.buttonModifyPersonalArea}>
-                                <MainButton name={nameButtonPersonalArea} />
+                            <MainButton name={nameButtonPersonalArea} />
                             </div>
                         </div>
                     </div>
