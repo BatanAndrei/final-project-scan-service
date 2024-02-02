@@ -37,6 +37,10 @@
     opacity: 0.2;
 }
 
+.formFill {
+    display: flex;
+}
+
 .blockImages {
     width: 568px;
     height: 759px;
