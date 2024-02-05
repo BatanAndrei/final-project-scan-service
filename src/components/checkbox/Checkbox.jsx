@@ -12,7 +12,7 @@ const Checkbox = ({name}) => {
     return (
         <label className={check ? styles.label : styles.lableChecked}>
             <input onChange={HeandleCheckBox} type="checkbox" className={styles.checkbox}/>
-            <span className={styles.fake}></span>
+            <span className={check ? styles.fake : styles.fakeChecked}></span>
             <span className={styles.color}>{name}</span>          
         </label>
     )
