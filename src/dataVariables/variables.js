@@ -2,6 +2,7 @@ export const nameButtonReqData = 'Запросить данные';
 export const nameButtonMoreDetail = 'Подробнее';
 export const nameButtonPersonalArea = 'Перейти в личный кабинет';
 export const nameButtonLogin = 'Войти';
+export const nameButtonSearch = 'Поиск';
 
 export const listCheckbox = [{
     id: 1,

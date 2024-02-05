@@ -5,6 +5,8 @@ import foldersPng from '../../Images/foldersPng.png';
 import manRocketPng from '../../Images/manRocketPng.png';
 import Checkbox from '../../components/checkbox/Checkbox';
 import { listCheckbox } from '../../dataVariables/variables';
+import MainButton from '../../components/mainButton/mainButton';
+import { nameButtonSearch } from '../../dataVariables/variables';
 
 
 
@@ -36,8 +38,13 @@ const SearchPageComponent = () => {
                         </div>
                     </div>
                     <div className={styles.checkboxButtonSearch}>
-                        {listCheckbox.map((box) => <Checkbox key={box.id} name={box.lable} />)}
+                        {listCheckbox.map((checkbox) => <Checkbox key={checkbox.id} name={checkbox.lable} />)}
+                        <div className={styles.buttonModifyReqData}>
+                            <MainButton name={nameButtonSearch} />
+                        </div>
+                        <h3 className={styles.textForFieldsRequired}>* Обязательные к заполнению поля</h3>
                     </div>
+                    
                 </form>
             </div>
             <div className={styles.blockImages}>

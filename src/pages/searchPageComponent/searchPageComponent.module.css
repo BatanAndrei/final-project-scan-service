@@ -42,18 +42,17 @@
 .inputSelectFilds {
     width: 383px;
     height: 477px;
-    border: 1px solid;
 }
 
 .lableText {
     font-family: 'Inter', sans-serif;
-    margin: 30px 0px 0px 0px;
+    margin: 28px 0px 0px 0px;
     font-weight: 400;
     font-size: 18px;
 }
 
 .input {
-    margin: 20px 0px 0px 0px;
+    margin: 19px 0px 0px 0px;
     border-radius: 1px;
     box-shadow: 0 0 20px 0px #dadada;
     border: 1px solid #C7C7C7;
@@ -120,7 +119,6 @@
     margin-top: 16px;
     width: 406px;
     height: 475px;
-    border: 1px solid;
 }
 
 .blockImages {
@@ -138,4 +136,23 @@
 
 .manRocketImg {
     margin: 108px 0px 0px 80px;
+}
+
+.buttonModifyReqData button {
+    margin: 105px 0px 0px 90px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    width: 305px;
+    height: 59px;
+    font-weight: 500;
+    font-size: 22px;
+    background-color: #5970FF;
+}
+
+.textForFieldsRequired {
+    margin: 10px 0px 0px 90px;
+    font-family: 'Inter', sans-serif;
+    color: #949494;
+    font-weight: 400;
+    font-size: 14px;
 }
