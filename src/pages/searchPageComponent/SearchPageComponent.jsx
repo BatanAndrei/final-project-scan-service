@@ -31,7 +31,7 @@ const SearchPageComponent = () => {
                         <input className={styles.input} placeholder='От 1 до 1000'/>
                         <h2 className={styles.lableText}>Диапазон поиска *</h2>
                         <div className={styles.dateFields}>
-                            <input className={styles.inputDate} defaultValue={new Date()} type="date"/>
+                            <input className={styles.inputDate} type="date"/>
                             <input className={styles.inputDate} type="date"/>
                         </div>
                     </div>
