@@ -1,12 +1,19 @@
 import styles from './checkbox.module.css';
+import { useState } from 'react';
 
 
 const Checkbox = ({name}) => {
+    const [check, setCheck] = useState(true);
+
+    const HeandleCheckBox = () => {
+        setCheck(() => !check)
+    }
+
     return (
-        <label className={styles.label}>
-            <input type="checkbox" name="1" className={styles.checkbox}/>
+        <label className={check ? styles.label : styles.lableChecked}>
+            <input onChange={HeandleCheckBox} type="checkbox" className={styles.checkbox}/>
             <span className={styles.fake}></span>
-            <span>{name}</span>            
+            <span className={styles.color}>{name}</span>          
         </label>
     )
 };
