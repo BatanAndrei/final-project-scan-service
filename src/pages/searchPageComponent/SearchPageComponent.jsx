@@ -4,6 +4,7 @@ import documentPng from '../../Images/documentPng.png';
 import foldersPng from '../../Images/foldersPng.png';
 import manRocketPng from '../../Images/manRocketPng.png';
 import Checkbox from '../../components/checkbox/Checkbox';
+import { lableCheckbox } from '../../dataVariables/variables';
 
 
 
@@ -35,7 +36,7 @@ const SearchPageComponent = () => {
                         </div>
                     </div>
                     <div className={styles.checkboxButtonSearch}>
-                        <Checkbox />
+                        {lableCheckbox.map((box) => <Checkbox key={box.id} name={box.lable} />)}
                     </div>
                 </form>
             </div>

@@ -25,6 +25,7 @@
     justify-content: center;
     border: 1px solid black;
     border-radius: 1px;
+    cursor: pointer;
 } 
 
 .fake::before {
@@ -33,7 +34,7 @@
     top: 6px;
     height: 50%;
     width: 3px;
-    background-color: rgb(12, 218, 12);
+    background-color: rgb(12, 211, 12);
     content: "";
     transform: translateX(10px) rotate(-45deg);
     transform-origin: left bottom;
@@ -43,11 +44,11 @@
 .fake::after {
     position: absolute;
     left: -2px;
-    top: 12px;
+    top: 12.5px;
     bottom: 0;
     height: 3px;
     width: 70%;
-    background-color: rgb(12, 218, 12);
+    background-color: rgb(12, 211, 12);
     content: "";
     transform: translateX(10px) rotate(-45deg);
     transform-origin: left bottom;
