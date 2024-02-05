@@ -1,10 +1,12 @@
 import styles from './userInfoHeader.module.css';
 
 
+
 const UserInfoHeader = () => {
     return (
         <div className={styles.container}>
             <div className={styles.infoByComponies}>
+                {/* <div className={styles.loader}></div> */}
                 <h3 className={styles.textUsedCompanies}>Использовано компаний <span className={styles.styleQuantityUsed}>34</span></h3>
                 <h3 className={styles.textLimitCompanies}>Лимит по компаниям <span className={styles.styleQuantityLimit}>100</span></h3>
             </div>
