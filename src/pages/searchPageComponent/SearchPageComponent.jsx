@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './searchPageComponent.module.css';
 import documentPng from '../../Images/documentPng.png';
 import foldersPng from '../../Images/foldersPng.png';
@@ -9,7 +9,7 @@ import { listCheckbox } from '../../dataVariables/variables';
 
 
 const SearchPageComponent = () => {
-    const [value, setValue] = useState(null);
+
     return (
         <div className={styles.containerPage}>
             <div className={styles.blockSearch}>
