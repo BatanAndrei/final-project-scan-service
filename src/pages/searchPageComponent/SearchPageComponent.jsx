@@ -7,12 +7,14 @@ import Checkbox from '../../components/checkbox/Checkbox';
 import { listCheckbox } from '../../dataVariables/variables';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonSearch } from '../../dataVariables/variables';
+import DisplyedResultSearch from '../../components/displyedResultSearch/DisplyedResultSearch';
 
 
 
 const SearchPageComponent = () => {
 
     return (
+        <>
         <div className={styles.containerPage}>
             <div className={styles.blockSearch}>
                 <div className={styles.titleBlockSearch}>
@@ -53,6 +55,7 @@ const SearchPageComponent = () => {
                 <img className={styles.manRocketImg} src={manRocketPng}></img>
             </div>
         </div>
+        </>
     )
 };
 
