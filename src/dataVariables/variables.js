@@ -3,7 +3,7 @@ export const nameButtonMoreDetail = 'Подробнее';
 export const nameButtonPersonalArea = 'Перейти в личный кабинет';
 export const nameButtonLogin = 'Войти';
 
-export const lableCheckbox = [{
+export const listCheckbox = [{
     id: 1,
     lable: 'Признак максимальной полноты'
 },
