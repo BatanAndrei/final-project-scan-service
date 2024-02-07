@@ -15,7 +15,8 @@ const SearchPageComponent = () => {
 
     return (
         <>
-        <div className={styles.containerPage}>
+        <DisplyedResultSearch />
+        {/*<div className={styles.containerPage}>
             <div className={styles.blockSearch}>
                 <div className={styles.titleBlockSearch}>
                     <h1 className={styles.textTitle}>Найдите необходимые<br/> данные в пару кликов.</h1>
@@ -54,7 +55,7 @@ const SearchPageComponent = () => {
                 <img className={styles.foldersImg} src={foldersPng}></img>
                 <img className={styles.manRocketImg} src={manRocketPng}></img>
             </div>
-        </div>
+    </div>*/}
         </>
     )
 };

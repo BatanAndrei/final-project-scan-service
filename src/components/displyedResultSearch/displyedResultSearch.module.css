@@ -1,0 +1,86 @@
+.containerResult {
+    padding: 25px 43px 125px 51px;
+    margin: auto;
+    width: 1440px;
+    height: 100%;
+}
+
+.infoAboutSearch {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 60px 0px 9px;
+    width: 1346px;
+    height: 100%;
+}
+
+.infoTitle {
+    width: 553px;
+    height: 369px;
+    border: 1px solid;
+}
+
+.infoImage {
+    width: 553px;
+    height: 369px;
+    border: 1px solid;
+}
+
+.wrapperSlider {
+    width: 1346px;
+    height: 260px;
+}
+
+.textModifyGeneralSummary {
+    margin: 0px;
+    font-family: 'Ferry', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.textModifyOptionsFound {
+    margin: 17px 0px 0px 0px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #949494;
+}
+
+.slider {
+    margin: 27px auto;
+    width: 1260px;
+    height: 158px;
+    border-radius: 10px;
+    border: 2px solid #029491;
+}
+
+.titleDataSlider {
+    width: 133px;
+    height: 155px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #029491;
+}
+
+.textModifyListDoc {
+    margin: 107px 0px 0px 0px;
+    font-family: 'Ferry', sans-serif;
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.wrapperDocuments {
+    margin: 58px 0px 0px 0px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 36px;
+    width: 1320px;
+    height: 100%;
+}
+
+.cardDoc {
+    width: 641px;
+    height: 694px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px 0 #dadada;
+}
+
+
