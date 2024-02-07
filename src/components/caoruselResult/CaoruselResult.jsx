@@ -3,7 +3,6 @@ import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Slider from "react-slick";
 import styles from './caoruselResult.module.css';
-import { hover } from "@testing-library/user-event/dist/hover";
 
 
 function ArrowPrev(props) {
@@ -24,7 +23,7 @@ function ArrowNext(props) {
     return (
         <div
             className={className+' '+styles.arrow+' '+styles.slick_next}
-            style={{ ...style, display: "block", background: "#dadada"}}
+            style={{ ...style, display: "block", background: "black"}}
             onClick={onClick}
         />
     );
