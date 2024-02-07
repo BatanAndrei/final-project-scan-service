@@ -1,4 +1,5 @@
 import styles from './displyedResultSearch.module.css';
+import SimpleSliderResult from '../../components/caoruselResult/CaoruselResult';
 
 
 const DisplyedResultSearch = () => {
@@ -22,7 +23,9 @@ const DisplyedResultSearch = () => {
                         <h3 className={styles.texModifyTitleSlider}>Всего</h3>
                         <h3 className={styles.texModifyTitleSlider}>Риски</h3>
                     </div>
-                    <div className={styles.bodySlider}></div>
+                    <div className={styles.bodySlider}>
+                        <SimpleSliderResult />
+                    </div>
                 </div>
             </div>
             <h2 className={styles.textModifyListDoc}>Список документов</h2>

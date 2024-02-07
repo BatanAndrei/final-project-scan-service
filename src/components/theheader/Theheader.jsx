@@ -18,8 +18,8 @@ const Theheader = () => {
                 <li className={styles.list}><Link className={styles.link} to='/faq'>FAQ</Link></li>
             </ul>
             <div className={styles.userInfo}>
-                <UserInfoHeader />
-                {/* <RegistrationPanelLogin /> */}
+                {/* <UserInfoHeader /> */}
+                <RegistrationPanelLogin />
             </div>
         </header>
     )

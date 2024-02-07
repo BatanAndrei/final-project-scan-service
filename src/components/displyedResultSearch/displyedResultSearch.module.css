@@ -75,7 +75,7 @@
     height: 158px;
     border-radius: 10px 0px 0px 10px;
     background-color: #029491;
-}
+} 
 
 .texModifyTitleSlider {
     margin: 0px;
@@ -86,6 +86,7 @@
 }
 
 .bodySlider {
+    padding-top: 17px;
     border-radius: 0px 10px 10px 0px;
     border: 2px solid #029491;
     width: 1127px;

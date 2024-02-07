@@ -3,7 +3,7 @@ import imageAboutSite from '../../Images/imageAboutSite.jpg';
 import pictureUnderCarousel from '../../Images/pictureUnderCarousel.jpg';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonReqData, nameButtonMoreDetail, nameButtonPersonalArea } from '../../dataVariables/variables';
-import SimpleSlider from '../../components/carousel/Carousel';
+import SimpleSliderHome from '../../components/carouselHome/CarouselHome';
 import lamp from '../../Images/lamp.png';
 import target from '../../Images/target.png';
 import laptop from '../../Images/laptop.png';
@@ -31,7 +31,7 @@ const HomePageComponent = () => {
                 </div>
                 <h2 className={styles.textTitleBlockName}>ПОЧЕМУ ИМЕННО МЫ</h2>
                 <div className={styles.blockCarousel}>
-                    <SimpleSlider />
+                    <SimpleSliderHome />
                 </div>
                 <div className={styles.blockPictureUnderCarousel}>
                     <img src={pictureUnderCarousel} alt='Картинка о сайте'></img>
