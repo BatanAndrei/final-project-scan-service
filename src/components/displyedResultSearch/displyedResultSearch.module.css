@@ -247,7 +247,7 @@
     background-color: #7CE3E1;
 }
 
-.buttonModifyReadSource:hover button {
+.buttonModifyReadSource button:hover {
     font-size: 17px;
 }
 
@@ -270,7 +270,7 @@
     color: #FFFFFF;
 }
 
-.buttonModifyDispleyMore:hover button {
+.buttonModifyDispleyMore button:hover {
     font-size: 23px;
 }
 
