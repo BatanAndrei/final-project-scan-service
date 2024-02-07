@@ -18,22 +18,21 @@ const DisplyedResultSearch = () => {
                 <h2 className={styles.textModifyGeneralSummary}>Общая сводка</h2>
                 <h3 className={styles.textModifyOptionsFound}>Найдено 4 221 вариантов</h3>
 
-                {/* <div className={styles.sliderLoad}>
-                    <div className={styles.arrowPrev}></div>
+                {/* <div className={styles.sliderBeforeLoad}>
+                    <div className={styles.arrowPrevDecoration}></div>
                     <div className={styles.blockTitleDataSlider}>
                         <h3 className={styles.texModifyTitleSlider}>Период</h3>
                         <h3 className={styles.texModifyTitleSlider}>Всего</h3>
                         <h3 className={styles.texModifyTitleSlider}>Риски</h3>
                     </div>
-
                     <div className={styles.bodySlider}>
                         <div className={styles.loader}></div>
                         <h3 className={styles.textModifyLoadData}>Загружаем данные</h3>
                     </div>
-                    <div className={styles.arrowNext}></div>
+                    <div className={styles.arrowNextDecoration}></div>
                 </div> */}
 
-                <div className={styles.slider}>
+                <div className={styles.sliderAfterLoad}>
                     <div className={styles.blockTitleDataSlider}>
                         <h3 className={styles.texModifyTitleSlider}>Период</h3>
                         <h3 className={styles.texModifyTitleSlider}>Всего</h3>
