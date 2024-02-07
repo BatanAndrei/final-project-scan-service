@@ -92,7 +92,6 @@ export default function SimpleSliderResult() {
                 <h3 className={styles.textModifyDataResultAll}>5</h3>
                 <h3 className={styles.textModifyDataResultAll}>0</h3>
             </div>
-            
         </Slider>
     );
 }
