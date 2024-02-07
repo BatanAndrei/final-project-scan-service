@@ -52,14 +52,47 @@ export default function SimpleSliderResult() {
 
     return (
         <Slider {...settings}>
-            <div className={styles.cardInfo}></div>
-            <div className={styles.cardInfo}></div>
-            <div className={styles.cardInfo}></div>
-            <div className={styles.cardInfo}></div>
-            <div className={styles.cardInfo}></div>
-            <div className={styles.cardInfo}></div>
-            <div className={styles.cardInfo}></div>
-            <div className={styles.cardInfo}></div>    
+            <div className={styles.cardInfo}>
+                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
+                <h3 className={styles.textModifyDataResultAll}>5</h3>
+                <h3 className={styles.textModifyDataResultAll}>0</h3>
+            </div>
+            <div className={styles.cardInfo}>
+                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
+                <h3 className={styles.textModifyDataResultAll}>5</h3>
+                <h3 className={styles.textModifyDataResultAll}>0</h3>
+            </div>
+            <div className={styles.cardInfo}>
+                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
+                <h3 className={styles.textModifyDataResultAll}>5</h3>
+                <h3 className={styles.textModifyDataResultAll}>0</h3>
+            </div>
+            <div className={styles.cardInfo}>
+                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
+                <h3 className={styles.textModifyDataResultAll}>5</h3>
+                <h3 className={styles.textModifyDataResultAll}>0</h3>
+            </div>
+            <div className={styles.cardInfo}>
+                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
+                <h3 className={styles.textModifyDataResultAll}>5</h3>
+                <h3 className={styles.textModifyDataResultAll}>0</h3>
+            </div>
+            <div className={styles.cardInfo}>
+                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
+                <h3 className={styles.textModifyDataResultAll}>5</h3>
+                <h3 className={styles.textModifyDataResultAll}>0</h3>
+            </div>
+            <div className={styles.cardInfo}>
+                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
+                <h3 className={styles.textModifyDataResultAll}>5</h3>
+                <h3 className={styles.textModifyDataResultAll}>0</h3>
+            </div>
+            <div className={styles.cardInfo}>
+                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
+                <h3 className={styles.textModifyDataResultAll}>5</h3>
+                <h3 className={styles.textModifyDataResultAll}>0</h3>
+            </div>
+            
         </Slider>
     );
 }
