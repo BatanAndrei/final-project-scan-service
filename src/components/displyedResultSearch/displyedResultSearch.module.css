@@ -16,13 +16,26 @@
 .infoTitle {
     width: 553px;
     height: 369px;
-    border: 1px solid;
+}
+
+.textModifySearchSoon {
+    margin: 44px 0px 0px 0px;
+    font-family: 'Ferry', sans-serif;
+    font-weight: 900;
+    font-size: 40px;
+}
+
+.textModifyWaitTime {
+    margin: 36px 0px 0px 0px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
 }
 
 .infoImage {
     width: 553px;
     height: 369px;
-    border: 1px solid;
+    background-image: url('../../Images/searchImageTarget.png');
 }
 
 .wrapperSlider {

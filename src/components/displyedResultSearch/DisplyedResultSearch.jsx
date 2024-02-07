@@ -5,7 +5,12 @@ const DisplyedResultSearch = () => {
     return (
         <div className={styles.containerResult}>
             <div className={styles.infoAboutSearch}>
-                <div className={styles.infoTitle}></div>
+                <div className={styles.infoTitle}>
+                    {/* <h1 className={styles.textModifySearchSoon}>Поиск завершён</h1>
+                    <h2 className={styles.textModifyWaitTime}>Резулультат в общей сводке.</h2> */}
+                    <h1 className={styles.textModifySearchSoon}>Ищем. Скоро<br/> будут результаты</h1>
+                    <h2 className={styles.textModifyWaitTime}>Поиск может занять некоторое время,<br/> просим сохранять терпение.</h2>
+                </div>
                 <div className={styles.infoImage}></div>
             </div>
             <div className={styles.wrapperSlider}>
