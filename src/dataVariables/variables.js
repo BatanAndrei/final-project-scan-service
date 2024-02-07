@@ -3,6 +3,8 @@ export const nameButtonMoreDetail = 'Подробнее';
 export const nameButtonPersonalArea = 'Перейти в личный кабинет';
 export const nameButtonLogin = 'Войти';
 export const nameButtonSearch = 'Поиск';
+export const nameButtonDispleyMore = 'Показать больше';
+export const nameButtonReadSource = 'Читать в источнике';
 
 export const listCheckbox = [{
     id: 1,
