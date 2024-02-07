@@ -43,6 +43,22 @@
     height: 260px;
 }
 
+.arrowPrev {
+    margin-top: 60px;
+    width: 40px;
+    height: 158px;
+    background-image: url('../../Images/arrowLeft.png');
+    background-repeat: no-repeat;
+}
+
+.arrowNext {
+    margin-top: 60px;
+    width: 40px;
+    height: 158px;
+    background-image: url('../../Images/arrowRight.png');
+    background-repeat: no-repeat;
+}
+
 .textModifyGeneralSummary {
     margin: 0px;
     font-family: 'Ferry', sans-serif;
@@ -62,6 +78,14 @@
     display: flex;
     margin: 27px auto;
     width: 1260px;
+    height: 158px;
+    border-radius: 10px;
+}
+
+.sliderLoad {
+    display: flex;
+    margin-top: 27px;
+    width: 1346px;
     height: 158px;
     border-radius: 10px;
 }
@@ -91,6 +115,28 @@
     border: 2px solid #029491;
     width: 1127px;
     height: 158px;
+}
+
+.loader {
+    margin: 15px 0px 0px 515px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-image: url('../../Images/loaderFoto50.png');
+    animation: loader 1.3s linear infinite;
+}
+
+@keyframes loader {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.textModifyLoadData {
+    margin: 11px 0px 0px 460px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
 }
 
 .textModifyListDoc {

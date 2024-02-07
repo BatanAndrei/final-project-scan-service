@@ -70,7 +70,7 @@ export default function SimpleSliderResult() {
                 <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
                 <h3 className={styles.textModifyDataResultAll}>5</h3>
                 <h3 className={styles.textModifyDataResultAll}>0</h3>
-            </div>
+            </div>    
             <div className={styles.cardInfo}>
                 <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
                 <h3 className={styles.textModifyDataResultAll}>5</h3>
@@ -90,7 +90,7 @@ export default function SimpleSliderResult() {
                 <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
                 <h3 className={styles.textModifyDataResultAll}>5</h3>
                 <h3 className={styles.textModifyDataResultAll}>0</h3>
-            </div>
+            </div>  
         </Slider>
     );
 }
