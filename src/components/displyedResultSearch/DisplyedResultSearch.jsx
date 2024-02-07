@@ -17,7 +17,12 @@ const DisplyedResultSearch = () => {
                 <h2 className={styles.textModifyGeneralSummary}>Общая сводка</h2>
                 <h3 className={styles.textModifyOptionsFound}>Найдено 4 221 вариантов</h3>
                 <div className={styles.slider}>
-                    <div className={styles.titleDataSlider}></div>
+                    <div className={styles.blockTitleDataSlider}>
+                        <h3 className={styles.texModifyTitleSlider}>Период</h3>
+                        <h3 className={styles.texModifyTitleSlider}>Всего</h3>
+                        <h3 className={styles.texModifyTitleSlider}>Риски</h3>
+                    </div>
+                    <div className={styles.bodySlider}></div>
                 </div>
             </div>
             <h2 className={styles.textModifyListDoc}>Список документов</h2>

@@ -59,18 +59,37 @@
 }
 
 .slider {
+    display: flex;
     margin: 27px auto;
     width: 1260px;
     height: 158px;
     border-radius: 10px;
-    border: 2px solid #029491;
 }
 
-.titleDataSlider {
+.blockTitleDataSlider {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 17px 0px 17px 28px;
     width: 133px;
-    height: 155px;
+    height: 158px;
     border-radius: 10px 0px 0px 10px;
     background-color: #029491;
+}
+
+.texModifyTitleSlider {
+    margin: 0px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFFFFF;
+}
+
+.bodySlider {
+    border-radius: 0px 10px 10px 0px;
+    border: 2px solid #029491;
+    width: 1127px;
+    height: 158px;
 }
 
 .textModifyListDoc {
