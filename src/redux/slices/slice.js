@@ -25,7 +25,7 @@ export const authlSlice = createSlice({
         .addCase(postAuth.fulfilled, 
             (state, { payload }) => { 
 
-            state.token = payload;
+            state.token = payload.accessToken;
             state.status = "idle";
     });
 
