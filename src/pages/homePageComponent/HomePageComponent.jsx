@@ -9,22 +9,23 @@ import target from '../../Images/target.png';
 import laptop from '../../Images/laptop.png';
 import galochka from '../../Images/galochka.png';
 import { Link } from 'react-router-dom';
-import { selectStatus, selectListUsers } from '../../redux/selectors/selectors';
+import { selectStatus, selectToken } from '../../redux/selectors/selectors';
 import { useSelector, useDispatch } from 'react-redux'; 
-import { getUserInfo } from '../../api/requestUserInfo';
+import { postAuth } from '../../api/postAuth';
 import { useEffect } from 'react';
 
 
 const HomePageComponent = () => {
 
     const dispatch = useDispatch();
-    const user = useSelector(selectListUsers);
-    console.log(user)
+    const token = useSelector(selectToken);
+    console.log(token)
 
     useEffect(() => {
-        dispatch(getUserInfo())
+        dispatch(postAuth())
     }, [])
 
+    
     return (
         <>
             <div className={styles.homeContainer}>

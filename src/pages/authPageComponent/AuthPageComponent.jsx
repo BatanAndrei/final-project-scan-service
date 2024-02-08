@@ -11,6 +11,10 @@ import linkViaYandex from '../../Images/linkViaYandex.png';
 
 const AuthPageComponent = () => {
 
+    const PostRequestAuth = (e) => {
+        e.preventDefault();
+    }
+    
     return (
         <div className={styles.containerAuthPage}>
             <div className={styles.infoForSubscription}>
@@ -30,7 +34,7 @@ const AuthPageComponent = () => {
                         <h2 className={styles.titleInput}>Пароль:</h2>
                         <input className={styles.input} type="password" name="password"/>
                         <div className={styles.buttonModifyLogin}>
-                            <MainButton name={nameButtonLogin} />
+                            <MainButton click={PostRequestAuth} name={nameButtonLogin} />
                         </div>
                         <h3><Link className={styles.link} to='#'>Восстановить пароль</Link></h3>
                         <h3 className={styles.loginVia}>Войти через:</h3>

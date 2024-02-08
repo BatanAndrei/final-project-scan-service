@@ -1,2 +1,2 @@
-export const selectStatus = (state) => state.userExtraReducer.status;
-export const selectListUsers = (state) => state.userExtraReducer.dataUser;
+export const selectStatus = (state) => state.authExtraReducer.status;
+export const selectToken = (state) => state.authExtraReducer.token;

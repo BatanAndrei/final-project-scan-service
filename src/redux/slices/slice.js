@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getUserInfo } from '../../api/requestUserInfo';
+import { postAuth } from '../../api/postAuth';
 
 
 export const initialState = {
-    dataUser: [],
+    token: '',
 };
 
-export const generalSlice = createSlice({
-    name: "general",
+export const authlSlice = createSlice({
+    name: "auth",
     initialState,
     reducers: {   
 
@@ -15,22 +15,22 @@ export const generalSlice = createSlice({
 
     extraReducers: (builder) => {
         builder
-        .addCase(getUserInfo.pending, (state) => {
+        .addCase(postAuth.pending, (state) => {
 
             state.status = "loading";
             state.error = null;
     });
 
         builder
-        .addCase(getUserInfo.fulfilled, 
+        .addCase(postAuth.fulfilled, 
             (state, { payload }) => { 
 
-            state.dataUser = [...payload];
+            state.token = payload;
             state.status = "idle";
     });
 
         builder
-        .addCase(getUserInfo.rejected, 
+        .addCase(postAuth.rejected, 
             (state, { payload }) => {
 
             if (payload) state.error = payload.message; //В payload.message приходит из fetchBooks => return thunkApi.rejectWithValue({ message: "Failed to fetch books." })
