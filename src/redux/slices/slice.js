@@ -25,7 +25,7 @@ export const generalSlice = createSlice({
         .addCase(getUserInfo.fulfilled, 
             (state, { payload }) => { 
 
-            state.dataUser.push(...payload);
+            state.dataUser = [...payload];
             state.status = "idle";
     });
 

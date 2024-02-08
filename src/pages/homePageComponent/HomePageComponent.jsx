@@ -18,7 +18,7 @@ import { useEffect } from 'react';
 const HomePageComponent = () => {
 
     const dispatch = useDispatch();
-    const user = useSelector(selectStatus);
+    const user = useSelector(selectListUsers);
     console.log(user)
 
     useEffect(() => {
@@ -35,6 +35,7 @@ const HomePageComponent = () => {
                         <div className={styles.buttonModifyReqData}>
                             <Link to='/search'><MainButton name={nameButtonReqData} /></Link>
                         </div>
+                        <div>{user.length}</div>
                     </div>
                     <div className={styles.mainAboutSitePicture}>
                         <img src={imageAboutSite} alt='Картинка о сайте'></img>
