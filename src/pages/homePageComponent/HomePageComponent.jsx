@@ -35,7 +35,6 @@ const HomePageComponent = () => {
                         <div className={styles.buttonModifyReqData}>
                             <Link to='/search'><MainButton name={nameButtonReqData} /></Link>
                         </div>
-                        <div>{user.length}</div>
                     </div>
                     <div className={styles.mainAboutSitePicture}>
                         <img src={imageAboutSite} alt='Картинка о сайте'></img>
