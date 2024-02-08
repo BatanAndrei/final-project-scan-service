@@ -8,11 +8,22 @@ import lamp from '../../Images/lamp.png';
 import target from '../../Images/target.png';
 import laptop from '../../Images/laptop.png';
 import galochka from '../../Images/galochka.png';
-import { Link } from 'react-router-dom'; 
-
+import { Link } from 'react-router-dom';
+import { selectStatus, selectListUsers } from '../../redux/selectors/selectors';
+import { useSelector, useDispatch } from 'react-redux'; 
+import { getUserInfo } from '../../api/requestUserInfo';
+import { useEffect } from 'react';
 
 
 const HomePageComponent = () => {
+
+    const dispatch = useDispatch();
+    const user = useSelector(selectStatus);
+    console.log(user)
+
+    useEffect(() => {
+        dispatch(getUserInfo())
+    }, [])
 
     return (
         <>
