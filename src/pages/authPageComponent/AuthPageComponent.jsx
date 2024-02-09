@@ -10,33 +10,19 @@ import linkViaYandex from '../../Images/linkViaYandex.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { selectStatus, selectToken } from '../../redux/selectors/selectors';
-import { loginReducer, telDirtyReducer, passDirtyReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer } from '../../redux/slices/authSlice';
-import { selectTelDirty, selectPasswordDirty, selectTelError, selectPassError, selectTel, selectPassword, selectValidForm } from '../../redux/selectors/selectors';
+import { loginReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer } from '../../redux/slices/authSlice';
+import { selectTelError, selectPassError, selectTel, selectPassword, selectValidForm } from '../../redux/selectors/selectors';
 
 
 const AuthPageComponent = () => {
 
     const dispatch = useDispatch();
 
-    const telDirty = useSelector(selectTelDirty);
-    const passDirty = useSelector(selectPasswordDirty);
     const telError = useSelector(selectTelError);
     const passError = useSelector(selectPassError);
     const tel = useSelector(selectTel);
     const password = useSelector(selectPassword);
     const validForm = useSelector(selectValidForm);
-
-    const BlurHeandler = (e) => {
-        switch (e.target.name) {
-            case 'tel': 
-                dispatch(telDirtyReducer(true));
-                break;
-
-            case 'password':
-                dispatch(passDirtyReducer(true));
-                break;
-        }
-    };
 
     const TelHeandle = (e) => {
         dispatch(telReducer(e.target.value));
@@ -87,11 +73,11 @@ const AuthPageComponent = () => {
 
                     <form>
                         <h2 className={styles.titleInputTel}>Логин или номер телефона:</h2>
-                        <input className={styles.input} onChange={e => TelHeandle(e)} value={tel} onBlur={e => BlurHeandler(e)} type="tel" name="tel"/>
-                        <div className={styles.placeError}>{(telDirty && telError) && <p className={styles.errorMessage}>{telError}</p>}</div>
+                        <input className={telError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => TelHeandle(e)} value={tel}  type="tel" name="tel"/>
+                        <div className={styles.placeError}>{telError && <p className={styles.errorMessage}>{telError}</p>}</div>
                         <h2 className={styles.titleInputPass}>Пароль:</h2>
-                        <input className={styles.input} onChange={e => PassHeandle(e)} value={password} onBlur={e => BlurHeandler(e)} type="password" name="password"/>
-                        <div className={styles.placeError}>{(passDirty && passError) && <p className={styles.errorMessage}>{passError}</p>}</div>
+                        <input className={passError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => PassHeandle(e)} value={password} type="password" name="password"/>
+                        <div className={styles.placeError}>{passError && <p className={styles.errorMessage}>{passError}</p>}</div>
                         <div className={validForm ? styles.buttonModifyLogin : styles.buttonModifyLoginDisable}>
                             <MainButton disabled={!validForm} click={PostRequestAuth} name={nameButtonLogin} />
                         </div>

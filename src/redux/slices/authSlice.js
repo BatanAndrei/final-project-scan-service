@@ -7,10 +7,8 @@ export const initialState = {
     login: false,
     tel: '',
     password: '',
-    telDirty: false,
-    passDirty: false,
-    telError: 'Поле не может быть пустым',
-    passError: 'Поле не может быть пустым',
+    telError: ' ',
+    passError: ' ',
     validForm: false,
 };
 
@@ -21,14 +19,6 @@ export const authSlice = createSlice({
     
         loginReducer: (state) => {
             state.login = true;
-        },
-    
-        telDirtyReducer: (state, action) => {
-            state.telDirty = action.payload;
-        },
-    
-        passDirtyReducer: (state, action) => {
-            state.passDirty = action.payload;
         },
     
         telReducer: (state, action) => {
@@ -78,4 +68,4 @@ export const authSlice = createSlice({
     }
 })
 
-export const { loginReducer, telDirtyReducer, passDirtyReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer } = authSlice.actions;
+export const { loginReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer } = authSlice.actions;
