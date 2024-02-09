@@ -39,27 +39,19 @@ const AuthPageComponent = () => {
 
     const telHeandle = (e) => {
         dispatch(telReducer(e.target.value));
-        const reg = /^(?![\d+_@.-]+$)[a-zA-Z0-9+_@.-]*$/;
-        
-        if(!reg.test(String(e.target.value).toLowerCase())) {
-            dispatch(telErrorReducer('Введите корректные данные'));
             if(!e.target.value) {
                 dispatch(telErrorReducer('Поле не может быть пустым'));
-            }
-        }else {
-            dispatch(telErrorReducer(''));
+            }else {
+                dispatch(telErrorReducer(''));
         }
     };
 
     const passHeandle = (e) => {
         dispatch(passReducer(e.target.value));
-        if(e.target.value.length < 6 || e.target.value.length > 9) {
-            dispatch(passErrorReducer('Неправильный пароль'));
             if(!e.target.value) {
                 dispatch(passErrorReducer('Поле не может быть пустым'));
-            }
-        }else {
-            dispatch(passErrorReducer(''));
+            }else {
+                dispatch(passErrorReducer(''));
         }
     };
 
