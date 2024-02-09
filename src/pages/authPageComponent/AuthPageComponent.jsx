@@ -9,7 +9,6 @@ import linkViaFacebook from '../../Images/linkViaFacebook.png';
 import linkViaYandex from '../../Images/linkViaYandex.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { selectStatus, selectToken } from '../../redux/selectors/selectors';
 import { loginReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer } from '../../redux/slices/authSlice';
 import { selectTelError, selectPassError, selectTel, selectPassword, selectValidForm } from '../../redux/selectors/selectors';
 
@@ -48,12 +47,10 @@ const AuthPageComponent = () => {
         }else {
             dispatch(validFormReducer(true))
         }
-
     }, [telError, passError]) 
 
     const PostRequestAuth = (e) => {
         e.preventDefault();
-        alert('dddfffhhh')
     }
     
     return (
@@ -69,8 +66,6 @@ const AuthPageComponent = () => {
                         <button className={styles.loginTab}>Войти</button>
                         <button className={styles.registerTab}>Зарегистрироваться</button>
                     </div>
-
-
                     <form>
                         <h2 className={styles.titleInputTel}>Логин или номер телефона:</h2>
                         <input className={telError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => TelHeandle(e)} value={tel}  type="tel" name="tel"/>
@@ -84,8 +79,6 @@ const AuthPageComponent = () => {
                         <h3><Link className={styles.link} to='#'>Восстановить пароль</Link></h3>
                         <h3 className={styles.loginVia}>Войти через:</h3>
                     </form>
-
-
                     <div className={styles.blockLoginLinks}>
                         <button className={styles.button}><img src={linkViaGoogle} alt='ссылка на вход через Google'></img></button>
                         <button className={styles.button}><img src={linkViaFacebook} alt='ссылка на вход через Facebook'></img></button>

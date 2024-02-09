@@ -9,9 +9,9 @@ import target from '../../Images/target.png';
 import laptop from '../../Images/laptop.png';
 import galochka from '../../Images/galochka.png';
 import { Link } from 'react-router-dom';
-import { selectStatus, selectToken } from '../../redux/selectors/selectors';
+import { selectToken } from '../../redux/selectors/selectors';
 import { useSelector, useDispatch } from 'react-redux'; 
-import { postAuth } from '../../api/postAuth';
+import { RequestPostAuth } from '../../api/RequestPostAuth';
 import { useEffect } from 'react';
 
 
@@ -22,7 +22,7 @@ const HomePageComponent = () => {
     //console.log(token)
 
     /* useEffect(() => {
-        dispatch(postAuth())
+        dispatch(RequestPostAuth())
     }, []) */
 
     

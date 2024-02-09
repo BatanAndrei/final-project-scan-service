@@ -6,7 +6,7 @@ let registr = {
     };
 
 
-export const postAuth = createAsyncThunk(
+export const RequestPostAuth = createAsyncThunk(
     "auth/postAuth", 
     async (_, thunkApi) => { // объект thunkApi содержит функцию rejectWithValue
 

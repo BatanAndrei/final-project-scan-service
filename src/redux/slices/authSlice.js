@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { postAuth } from '../../api/postAuth';
+import { RequestPostAuth } from '../../api/RequestPostAuth';
 
 
 export const initialState = {
@@ -44,14 +44,14 @@ export const authSlice = createSlice({
 
     extraReducers: (builder) => {
         builder
-        .addCase(postAuth.pending, (state) => {
+        .addCase(RequestPostAuth.pending, (state) => {
 
             state.status = "loading";
             state.error = null;
     });
 
         builder
-        .addCase(postAuth.fulfilled, 
+        .addCase(RequestPostAuth.fulfilled, 
             (state, { payload }) => { 
 
             state.token = payload.accessToken;
@@ -59,7 +59,7 @@ export const authSlice = createSlice({
     });
 
         builder
-        .addCase(postAuth.rejected, 
+        .addCase(RequestPostAuth.rejected, 
             (state, { payload }) => {
 
             if (payload) state.error = payload.message; //В payload.message приходит из fetchBooks => return thunkApi.rejectWithValue({ message: "Failed to fetch books." })
