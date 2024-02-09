@@ -1,9 +1,9 @@
 import styles from './mainButton.module.css';
 
 
-const MainButton = ({click, name}) => {
+const MainButton = ({disabled, click, name}) => {
     return (
-        <button onClick={click} className={styles.button}>{name}</button>
+        <button disabled={disabled} onClick={click} className={styles.button}>{name}</button>
     )
 };
 

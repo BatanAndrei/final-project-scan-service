@@ -124,6 +124,18 @@
     border: 1px solid #C7C7C7;
 }
 
+.buttonModifyLoginDisable button {
+    margin: 10px 0px 0px 25px;
+    width: 379px;
+    height: 59px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    background-color: #95a1f2;
+    color: white;
+    cursor: default;
+}
+
 .buttonModifyLogin button {
     margin: 10px 0px 0px 25px;
     width: 379px;

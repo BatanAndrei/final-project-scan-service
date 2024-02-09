@@ -8,6 +8,7 @@ import linkViaGoogle from '../../Images/linkViaGoogle.png';
 import linkViaFacebook from '../../Images/linkViaFacebook.png';
 import linkViaYandex from '../../Images/linkViaYandex.png';
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import { selectStatus, selectToken } from '../../redux/selectors/selectors';
 import { loginReducer, telDirtyReducer, passDirtyReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer } from '../../redux/slices/authSlice';
 import { selectTelDirty, selectPasswordDirty, selectTelError, selectPassError, selectTel, selectPassword, selectValidForm } from '../../redux/selectors/selectors';
@@ -55,8 +56,18 @@ const AuthPageComponent = () => {
         }
     };
 
+    useEffect(() => {
+        if(telError || passError) {
+            dispatch(validFormReducer(false))
+        }else {
+            dispatch(validFormReducer(true))
+        }
+
+    }, [telError, passError]) 
+
     const PostRequestAuth = (e) => {
         e.preventDefault();
+        alert('dddfffhhh')
     }
     
     return (
@@ -81,8 +92,8 @@ const AuthPageComponent = () => {
                         <h2 className={styles.titleInputPass}>Пароль:</h2>
                         <input className={styles.input} onChange={e => PassHeandle(e)} value={password} onBlur={e => BlurHeandler(e)} type="password" name="password"/>
                         <div className={styles.placeError}>{(passDirty && passError) && <p className={styles.errorMessage}>{passError}</p>}</div>
-                        <div className={styles.buttonModifyLogin}>
-                            <MainButton click={PostRequestAuth} name={nameButtonLogin} />
+                        <div className={validForm ? styles.buttonModifyLogin : styles.buttonModifyLoginDisable}>
+                            <MainButton disabled={!validForm} click={PostRequestAuth} name={nameButtonLogin} />
                         </div>
                         <h3><Link className={styles.link} to='#'>Восстановить пароль</Link></h3>
                         <h3 className={styles.loginVia}>Войти через:</h3>
