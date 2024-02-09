@@ -5,6 +5,7 @@ let registr = {
     password: "4i2385j"
     };
 
+
 export const postAuth = createAsyncThunk(
     "auth/postAuth", 
     async (_, thunkApi) => { // объект thunkApi содержит функцию rejectWithValue

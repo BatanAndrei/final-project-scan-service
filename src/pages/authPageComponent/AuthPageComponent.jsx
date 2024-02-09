@@ -7,9 +7,61 @@ import { Link } from 'react-router-dom';
 import linkViaGoogle from '../../Images/linkViaGoogle.png';
 import linkViaFacebook from '../../Images/linkViaFacebook.png';
 import linkViaYandex from '../../Images/linkViaYandex.png';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectStatus, selectToken } from '../../redux/selectors/selectors';
+import { loginReducer, telDirtyReducer, passDirtyReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer } from '../../redux/slices/authSlice';
+import { selectTelDirty, selectPasswordDirty, selectTelError, selectPassError, selectTel, selectPassword, selectValidForm } from '../../redux/selectors/selectors';
 
 
 const AuthPageComponent = () => {
+
+    const dispatch = useDispatch();
+
+    const telDirty = useSelector(selectTelDirty);
+    const passDirty = useSelector(selectPasswordDirty);
+    const telError = useSelector(selectTelError);
+    const passError = useSelector(selectPassError);
+    const tel = useSelector(selectTel);
+    const password = useSelector(selectPassword);
+    const validForm = useSelector(selectValidForm);
+
+    const blurHeandler = (e) => {
+        switch (e.target.name) {
+            case 'tel': 
+                dispatch(telDirtyReducer(true));
+                break;
+
+            case 'password':
+                dispatch(passDirtyReducer(true));
+                break;
+        }
+    };
+
+    const telHeandle = (e) => {
+        dispatch(telReducer(e.target.value));
+        const reg = /^(?![\d+_@.-]+$)[a-zA-Z0-9+_@.-]*$/;
+        
+        if(!reg.test(String(e.target.value).toLowerCase())) {
+            dispatch(telErrorReducer('Введите корректные данные'));
+            if(!e.target.value) {
+                dispatch(telErrorReducer('Поле не может быть пустым'));
+            }
+        }else {
+            dispatch(telErrorReducer(''));
+        }
+    };
+
+    const passHeandle = (e) => {
+        dispatch(passReducer(e.target.value));
+        if(e.target.value.length < 6 || e.target.value.length > 9) {
+            dispatch(passErrorReducer('Неправильный пароль'));
+            if(!e.target.value) {
+                dispatch(passErrorReducer('Поле не может быть пустым'));
+            }
+        }else {
+            dispatch(passErrorReducer(''));
+        }
+    };
 
     const PostRequestAuth = (e) => {
         e.preventDefault();
@@ -28,17 +80,23 @@ const AuthPageComponent = () => {
                         <button className={styles.loginTab}>Войти</button>
                         <button className={styles.registerTab}>Зарегистрироваться</button>
                     </div>
+
+
                     <form>
-                        <h2 className={styles.titleInput}>Логин или номер телефона:</h2>
-                        <input className={styles.input} type="email" name="email"/>
-                        <h2 className={styles.titleInput}>Пароль:</h2>
-                        <input className={styles.input} type="password" name="password"/>
+                        <h2 className={styles.titleInputTel}>Логин или номер телефона:</h2>
+                        <input className={styles.input} onChange={e => telHeandle(e)} value={tel} onBlur={e => blurHeandler(e)} type="tel" name="tel"/>
+                        <div className={styles.placeError}>{(telDirty && telError) && <p className={styles.errorMessage}>{telError}</p>}</div>
+                        <h2 className={styles.titleInputPass}>Пароль:</h2>
+                        <input className={styles.input} onChange={e => passHeandle(e)} value={password} onBlur={e => blurHeandler(e)} type="password" name="password"/>
+                        <div className={styles.placeError}>{(passDirty && passError) && <p className={styles.errorMessage}>{passError}</p>}</div>
                         <div className={styles.buttonModifyLogin}>
                             <MainButton click={PostRequestAuth} name={nameButtonLogin} />
                         </div>
                         <h3><Link className={styles.link} to='#'>Восстановить пароль</Link></h3>
                         <h3 className={styles.loginVia}>Войти через:</h3>
                     </form>
+
+
                     <div className={styles.blockLoginLinks}>
                         <button className={styles.button}><img src={linkViaGoogle} alt='ссылка на вход через Google'></img></button>
                         <button className={styles.button}><img src={linkViaFacebook} alt='ссылка на вход через Facebook'></img></button>

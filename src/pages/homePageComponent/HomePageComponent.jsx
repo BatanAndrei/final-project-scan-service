@@ -19,11 +19,11 @@ const HomePageComponent = () => {
 
     const dispatch = useDispatch();
     const token = useSelector(selectToken);
-    console.log(token)
+    //console.log(token)
 
-    useEffect(() => {
+    /* useEffect(() => {
         dispatch(postAuth())
-    }, [])
+    }, []) */
 
     
     return (

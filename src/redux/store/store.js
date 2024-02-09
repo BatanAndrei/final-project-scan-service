@@ -1,5 +1,5 @@
 import { configureStore, combineReducers  } from '@reduxjs/toolkit';
-import { authlSlice } from '../slices/slice';
+import { authSlice } from '../slices/authSlice';
 import storage from 'redux-persist/lib/storage';
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 
@@ -10,7 +10,15 @@ const persistConfig = {
 }
 
 const reducer = combineReducers({
-    authExtraReducer: authlSlice.reducer,
+    authExtraReducer: authSlice.reducer,
+    loginReducer: authSlice.reducer,
+    emailDirtyReducer: authSlice.reducer,
+    passDirtyReducer: authSlice.reducer,
+    emailReducer: authSlice.reducer,
+    passReducer: authSlice.reducer,
+    emailErrorReducer: authSlice.reducer,
+    passErrorReducer: authSlice.reducer,
+    validFormReducer: authSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);
