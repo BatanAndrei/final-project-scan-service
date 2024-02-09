@@ -25,7 +25,7 @@ const AuthPageComponent = () => {
     const password = useSelector(selectPassword);
     const validForm = useSelector(selectValidForm);
 
-    const blurHeandler = (e) => {
+    const BlurHeandler = (e) => {
         switch (e.target.name) {
             case 'tel': 
                 dispatch(telDirtyReducer(true));
@@ -37,7 +37,7 @@ const AuthPageComponent = () => {
         }
     };
 
-    const telHeandle = (e) => {
+    const TelHeandle = (e) => {
         dispatch(telReducer(e.target.value));
             if(!e.target.value) {
                 dispatch(telErrorReducer('Поле не может быть пустым'));
@@ -46,7 +46,7 @@ const AuthPageComponent = () => {
         }
     };
 
-    const passHeandle = (e) => {
+    const PassHeandle = (e) => {
         dispatch(passReducer(e.target.value));
             if(!e.target.value) {
                 dispatch(passErrorReducer('Поле не может быть пустым'));
@@ -76,10 +76,10 @@ const AuthPageComponent = () => {
 
                     <form>
                         <h2 className={styles.titleInputTel}>Логин или номер телефона:</h2>
-                        <input className={styles.input} onChange={e => telHeandle(e)} value={tel} onBlur={e => blurHeandler(e)} type="tel" name="tel"/>
+                        <input className={styles.input} onChange={e => TelHeandle(e)} value={tel} onBlur={e => BlurHeandler(e)} type="tel" name="tel"/>
                         <div className={styles.placeError}>{(telDirty && telError) && <p className={styles.errorMessage}>{telError}</p>}</div>
                         <h2 className={styles.titleInputPass}>Пароль:</h2>
-                        <input className={styles.input} onChange={e => passHeandle(e)} value={password} onBlur={e => blurHeandler(e)} type="password" name="password"/>
+                        <input className={styles.input} onChange={e => PassHeandle(e)} value={password} onBlur={e => BlurHeandler(e)} type="password" name="password"/>
                         <div className={styles.placeError}>{(passDirty && passError) && <p className={styles.errorMessage}>{passError}</p>}</div>
                         <div className={styles.buttonModifyLogin}>
                             <MainButton click={PostRequestAuth} name={nameButtonLogin} />
