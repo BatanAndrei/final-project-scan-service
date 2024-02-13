@@ -30,7 +30,8 @@ export const authSlice = createSlice({
         logOutReducer: (state, action) => {
             state.isActivated = action.payload;
             state.accessToken = '';
-            
+            state.loginField = '';
+            state.passwordField = '';
         },
     
         loginReducer: (state, action) => {
