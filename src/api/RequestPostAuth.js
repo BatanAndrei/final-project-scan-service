@@ -13,7 +13,7 @@ export const RequestPostAuth = createAsyncThunk(
         const response = await fetch(`https://gateway.scan-interfax.ru/api/v1/account/login`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json;charset=utf-8',
+                'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
             body: JSON.stringify(registr)

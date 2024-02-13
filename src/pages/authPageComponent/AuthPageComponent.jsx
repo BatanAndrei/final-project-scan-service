@@ -27,8 +27,9 @@ const AuthPageComponent = () => {
     const tel = useSelector(selectTel);
     const password = useSelector(selectPassword);
     const validForm = useSelector(selectValidForm);
+    
 
-    const TelHeandle = (e) => {
+    const TelHeandleChange = (e) => {
         dispatch(telReducer(e.target.value));
             if(!e.target.value) {
                 dispatch(telErrorReducer('Поле не может быть пустым'));
@@ -37,7 +38,7 @@ const AuthPageComponent = () => {
         }
     };
 
-    const PassHeandle = (e) => {
+    const PassHeandleChange = (e) => {
         dispatch(passReducer(e.target.value));
             if(!e.target.value) {
                 dispatch(passErrorReducer('Поле не может быть пустым'));
@@ -74,10 +75,10 @@ const AuthPageComponent = () => {
                     </div>
                     <form>
                         <h2 className={styles.titleInputTel}>Логин или номер телефона:</h2>
-                        <input className={telError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => TelHeandle(e)} value={tel}  type="tel" name="tel"/>
+                        <input className={telError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => TelHeandleChange(e)} value={tel}  type="tel" name="tel"/>
                         <div className={styles.placeError}>{telError && <p className={styles.errorMessage}>{telError}</p>}</div>
                         <h2 className={styles.titleInputPass}>Пароль:</h2>
-                        <input className={passError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => PassHeandle(e)} value={password} type="password" name="password"/>
+                        <input className={passError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => PassHeandleChange(e)} value={password} type="password" name="password"/>
                         <div className={styles.placeError}>{passError && <p className={styles.errorMessage}>{passError}</p>}</div>
                         <div className={validForm ? styles.buttonModifyLogin : styles.buttonModifyLoginDisable}>
                             <MainButton disabled={!validForm} click={PostRequestAuth} name={nameButtonLogin} />
