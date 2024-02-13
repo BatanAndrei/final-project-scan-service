@@ -4,15 +4,15 @@ import { RequestPostAuth } from '../../api/RequestPostAuth';
 
 export const initialState = {
     loginData: {
-        telInput: '',
-        passInput: ''
+        loginData: '',
+        passwordData: ''
     },
     accessToken: '',
     isActivated: false,
-    tel: '',
-    password: '',
-    telError: ' ',
-    passError: ' ',
+    loginField: '',
+    passwordField: '',
+    loginError: ' ',
+    passwordError: ' ',
     validForm: false,
 };
 
@@ -32,22 +32,22 @@ export const authSlice = createSlice({
             state.accessToken = '';
         },
     
-        telReducer: (state, action) => {
-            state.tel = action.payload;
-            state.loginData.telInput = action.payload;
+        loginReducer: (state, action) => {
+            state.loginField = action.payload;
+            state.loginData.loginData = action.payload;
         },
     
-        passReducer: (state, action) => {
-            state.password = action.payload;
-            state.loginData.passInput = action.payload;
+        passwordReducer: (state, action) => {
+            state.passwordField = action.payload;
+            state.loginData.passwordData = action.payload;
         },
 
-        telErrorReducer: (state, action) => {
-            state.telError = action.payload;
+        loginErrorReducer: (state, action) => {
+            state.loginError = action.payload;
         },
     
-        passErrorReducer: (state, action) => {
-            state.passError = action.payload;
+        passwordErrorReducer: (state, action) => {
+            state.passwordError = action.payload;
         },
     
         validFormReducer: (state, action) => {
@@ -81,4 +81,4 @@ export const authSlice = createSlice({
     }
 })
 
-export const { telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer, isActivatedReducer, logOutReducer } = authSlice.actions;
+export const { loginReducer, passwordReducer, loginErrorReducer, passwordErrorReducer, validFormReducer, isActivatedReducer, logOutReducer } = authSlice.actions;

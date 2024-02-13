@@ -11,8 +11,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { RequestPostAuth } from '../../api/RequestPostAuth';
 import { useNavigate } from "react-router-dom";
-import { telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer, isActivatedReducer } from '../../redux/slices/authSlice';
-import { selectAccessToken, selectTelError, selectPassError, selectTel, selectPassword, selectValidForm, selectLoginData, selectIsActivated } from '../../redux/selectors/selectors';
+import { loginReducer, passwordReducer, loginErrorReducer, passwordErrorReducer, validFormReducer, isActivatedReducer } from '../../redux/slices/authSlice';
+import { selectAccessToken, selectLoginError, selectPasswordError, selectLoginField, selectPasswordField, selectValidForm, selectLoginData, selectIsActivated } from '../../redux/selectors/selectors';
 
 
 const AuthPageComponent = () => {
@@ -24,38 +24,38 @@ const AuthPageComponent = () => {
     const accessToken = useSelector(selectAccessToken);
     const isActivated = useSelector(selectIsActivated);
 
-    const telError = useSelector(selectTelError);
-    const passError = useSelector(selectPassError);
-    const tel = useSelector(selectTel);
-    const password = useSelector(selectPassword);
+    const loginError = useSelector(selectLoginError);
+    const passwordError = useSelector(selectPasswordError);
+    const loginField = useSelector(selectLoginField);
+    const passwordField = useSelector(selectPasswordField);
     const validForm = useSelector(selectValidForm);
     
 
     const TelHeandleChange = (e) => {
-        dispatch(telReducer(e.target.value));
+        dispatch(loginReducer(e.target.value));
             if(!e.target.value) {
-                dispatch(telErrorReducer('Поле не может быть пустым'));
+                dispatch(loginErrorReducer('Поле не может быть пустым'));
             }else {
-                dispatch(telErrorReducer(''));
+                dispatch(loginErrorReducer(''));
         }
     };
 
     const PassHeandleChange = (e) => {
-        dispatch(passReducer(e.target.value));
+        dispatch(passwordReducer(e.target.value));
             if(!e.target.value) {
-                dispatch(passErrorReducer('Поле не может быть пустым'));
+                dispatch(passwordErrorReducer('Поле не может быть пустым'));
             }else {
-                dispatch(passErrorReducer(''));
+                dispatch(passwordErrorReducer(''));
         }
     };
 
     useEffect(() => {
-        if(telError || passError) {
+        if(loginError || passwordError) {
             dispatch(validFormReducer(false))
         }else {
             dispatch(validFormReducer(true))
         }
-    }, [telError, passError]) 
+    }, [loginError, passwordError]) 
 
     const PostRequestAuth = (e) => {
         e.preventDefault();
@@ -85,11 +85,11 @@ const AuthPageComponent = () => {
                     </div>
                     <form>
                         <h2 className={styles.titleInputTel}>Логин или номер телефона:</h2>
-                        <input className={telError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => TelHeandleChange(e)} value={tel}  type="tel" name="tel"/>
-                        <div className={styles.placeError}>{telError && <p className={styles.errorMessage}>{telError}</p>}</div>
+                        <input className={loginError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => TelHeandleChange(e)} value={loginField}  type="tel" name="loginField"/>
+                        <div className={styles.placeError}>{loginError && <p className={styles.errorMessage}>{loginError}</p>}</div>
                         <h2 className={styles.titleInputPass}>Пароль:</h2>
-                        <input className={passError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => PassHeandleChange(e)} value={password} type="password" name="password"/>
-                        <div className={styles.placeError}>{passError && <p className={styles.errorMessage}>{passError}</p>}</div>
+                        <input className={passwordError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => PassHeandleChange(e)} value={passwordField} type="password" name="passwordField"/>
+                        <div className={styles.placeError}>{passwordError && <p className={styles.errorMessage}>{passwordError}</p>}</div>
                         <div className={validForm ? styles.buttonModifyLogin : styles.buttonModifyLoginDisable}>
                             <MainButton disabled={!validForm} click={PostRequestAuth} name={nameButtonLogin} />
                         </div>

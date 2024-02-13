@@ -2,9 +2,9 @@ export const selectStatus = (state) => state.authExtraReducer.status;
 export const selectAccessToken = (state) => state.authExtraReducer.accessToken;
 
 export const selectIsActivated = (state) => state.authExtraReducer.isActivated;
-export const selectTelError = (state) => state.authExtraReducer.telError;
-export const selectPassError = (state) => state.authExtraReducer.passError;
-export const selectTel = (state) => state.authExtraReducer.tel;
-export const selectPassword = (state) => state.authExtraReducer.password;
+export const selectLoginError = (state) => state.authExtraReducer.loginError;
+export const selectPasswordError = (state) => state.authExtraReducer.passwordError;
+export const selectLoginField = (state) => state.authExtraReducer.loginField;
+export const selectPasswordField = (state) => state.authExtraReducer.passwordField;
 export const selectValidForm = (state) => state.authExtraReducer.validForm;
 export const selectLoginData = (state) => state.authExtraReducer.loginData;

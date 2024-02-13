@@ -13,10 +13,10 @@ const reducer = combineReducers({
     authExtraReducer: authSlice.reducer,
     isActivatedReducer: authSlice.reducer,
     logOutReducer: authSlice.reducer,
-    telReducer: authSlice.reducer,
-    passReducer: authSlice.reducer,
-    telErrorReducer: authSlice.reducer,
-    passErrorReducer: authSlice.reducer,
+    LoginReducer: authSlice.reducer,
+    passwordReducer: authSlice.reducer,
+    loginErrorReducer: authSlice.reducer,
+    passwordErrorReducer: authSlice.reducer,
     validFormReducer: authSlice.reducer,
 })
 
