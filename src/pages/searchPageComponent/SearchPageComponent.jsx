@@ -15,12 +15,6 @@ import DisplyedResultSearch from '../../components/displyedResultSearch/Displyed
 
 const SearchPageComponent = () => {
 
-    const isActivated = useSelector(selectIsActivated);
-
-    useEffect(() => {
-
-    },[isActivated])
-
     return (
         <>
         {/* <DisplyedResultSearch /> */}

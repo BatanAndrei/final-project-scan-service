@@ -1,14 +1,17 @@
 import styles from './userInfoHeader.module.css';
-import { logOutReducer } from '../../redux/slices/authSlice';
-import { useDispatch } from 'react-redux';
+import { logOutReducer, isActivatedReducer } from '../../redux/slices/authSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from "react-router-dom";
 
 
 const UserInfoHeader = () => {
 
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const HeandleClickLogout = () => {
         dispatch(logOutReducer(false));
+        navigate('/');
     }
 
     return (

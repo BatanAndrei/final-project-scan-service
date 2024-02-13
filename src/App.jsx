@@ -24,8 +24,6 @@ function App() {
                     <main className="main">
                         <Routes>
                             <Route path='/' element={<HomePageComponent />} />
-                            <Route path='/rate' element={isActivated && <TariffPageComponent />} />
-                            <Route path='/faq' element={isActivated && <FaqPageComponent />} />
                             <Route path='/auth' element={!isActivated && <AuthPageComponent />} />
                             <Route path='/search' element={isActivated && <SearchPageComponent />} />
                         </Routes>

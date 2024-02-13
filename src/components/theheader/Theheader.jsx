@@ -18,8 +18,8 @@ const Theheader = () => {
             </div>
             <ul className={styles.navigationPages}>
                 <li className={styles.list}><Link className={styles.link} to='/'>Главная</Link></li>
-                <li className={styles.list}><Link className={styles.link} to='/rate'>Тарифы</Link></li>
-                <li className={styles.list}><Link className={styles.link} to='/faq'>FAQ</Link></li>
+                <li className={styles.list}><Link className={styles.link} to='#'>Тарифы</Link></li>
+                <li className={styles.list}><Link className={styles.link} to='#'>FAQ</Link></li>
             </ul>
             <div className={styles.userInfo}>
                 {isActivated ? <UserInfoHeader /> : <RegistrationPanelLogin />}

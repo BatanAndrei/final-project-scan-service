@@ -9,11 +9,10 @@ import linkViaFacebook from '../../Images/linkViaFacebook.png';
 import linkViaYandex from '../../Images/linkViaYandex.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { selectAccessToken } from '../../redux/selectors/selectors';
 import { RequestPostAuth } from '../../api/RequestPostAuth';
 import { useNavigate } from "react-router-dom";
 import { telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer, isActivatedReducer } from '../../redux/slices/authSlice';
-import { selectTelError, selectPassError, selectTel, selectPassword, selectValidForm, selectLoginData } from '../../redux/selectors/selectors';
+import { selectAccessToken, selectTelError, selectPassError, selectTel, selectPassword, selectValidForm, selectLoginData } from '../../redux/selectors/selectors';
 
 
 const AuthPageComponent = () => {
