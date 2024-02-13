@@ -10,3 +10,4 @@ export const selectLoginData = (state) => state.authExtraReducer.loginUser;
 export const selectRequestError = (state) => state.authExtraReducer.error;
 
 export const selectAccountInfo = (state) => state.accountInfoExtraReducer.accountInfo;
+export const selectStatusAccountInfo = (state) => state.accountInfoExtraReducer.status;
