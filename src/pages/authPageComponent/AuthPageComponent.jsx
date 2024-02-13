@@ -12,13 +12,14 @@ import { useEffect } from 'react';
 import { selectAccessToken } from '../../redux/selectors/selectors';
 import { RequestPostAuth } from '../../api/RequestPostAuth';
 import { loginReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer } from '../../redux/slices/authSlice';
-import { selectTelError, selectPassError, selectTel, selectPassword, selectValidForm } from '../../redux/selectors/selectors';
+import { selectTelError, selectPassError, selectTel, selectPassword, selectValidForm, selectLoginData } from '../../redux/selectors/selectors';
 
 
 const AuthPageComponent = () => {
 
     const dispatch = useDispatch();
 
+    const loginData = useSelector(selectLoginData);
     const accessToken = useSelector(selectAccessToken);
     console.log(accessToken);
 
@@ -57,7 +58,7 @@ const AuthPageComponent = () => {
 
     const PostRequestAuth = (e) => {
         e.preventDefault();
-        dispatch(RequestPostAuth())
+        dispatch(RequestPostAuth(loginData));
     }
     
     return (

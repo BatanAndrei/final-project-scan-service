@@ -3,6 +3,10 @@ import { RequestPostAuth } from '../../api/RequestPostAuth';
 
 
 export const initialState = {
+    loginData: {
+        telInput: '',
+        passInput: ''
+    },
     accessToken: '',
     isActivated: false,
     tel: '',
@@ -23,10 +27,12 @@ export const authSlice = createSlice({
     
         telReducer: (state, action) => {
             state.tel = action.payload;
+            state.loginData.telInput = action.payload;
         },
     
         passReducer: (state, action) => {
             state.password = action.payload;
+            state.loginData.passInput = action.payload;
         },
 
         telErrorReducer: (state, action) => {
@@ -53,7 +59,7 @@ export const authSlice = createSlice({
         builder
         .addCase(RequestPostAuth.fulfilled, 
             (state, { payload }) => { 
-
+    
             state.accessToken = payload;
             state.status = "idle";
     });
