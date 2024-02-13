@@ -54,7 +54,7 @@ export const authSlice = createSlice({
         .addCase(RequestPostAuth.fulfilled, 
             (state, { payload }) => { 
 
-            state.token = payload.accessToken;
+            state.token = payload;
             state.status = "idle";
     });
 

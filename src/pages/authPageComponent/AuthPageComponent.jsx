@@ -9,6 +9,8 @@ import linkViaFacebook from '../../Images/linkViaFacebook.png';
 import linkViaYandex from '../../Images/linkViaYandex.png';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { selectToken } from '../../redux/selectors/selectors';
+import { RequestPostAuth } from '../../api/RequestPostAuth';
 import { loginReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer } from '../../redux/slices/authSlice';
 import { selectTelError, selectPassError, selectTel, selectPassword, selectValidForm } from '../../redux/selectors/selectors';
 
@@ -16,6 +18,9 @@ import { selectTelError, selectPassError, selectTel, selectPassword, selectValid
 const AuthPageComponent = () => {
 
     const dispatch = useDispatch();
+
+    const token = useSelector(selectToken);
+    console.log(token);
 
     const telError = useSelector(selectTelError);
     const passError = useSelector(selectPassError);
@@ -51,6 +56,7 @@ const AuthPageComponent = () => {
 
     const PostRequestAuth = (e) => {
         e.preventDefault();
+        dispatch(RequestPostAuth())
     }
     
     return (
