@@ -22,7 +22,14 @@ export const authSlice = createSlice({
     reducers: {   
     
         isActivatedReducer: (state, action) => {
+            if(state.accessToken) {
+                state.isActivated = action.payload;
+            }  
+        },
+
+        logOutReducer: (state, action) => {
             state.isActivated = action.payload;
+            state.accessToken = '';
         },
     
         telReducer: (state, action) => {
@@ -60,7 +67,7 @@ export const authSlice = createSlice({
         .addCase(RequestPostAuth.fulfilled, 
             (state, { payload }) => { 
     
-            state.accessToken = payload;
+            state.accessToken = payload.accessToken;
             state.status = "idle";
     });
 
@@ -74,4 +81,4 @@ export const authSlice = createSlice({
     }
 })
 
-export const { loginReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer, isActivatedReducer } = authSlice.actions;
+export const { telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer, isActivatedReducer, logOutReducer } = authSlice.actions;

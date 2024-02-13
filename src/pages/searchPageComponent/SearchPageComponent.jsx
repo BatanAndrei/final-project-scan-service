@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './searchPageComponent.module.css';
 import documentPng from '../../Images/documentPng.png';
 import foldersPng from '../../Images/foldersPng.png';
@@ -7,11 +7,19 @@ import Checkbox from '../../components/checkbox/Checkbox';
 import { listCheckbox } from '../../dataVariables/variables';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonSearch } from '../../dataVariables/variables';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectIsActivated } from '../../redux/selectors/selectors';
 import DisplyedResultSearch from '../../components/displyedResultSearch/DisplyedResultSearch';
 
 
 
 const SearchPageComponent = () => {
+
+    const isActivated = useSelector(selectIsActivated);
+
+    useEffect(() => {
+
+    },[isActivated])
 
     return (
         <>

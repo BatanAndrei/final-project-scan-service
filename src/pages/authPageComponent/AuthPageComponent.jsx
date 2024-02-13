@@ -11,12 +11,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { selectAccessToken } from '../../redux/selectors/selectors';
 import { RequestPostAuth } from '../../api/RequestPostAuth';
-import { loginReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer } from '../../redux/slices/authSlice';
+import { useNavigate } from "react-router-dom";
+import { telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer, isActivatedReducer } from '../../redux/slices/authSlice';
 import { selectTelError, selectPassError, selectTel, selectPassword, selectValidForm, selectLoginData } from '../../redux/selectors/selectors';
 
 
 const AuthPageComponent = () => {
 
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const loginData = useSelector(selectLoginData);
@@ -60,6 +62,13 @@ const AuthPageComponent = () => {
         e.preventDefault();
         dispatch(RequestPostAuth(loginData));
     }
+
+    useEffect(() => {
+        if(accessToken) {
+            navigate('/');
+            dispatch(isActivatedReducer(true));
+        }
+    }, [accessToken]) 
     
     return (
         <div className={styles.containerAuthPage}>

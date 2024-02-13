@@ -1,8 +1,16 @@
 import styles from './userInfoHeader.module.css';
-
+import { logOutReducer } from '../../redux/slices/authSlice';
+import { useDispatch } from 'react-redux';
 
 
 const UserInfoHeader = () => {
+
+    const dispatch = useDispatch();
+
+    const HeandleClickLogout = () => {
+        dispatch(logOutReducer(false));
+    }
+
     return (
         <div className={styles.container}>
             <div className={styles.infoByComponies}>
@@ -13,7 +21,7 @@ const UserInfoHeader = () => {
             <div className={styles.avatarHeaderLogout}>
                 <div className={styles.userNameLogoutButton}>
                     <h3 className={styles.textUameUser}>Алексей А.</h3>
-                    <button className={styles.buttonLogout}>Выйти</button>
+                    <button className={styles.buttonLogout}onClick={HeandleClickLogout}>Выйти</button>
                 </div>
                 <div className={styles.avatarImage}></div>
             </div>

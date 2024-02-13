@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
     /* let registr = {
-        login: "sf_student1",
-        password: "4i2385j"
+        login: "sf_student1", //     sf_student1
+        password: "4i2385j"  //     4i2385j
         }; */
 
 export const RequestPostAuth = createAsyncThunk(
