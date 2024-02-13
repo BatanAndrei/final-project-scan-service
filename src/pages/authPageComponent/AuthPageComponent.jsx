@@ -31,8 +31,6 @@ const AuthPageComponent = () => {
     const passwordField = useSelector(selectPasswordField);
     const validForm = useSelector(selectValidForm);
     
-    console.log(requestError)
-
     const TelHeandleChange = (e) => {
         dispatch(loginReducer(e.target.value));
         dispatch(cleanErrorMessageReducer(''));

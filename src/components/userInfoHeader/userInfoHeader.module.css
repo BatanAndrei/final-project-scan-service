@@ -81,6 +81,7 @@
 }
 
 .styleQuantityUsed {
+    margin-left: 9px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 14px;
@@ -88,6 +89,7 @@
 }
 
 .styleQuantityLimit {
+    margin-left: 9px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     font-size: 14px;

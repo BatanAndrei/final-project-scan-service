@@ -85,6 +85,6 @@ export const authSlice = createSlice({
             state.status = "idle";
     })
     }
-})
+});
 
 export const { loginReducer, passwordReducer, loginErrorReducer, passwordErrorReducer, validFormReducer, isActivatedReducer, logOutReducer, cleanErrorMessageReducer } = authSlice.actions;
