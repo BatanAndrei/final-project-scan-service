@@ -7,7 +7,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const RequestPostAuth = createAsyncThunk(
     "auth/postAuth", 
-    async ({loginData, passwordData}, thunkApi) => { // объект thunkApi содержит функцию rejectWithValue
+    async ({login, password}, thunkApi) => { // объект thunkApi содержит функцию rejectWithValue
 
         const response = await fetch(`https://gateway.scan-interfax.ru/api/v1/account/login`, {
             method: 'POST',
@@ -16,8 +16,8 @@ export const RequestPostAuth = createAsyncThunk(
                 'Accept': 'application/json'
             },
             body: JSON.stringify({
-                login: loginData,
-                password: passwordData
+                login: login,
+                password: password
                 })
         });
 

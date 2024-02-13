@@ -3,9 +3,9 @@ import { RequestPostAuth } from '../../api/RequestPostAuth';
 
 
 export const initialState = {
-    loginData: {
-        loginData: '',
-        passwordData: ''
+    loginUser: {
+        login: '',
+        password: ''
     },
     accessToken: '',
     isActivated: false,
@@ -30,16 +30,17 @@ export const authSlice = createSlice({
         logOutReducer: (state, action) => {
             state.isActivated = action.payload;
             state.accessToken = '';
+            
         },
     
         loginReducer: (state, action) => {
             state.loginField = action.payload;
-            state.loginData.loginData = action.payload;
+            state.loginUser.login = action.payload;
         },
     
         passwordReducer: (state, action) => {
             state.passwordField = action.payload;
-            state.loginData.passwordData = action.payload;
+            state.loginUser.password = action.payload;
         },
 
         loginErrorReducer: (state, action) => {
