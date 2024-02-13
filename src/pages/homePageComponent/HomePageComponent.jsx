@@ -9,9 +9,13 @@ import target from '../../Images/target.png';
 import laptop from '../../Images/laptop.png';
 import galochka from '../../Images/galochka.png';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectIsActivated } from '../../redux/selectors/selectors';
 
 
 const HomePageComponent = () => {
+
+    const isActivated = useSelector(selectIsActivated)
 
     return (
         <>
@@ -20,9 +24,9 @@ const HomePageComponent = () => {
                     <div className={styles.mainAboutSiteText}>
                         <h1 className={styles.titleMainAboutSite}>сервис по поиску<br/> публикаций<br/> о компании<br/> по его инн</h1>
                         <h2 className={styles.subtitleMainAboutSite}>Комплексный анализ публикаций, получение данных<br/> в формате PDF на электронную почту.</h2>
-                        <div className={styles.buttonModifyReqData}>
+                        {isActivated && <div className={styles.buttonModifyReqData}>
                             <Link to='/search'><MainButton name={nameButtonReqData} /></Link>
-                        </div>
+                        </div>}
                     </div>
                     <div className={styles.mainAboutSitePicture}>
                         <img src={imageAboutSite} alt='Картинка о сайте'></img>

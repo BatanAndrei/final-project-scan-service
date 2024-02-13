@@ -4,7 +4,7 @@ import { RequestPostAuth } from '../../api/RequestPostAuth';
 
 export const initialState = {
     accessToken: '',
-    login: false,
+    isActivated: false,
     tel: '',
     password: '',
     telError: ' ',
@@ -17,8 +17,8 @@ export const authSlice = createSlice({
     initialState,
     reducers: {   
     
-        loginReducer: (state) => {
-            state.login = true;
+        isActivatedReducer: (state, action) => {
+            state.isActivated = action.payload;
         },
     
         telReducer: (state, action) => {
@@ -68,4 +68,4 @@ export const authSlice = createSlice({
     }
 })
 
-export const { loginReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer } = authSlice.actions;
+export const { loginReducer, telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer, isActivatedReducer } = authSlice.actions;

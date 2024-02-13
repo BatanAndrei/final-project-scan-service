@@ -11,7 +11,7 @@ const persistConfig = {
 
 const reducer = combineReducers({
     authExtraReducer: authSlice.reducer,
-    loginReducer: authSlice.reducer,
+    isActivatedReducer: authSlice.reducer,
     telReducer: authSlice.reducer,
     passReducer: authSlice.reducer,
     telErrorReducer: authSlice.reducer,
