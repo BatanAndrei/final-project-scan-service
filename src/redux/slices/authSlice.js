@@ -81,7 +81,7 @@ export const authSlice = createSlice({
         .addCase(RequestPostAuth.rejected, 
             (state, { payload }) => {
 
-            if (payload) state.error = payload.message; //В payload.message приходит из fetchBooks => return thunkApi.rejectWithValue({ message: "Failed to fetch books." })
+            if (payload) state.error = payload.message; //В payload.message приходит из fetchBooks => return thunkApi.rejectWithValue({ message: "Неправильный логин или пароль" })
             state.status = "idle";
     })
     }
