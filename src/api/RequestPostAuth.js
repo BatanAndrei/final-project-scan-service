@@ -26,7 +26,7 @@ export const RequestPostAuth = createAsyncThunk(
         if (response.status !== 200) {
         
             return thunkApi.rejectWithValue({  //rejectWithValue проверяет и возвращает ошибку при не удачном запросе
-            message: "Failed to fetch request." 
+            message: "Неправильный " 
             });
         }
     

@@ -55,6 +55,10 @@ export const authSlice = createSlice({
         validFormReducer: (state, action) => {
             state.validForm = action.payload;
         },
+
+        cleanErrorMessageReducer: (state, action) => {
+            state.error = action.payload;
+        }
     },
 
     extraReducers: (builder) => {
@@ -83,4 +87,4 @@ export const authSlice = createSlice({
     }
 })
 
-export const { loginReducer, passwordReducer, loginErrorReducer, passwordErrorReducer, validFormReducer, isActivatedReducer, logOutReducer } = authSlice.actions;
+export const { loginReducer, passwordReducer, loginErrorReducer, passwordErrorReducer, validFormReducer, isActivatedReducer, logOutReducer, cleanErrorMessageReducer } = authSlice.actions;

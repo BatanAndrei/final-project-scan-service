@@ -8,3 +8,4 @@ export const selectLoginField = (state) => state.authExtraReducer.loginField;
 export const selectPasswordField = (state) => state.authExtraReducer.passwordField;
 export const selectValidForm = (state) => state.authExtraReducer.validForm;
 export const selectLoginData = (state) => state.authExtraReducer.loginUser;
+export const selectRequestError = (state) => state.authExtraReducer.error;

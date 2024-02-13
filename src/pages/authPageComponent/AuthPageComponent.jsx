@@ -11,8 +11,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { RequestPostAuth } from '../../api/RequestPostAuth';
 import { useNavigate } from "react-router-dom";
-import { loginReducer, passwordReducer, loginErrorReducer, passwordErrorReducer, validFormReducer, isActivatedReducer } from '../../redux/slices/authSlice';
-import { selectAccessToken, selectLoginError, selectPasswordError, selectLoginField, selectPasswordField, selectValidForm, selectLoginData, selectIsActivated } from '../../redux/selectors/selectors';
+import { loginReducer, passwordReducer, loginErrorReducer, passwordErrorReducer, validFormReducer, isActivatedReducer, cleanErrorMessageReducer } from '../../redux/slices/authSlice';
+import { selectAccessToken, selectLoginError, selectPasswordError, selectLoginField, selectPasswordField, selectValidForm, selectLoginData, selectIsActivated, selectRequestError } from '../../redux/selectors/selectors';
 
 
 const AuthPageComponent = () => {
@@ -21,6 +21,7 @@ const AuthPageComponent = () => {
     const dispatch = useDispatch();
 
     const loginData = useSelector(selectLoginData);
+    const requestError = useSelector(selectRequestError);
     const accessToken = useSelector(selectAccessToken);
     const isActivated = useSelector(selectIsActivated);
 
@@ -30,9 +31,11 @@ const AuthPageComponent = () => {
     const passwordField = useSelector(selectPasswordField);
     const validForm = useSelector(selectValidForm);
     
+    console.log(requestError)
 
     const TelHeandleChange = (e) => {
         dispatch(loginReducer(e.target.value));
+        dispatch(cleanErrorMessageReducer(''));
             if(!e.target.value) {
                 dispatch(loginErrorReducer('Поле не может быть пустым'));
             }else {
@@ -42,6 +45,7 @@ const AuthPageComponent = () => {
 
     const PassHeandleChange = (e) => {
         dispatch(passwordReducer(e.target.value));
+        dispatch(cleanErrorMessageReducer(''));
             if(!e.target.value) {
                 dispatch(passwordErrorReducer('Поле не может быть пустым'));
             }else {
@@ -86,10 +90,10 @@ const AuthPageComponent = () => {
                     <form>
                         <h2 className={styles.titleInputTel}>Логин или номер телефона:</h2>
                         <input className={loginError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => TelHeandleChange(e)} value={loginField}  type="tel" name="loginField"/>
-                        <div className={styles.placeError}>{loginError && <p className={styles.errorMessage}>{loginError}</p>}</div>
+                        <div className={styles.placeError}>{loginError && <p className={styles.errorMessage}>{loginError}</p> || requestError && <p className={styles.errorMessage}>{requestError} логин</p>}</div>
                         <h2 className={styles.titleInputPass}>Пароль:</h2>
                         <input className={passwordError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => PassHeandleChange(e)} value={passwordField} type="password" name="passwordField"/>
-                        <div className={styles.placeError}>{passwordError && <p className={styles.errorMessage}>{passwordError}</p>}</div>
+                        <div className={styles.placeError}>{passwordError && <p className={styles.errorMessage}>{passwordError}</p> || requestError && <p className={styles.errorMessage}>{requestError} пароль</p>}</div>
                         <div className={validForm ? styles.buttonModifyLogin : styles.buttonModifyLoginDisable}>
                             <MainButton disabled={!validForm} click={PostRequestAuth} name={nameButtonLogin} />
                         </div>

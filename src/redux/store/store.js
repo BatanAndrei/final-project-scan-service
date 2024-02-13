@@ -18,6 +18,7 @@ const reducer = combineReducers({
     loginErrorReducer: authSlice.reducer,
     passwordErrorReducer: authSlice.reducer,
     validFormReducer: authSlice.reducer,
+    cleanErrorMessageReducer: authSlice.reducer
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);
