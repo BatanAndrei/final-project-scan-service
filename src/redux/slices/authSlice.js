@@ -3,7 +3,7 @@ import { RequestPostAuth } from '../../api/RequestPostAuth';
 
 
 export const initialState = {
-    token: '',
+    accessToken: '',
     login: false,
     tel: '',
     password: '',
@@ -54,7 +54,7 @@ export const authSlice = createSlice({
         .addCase(RequestPostAuth.fulfilled, 
             (state, { payload }) => { 
 
-            state.token = payload;
+            state.accessToken = payload;
             state.status = "idle";
     });
 

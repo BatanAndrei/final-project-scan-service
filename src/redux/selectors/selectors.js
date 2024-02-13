@@ -1,5 +1,5 @@
 export const selectStatus = (state) => state.authExtraReducer.status;
-export const selectToken = (state) => state.authExtraReducer.token;
+export const selectAccessToken = (state) => state.authExtraReducer.accessToken;
 
 export const selectLogin = (state) => state.loginReducer.login;
 export const selectTelError = (state) => state.authExtraReducer.telError;
