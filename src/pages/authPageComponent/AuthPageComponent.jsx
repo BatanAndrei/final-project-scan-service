@@ -12,7 +12,7 @@ import { useEffect } from 'react';
 import { RequestPostAuth } from '../../api/RequestPostAuth';
 import { useNavigate } from "react-router-dom";
 import { telReducer, passReducer, telErrorReducer, passErrorReducer, validFormReducer, isActivatedReducer } from '../../redux/slices/authSlice';
-import { selectAccessToken, selectTelError, selectPassError, selectTel, selectPassword, selectValidForm, selectLoginData } from '../../redux/selectors/selectors';
+import { selectAccessToken, selectTelError, selectPassError, selectTel, selectPassword, selectValidForm, selectLoginData, selectIsActivated } from '../../redux/selectors/selectors';
 
 
 const AuthPageComponent = () => {
@@ -22,7 +22,7 @@ const AuthPageComponent = () => {
 
     const loginData = useSelector(selectLoginData);
     const accessToken = useSelector(selectAccessToken);
-    console.log(accessToken);
+    const isActivated = useSelector(selectIsActivated);
 
     const telError = useSelector(selectTelError);
     const passError = useSelector(selectPassError);
@@ -70,7 +70,8 @@ const AuthPageComponent = () => {
     }, [accessToken]) 
     
     return (
-        <div className={styles.containerAuthPage}>
+        <>
+        {!isActivated && <div className={styles.containerAuthPage}>
             <div className={styles.infoForSubscription}>
                 <h1 className={styles.titleInfo}>Для оформления подписки<br/> на тариф, необходимо<br/> авторизоваться.</h1>
                 <img className={styles.positionPicture} src={picturePageAuth} alt='картинка на тему авторизации'></img>
@@ -102,7 +103,8 @@ const AuthPageComponent = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </div>}
+        </>
     )
 };
 
