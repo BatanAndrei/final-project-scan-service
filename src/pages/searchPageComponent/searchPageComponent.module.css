@@ -45,15 +45,47 @@
 }
 
 .lableText {
+    margin: 0px;
     font-family: 'Inter', sans-serif;
-    margin: 28px 0px 0px 0px;
     font-weight: 400;
     font-size: 18px;
 }
 
+.lableTextInn {
+    margin-top: 29px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.textErrorMessage {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    width: 242px;
+    height: 20px;
+}
+
+.textErrorMessageDate {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: center;
+    width: 372px;
+    height: 20px;
+}
+
+.error {
+    font-family: 'Inter', sans-serif;
+    margin: 0px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #FF5959;
+}
+
 .input {
+    padding-left: 19px;
     margin: 19px 0px 0px 0px;
-    border-radius: 1px;
+    border-radius: 5px;
     box-shadow: 0 0 20px 0px #dadada;
     border: 1px solid #C7C7C7;
     outline: none;
@@ -61,6 +93,28 @@
     height: 43px;
     display: block;
     text-align: left;
+}
+
+.inputError {
+    padding-left: 19px;
+    margin: 19px 0px 0px 0px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0px #dadada;
+    border: 1px solid #FF5959;
+    color: #FF5959;
+    outline: none;
+    width: 242px;
+    height: 43px;
+    display: block;
+    text-align: left;
+}
+
+.starRequired {
+    color: black;
+}
+
+.starRequiredRed {
+    color: #FF5959;
 }
 
 ::placeholder {
@@ -103,6 +157,22 @@
     border-radius: 1px;
     box-shadow: 0 0 20px 0px #dadada;
     border: 1px solid #C7C7C7;
+    outline: none;
+    width: 176px;
+    height: 43px;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    user-select: none;
+}
+
+.inputDateError {
+    padding-left: 20px;
+    border-radius: 1px;
+    box-shadow: 0 0 20px 0px #dadada;
+    border: 1px solid #FF5959;
+    color: #FF5959;
     outline: none;
     width: 176px;
     height: 43px;

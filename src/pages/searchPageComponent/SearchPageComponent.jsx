@@ -9,13 +9,34 @@ import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonSearch } from '../../dataVariables/variables';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectIsActivated } from '../../redux/selectors/selectors';
+import { innReducer, innErrorReducer } from '../../redux/slices/histogramsSlice';
+import { selectInnError, selectInnField } from '../../redux/selectors/selectors';
 import DisplyedResultSearch from '../../components/displyedResultSearch/DisplyedResultSearch';
 
 
 
 const SearchPageComponent = () => {
 
+    const dispatch = useDispatch();
+
     const isActivated = useSelector(selectIsActivated);
+    const innField = useSelector(selectInnField);
+    const innError = useSelector(selectInnError);
+
+    const CheckInn = (e) => {
+        dispatch(innReducer(e.target.value));
+        
+        if(!e.target.value) {
+            dispatch(innErrorReducer('Обязательное поле'));
+        }else if (/[^0-9]/.test(e.target.value)) {
+            dispatch(innErrorReducer('Введите корректные данные'));
+        }else if (e.target.value.length > 10) {
+            dispatch(innErrorReducer('Введите корректные данные'));
+        }else { 
+            dispatch(innErrorReducer(''));                        //             4i2385j 
+            
+        };
+    };
 
     return (
         <>
@@ -28,21 +49,25 @@ const SearchPageComponent = () => {
                 </div>
                 <form className={styles.formFillData}>
                     <div className={styles.inputSelectFilds}>
-                        <h2 className={styles.lableText}>ИНН компании *</h2>
-                        <input className={styles.input} placeholder='10 цифр'/>
+                        <h2 className={styles.lableTextInn}>ИНН компании <span className={!innError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
+                        <input className={!innError ? styles.input : styles.inputError} name='innField' value={innField} onChange={(e) => CheckInn(e)} type='text' placeholder='10 цифр'/>
+                        <div className={styles.textErrorMessage}><h3 className={styles.error}>{innError}</h3></div>
                         <h2 className={styles.lableText}>Тональность</h2>
                         <select name='tonality' className={styles.select}>
                             <option value='positive'>Позитианая</option>
                             <option value='negative'>Негативная</option>
                             <option value='any'>Любая</option> 
                         </select>
-                        <h2 className={styles.lableText}>Количество документов в выдаче *</h2>
-                        <input className={styles.input} placeholder='От 1 до 1000'/>
-                        <h2 className={styles.lableText}>Диапазон поиска *</h2>
+                        <div className={styles.textErrorMessage}></div>
+                        <h2 className={styles.lableText}>Количество документов в выдаче <span className={!innError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
+                        <input className={!innError ? styles.input : styles.inputError} name='quantityDocField' type='text' placeholder='От 1 до 1000'/>
+                        <div className={styles.textErrorMessage}><h3 className={styles.error}>{innError}</h3></div>
+                        <h2 className={styles.lableText}>Диапазон поиска <span className={!innError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
                         <div className={styles.dateFields}>
-                            <input className={styles.inputDate} type="date"/>
-                            <input className={styles.inputDate} type="date"/>
+                            <input className={!innError ? styles.inputDate : styles.inputDateError} type="date"/>
+                            <input className={!innError ? styles.inputDate : styles.inputDateError} type="date"/>
                         </div>
+                        <div className={styles.textErrorMessageDate}><h3 className={styles.error}>{innError}</h3></div>
                     </div>
                     <div className={styles.checkboxButtonSearch}>
                         {listCheckbox.map((checkbox) => <Checkbox key={checkbox.id} name={checkbox.lable} />)}

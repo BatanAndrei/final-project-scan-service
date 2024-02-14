@@ -2,7 +2,6 @@ import { createSlice } from '@reduxjs/toolkit';
 import { RequestGetAccountInfo } from '../../api/RequestGetAccountInfo'; 
 
 
-
 export const initialState = {
     accountInfo: new Object(),
     tariffBeginner: false,
