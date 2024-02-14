@@ -21,7 +21,10 @@ const reducer = combineReducers({
     validFormReducer: authSlice.reducer,
     cleanErrorMessageReducer: authSlice.reducer,
 
-    accountInfoExtraReducer: accountInfoSlice.reducer 
+    accountInfoExtraReducer: accountInfoSlice.reducer,
+    tariffBeginnerReducer: accountInfoSlice.reducer,
+    tariffProReducer: accountInfoSlice.reducer,
+    tariffBusinessReducer: accountInfoSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);

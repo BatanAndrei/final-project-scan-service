@@ -10,3 +10,7 @@ export const selectRequestError = (state) => state.authExtraReducer.error;
 
 export const selectAccountInfo = (state) => state.accountInfoExtraReducer.accountInfo;
 export const selectStatusAccountInfo = (state) => state.accountInfoExtraReducer.status;
+export const selectTariffBeginner = (state) => state.accountInfoExtraReducer.tariffBeginner;
+export const selectTariffPro = (state) => state.accountInfoExtraReducer.tariffPro;
+export const selectTariffBusiness = (state) => state.accountInfoExtraReducer.tariffBusiness;
+

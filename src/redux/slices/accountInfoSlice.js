@@ -5,13 +5,33 @@ import { RequestGetAccountInfo } from '../../api/RequestGetAccountInfo';
 
 export const initialState = {
     accountInfo: new Object(),
+    tariffBeginner: false,
+    tariffPro: false,
+    tariffBusiness: false,
 };
 
 export const accountInfoSlice = createSlice({
     name: "accountInfo",
     initialState,
     reducers: {   
-    
+
+        tariffBeginnerReducer: (state) => {
+            state.tariffBeginner = true;
+            state.tariffPro = false;
+            state.tariffBusiness = false;
+        },
+
+        tariffProReducer: (state) => {
+            state.tariffBeginner = false;
+            state.tariffPro = true;
+            state.tariffBusiness = false;
+        },
+
+        tariffBusinessReducer: (state) => {
+            state.tariffBeginner = false;
+            state.tariffPro = false;
+            state.tariffBusiness = true;
+        },
     },
 
     extraReducers: (builder) => {
@@ -39,4 +59,4 @@ export const accountInfoSlice = createSlice({
     }
 });
 
-export const { } = accountInfoSlice.actions;
+export const { tariffBeginnerReducer, tariffProReducer, tariffBusinessReducer } = accountInfoSlice.actions;

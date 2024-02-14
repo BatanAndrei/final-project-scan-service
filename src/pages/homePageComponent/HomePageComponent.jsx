@@ -9,13 +9,31 @@ import target from '../../Images/target.png';
 import laptop from '../../Images/laptop.png';
 import galochka from '../../Images/galochka.png';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { selectIsActivated } from '../../redux/selectors/selectors';
+import { useSelector, useDispatch } from 'react-redux';
+import { selectIsActivated, selectTariffBeginner, selectTariffPro, selectTariffBusiness } from '../../redux/selectors/selectors';
+import { tariffBeginnerReducer, tariffProReducer, tariffBusinessReducer } from '../../redux/slices/accountInfoSlice';
 
 
 const HomePageComponent = () => {
 
-    const isActivated = useSelector(selectIsActivated)
+    const isActivated = useSelector(selectIsActivated);
+    const tariffBeginner = useSelector(selectTariffBeginner)
+    const tariffPro = useSelector(selectTariffPro)
+    const tariffBusiness = useSelector(selectTariffBusiness)
+
+    const dispatch = useDispatch();
+
+    const ChooseTariffBeginner = () => {
+        dispatch(tariffBeginnerReducer());
+    };
+
+    const ChooseTariffPro = () => {
+        dispatch(tariffProReducer());
+    };
+
+    const ChooseTariffBusiness = () => {
+        dispatch(tariffBusinessReducer());
+    }
 
     return (
         <>
@@ -41,7 +59,7 @@ const HomePageComponent = () => {
                 </div>
                 <h2 className={styles.textTitleBlockName}>НАШИ ТАРИФЫ</h2>
                 <div className={styles.blockTariffs}>
-                    <div className={styles.tariffItem}>
+                    <div className={styles.tariffItem} onClick={ChooseTariffBeginner}>
                         <div className={styles.headTariffItem+' '+styles.beginner}>
                             <div className={styles.titleTariffItem}>
                                 <h2 className={styles.nameTariffText}>Beginner</h2>
@@ -51,9 +69,9 @@ const HomePageComponent = () => {
                                 <img className={styles.marginIconLamp} src={lamp} alt='лампочка'></img>
                             </div>
                         </div>
-                        <div className={styles.mainTariffItem+' '+styles.selectedTariffBeginer}>
+                        <div className={tariffBeginner ? styles.mainTariffItem+' '+styles.selectedTariffBeginer : styles.mainTariffItem}>
                             <div className={styles.containerBadge}>
-                                <div className={styles.badge}>Текущий тариф</div>
+                                {tariffBeginner && <div className={styles.badge}>Текущий тариф</div>}
                             </div>
                             <h2 className={styles.price}>799 ₽ &ensp;<span className={styles.priceСrossed}>1 200 ₽</span></h2>
                             <h3 className={styles.paymentMethod+' '+styles.styleTextMainDesc}>или 150 ₽/мес. при рассрочке на 24 мес.</h3>
@@ -61,12 +79,12 @@ const HomePageComponent = () => {
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Безлимитная история запросов</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Безопасная сделка</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Поддержка 24/7</h3>
-                            <div className={styles.buttonModifyPersonalArea}>
-                            <MainButton name={nameButtonPersonalArea} />
+                            <div className={tariffBeginner ? styles.buttonModifyPersonalArea : styles.buttonModifyMoreDetail}>
+                            <MainButton disabled={true} name={tariffBeginner ? nameButtonPersonalArea : nameButtonMoreDetail} />
                             </div>
                         </div>
                     </div>
-                    <div className={styles.tariffItem}>
+                    <div className={styles.tariffItem} onClick={ChooseTariffPro}>
                         <div className={styles.headTariffItem+' '+styles.pro}>
                             <div className={styles.titleTariffItem}>
                                 <h2 className={styles.nameTariffText}>Pro</h2>
@@ -76,9 +94,9 @@ const HomePageComponent = () => {
                                 <img className={styles.marginIconTarget} src={target} alt='мишень'></img>
                             </div>
                         </div>
-                        <div className={styles.mainTariffItem+' '+styles.selectedTariffPro}>
+                        <div className={tariffPro ? styles.mainTariffItem+' '+styles.selectedTariffPro : styles.mainTariffItem}>
                             <div className={styles.containerBadge}>
-                                <div className={styles.badge}>Текущий тариф</div>
+                                {tariffPro && <div className={styles.badge}>Текущий тариф</div>}
                             </div>
                             <h2 className={styles.price}>1 299 ₽ &ensp;<span className={styles.priceСrossed}>2 600 ₽</span></h2>
                             <h3 className={styles.paymentMethod+' '+styles.styleTextMainDesc}>или 279 ₽/мес. при рассрочке на 24 мес.</h3>
@@ -86,12 +104,12 @@ const HomePageComponent = () => {
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Все пункты тарифа Beginner</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Экспорт истории</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Рекомендации по приоритетам</h3>
-                            <div className={styles.buttonModifyMoreDetail}>
-                                <MainButton name={nameButtonMoreDetail} />
+                            <div className={tariffPro ? styles.buttonModifyPersonalArea : styles.buttonModifyMoreDetail}>
+                                <MainButton disabled={true} name={tariffPro ? nameButtonPersonalArea : nameButtonMoreDetail} />
                             </div>
                         </div>
                     </div>
-                    <div className={styles.tariffItem}>
+                    <div className={styles.tariffItem} onClick={ChooseTariffBusiness}>
                         <div className={styles.headTariffItem+' '+styles.business}>
                             <div className={styles.titleTariffItem}>
                                 <h2 className={styles.nameTariffText+' '+styles.colorBusiness}>Business</h2>
@@ -101,9 +119,9 @@ const HomePageComponent = () => {
                                 <img className={styles.marginIconLaptop} src={laptop} alt='ноутбук'></img>
                             </div>
                         </div>
-                        <div className={styles.mainTariffItem+' '+styles.selectedTariffBusiness}>
+                        <div className={tariffBusiness ? styles.mainTariffItem+' '+styles.selectedTariffBusiness : styles.mainTariffItem}>
                             <div className={styles.containerBadge}>
-                                <div className={styles.badge}>Текущий тариф</div>
+                                {tariffBusiness && <div className={styles.badge}>Текущий тариф</div>}
                             </div>
                             <h2 className={styles.price}>2 379 ₽ &ensp;<span className={styles.priceСrossed}>3 700 ₽</span></h2>
                             <h3 className={styles.paymentMethod}>&ensp;</h3>
@@ -111,8 +129,8 @@ const HomePageComponent = () => {
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Все пункты тарифа Pro</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Безлимитное количество запросов</h3>
                             <h3 className={styles.styleTextMainDesc+' '+styles.marginListInclude}><img className={styles.positionGalka} src={galochka} alt='галочка'></img> Приоритетная поддержка</h3>
-                            <div className={styles.buttonModifyMoreDetail}>
-                                <MainButton name={nameButtonMoreDetail} />
+                            <div className={tariffBusiness ? styles.buttonModifyPersonalArea : styles.buttonModifyMoreDetail}>
+                                <MainButton disabled={true} name={tariffBusiness ? nameButtonPersonalArea : nameButtonMoreDetail} />
                             </div>
                         </div>
                     </div>
