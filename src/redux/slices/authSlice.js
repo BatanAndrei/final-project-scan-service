@@ -8,6 +8,7 @@ export const initialState = {
         password: ''
     },
     accessToken: '',
+    expire: '',
     isActivated: false,
     loginField: '',
     passwordField: '',
@@ -74,6 +75,7 @@ export const authSlice = createSlice({
             (state, { payload }) => { 
     
             state.accessToken = payload.accessToken;
+            state.expire = payload.expire;
             state.status = "idle";
     });
 

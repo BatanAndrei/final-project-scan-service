@@ -13,6 +13,9 @@ import { PersistGate } from 'redux-persist/es/integration/react';
 
 
 function App() {
+console.log(store.getState().authExtraReducer.isActivated)
+
+    const isActivated = store.getState().authExtraReducer.isActivated;
 
     return (
         <div className="app">
@@ -23,7 +26,7 @@ function App() {
                         <Routes>
                             <Route path='/' element={<HomePageComponent />} />
                             <Route path='/auth' element={<AuthPageComponent />} />
-                            <Route path='/search' element={<SearchPageComponent />} />
+                            <Route path='/search' element={isActivated ? <SearchPageComponent /> : <HomePageComponent />} />
                         </Routes>
                     </main>
                     <Thefooter />
