@@ -29,7 +29,7 @@ const SearchPageComponent = () => {
     const dateEnd = useSelector(selectDateEnd);
     const dateError = useSelector(selectDateError);
     const validFormSearch = useSelector(selectValidFormSearch);
-console.log(validFormSearch)
+
     const CheckInn = (e) => {
         dispatch(innReducer(e.target.value));
         
