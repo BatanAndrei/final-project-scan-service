@@ -59,12 +59,29 @@ const SearchPageComponent = () => {
 
     const getDateFieldHiddenBegin = (e) => {
         dispatch(deteBeginReducer(e.target.value));
+            let nowDate = new Date();
+            let setDateBegin = new Date(e.target.value+ 'T00:00:00');
+
+                if(nowDate >= setDateBegin && setDateBegin <= new Date(dateEnd+ 'T00:00:00')) {
+                    dispatch(deteErrorReducer(''));
+                }else {
+                    dispatch(deteErrorReducer('Введите корректные данные'));
+                }
     }
 
     const getDateFieldHiddenEnd = (e) => {
         dispatch(deteEndReducer(e.target.value));
+            let nowDate = new Date();
+            let setDateEnd = new Date(e.target.value+ 'T00:00:00');
+            console.log(setDateEnd)
+            console.log(new Date(dateBegin))
+                if(nowDate >= setDateEnd && setDateEnd >= new Date(dateBegin+ 'T00:00:00')) {
+                    dispatch(deteErrorReducer(''));
+                }else {
+                    dispatch(deteErrorReducer('Введите корректные данные'));
+                }
     }
-
+    
     return (
         <>
         {/* <DisplyedResultSearch /> */}
@@ -93,14 +110,14 @@ const SearchPageComponent = () => {
                         <input className={!deliveryDocError ? styles.input : styles.inputError} value={deliveryDocField} onChange={(e) => CheckDeliveryDoc(e)} type='text' placeholder='От 1 до 1000'/>
                         <div className={styles.textErrorMessage}><h3 className={styles.error}>{deliveryDocError}</h3></div>
 
-                        <h2 className={styles.lableText}>Диапазон поиска <span className={!innError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
+                        <h2 className={styles.lableText}>Диапазон поиска <span className={!dateError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
                         <div className={styles.dateFields}>
-                            <input type='text' value={dateBegin} className={!innError ? styles.inputDateFake : styles.inputDateError} placeholder='Дата начала'></input>
+                            <input type='text' value={dateBegin} disabled className={!dateError ? styles.inputDateFake : styles.inputDateError} placeholder='Дата начала'></input>
                             <input className={styles.inputDateHidden} onChange={(e) => getDateFieldHiddenBegin(e)} type="date"/>
-                            <input type='text' value={dateEnd} className={!innError ? styles.inputDateFake : styles.inputDateError} placeholder='Дата конца'></input>
+                            <input type='text' value={dateEnd} disabled className={!dateError ? styles.inputDateFake : styles.inputDateError} placeholder='Дата конца'></input>
                             <input className={styles.inputDateHidden} onChange={(e) => getDateFieldHiddenEnd(e)} type="date"/>
                         </div>
-                        <div className={styles.textErrorMessageDate}><h3 className={styles.error}>{innError}</h3></div>
+                        <div className={styles.textErrorMessageDate}><h3 className={styles.error}>{dateError}</h3></div>
 
                     </div>
                     <div className={styles.checkboxButtonSearch}>
