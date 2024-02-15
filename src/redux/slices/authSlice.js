@@ -12,8 +12,8 @@ export const initialState = {
     isActivated: false,
     loginField: '',
     passwordField: '',
-    loginError: '',
-    passwordError: '',
+    loginError: ' ',
+    passwordError: ' ',
     validForm: false,
 };
 

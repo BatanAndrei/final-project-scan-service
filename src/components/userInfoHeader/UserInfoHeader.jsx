@@ -1,5 +1,5 @@
 import styles from './userInfoHeader.module.css';
-import { logOutReducer, isActivatedReducer } from '../../redux/slices/authSlice';
+import { logOutReducer, isActivatedReducer, loginErrorReducer, passwordErrorReducer } from '../../redux/slices/authSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { RequestGetAccountInfo } from '../../api/RequestGetAccountInfo';
@@ -18,6 +18,8 @@ const UserInfoHeader = () => {
 
     const HeandleClickLogout = () => {
         dispatch(logOutReducer(false));
+        dispatch(loginErrorReducer(' '));
+        dispatch(passwordErrorReducer(' '));
         navigate('/');
     }
 
