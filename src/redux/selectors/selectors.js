@@ -21,5 +21,6 @@ export const selectDeliveryDocError = (state) => state.histogramsExtraReducers.d
 export const selectDateBegin = (state) => state.histogramsExtraReducers.dateBegin;
 export const selectDateEnd = (state) => state.histogramsExtraReducers.dateEnd;
 export const selectDateError = (state) => state.histogramsExtraReducers.dateError;
+export const selectValidFormSearch = (state) => state.histogramsExtraReducers.validFormSearch;
 
 

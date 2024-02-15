@@ -9,8 +9,8 @@ import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonSearch } from '../../dataVariables/variables';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectIsActivated } from '../../redux/selectors/selectors';
-import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer } from '../../redux/slices/histogramsSlice';
-import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError } from '../../redux/selectors/selectors';
+import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer } from '../../redux/slices/histogramsSlice';
+import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch } from '../../redux/selectors/selectors';
 import DisplyedResultSearch from '../../components/displyedResultSearch/DisplyedResultSearch';
 
 
@@ -28,7 +28,8 @@ const SearchPageComponent = () => {
     const dateBegin = useSelector(selectDateBegin);
     const dateEnd = useSelector(selectDateEnd);
     const dateError = useSelector(selectDateError);
-
+    const validFormSearch = useSelector(selectValidFormSearch);
+console.log(validFormSearch)
     const CheckInn = (e) => {
         dispatch(innReducer(e.target.value));
         
@@ -67,19 +68,30 @@ const SearchPageComponent = () => {
                 }else {
                     dispatch(deteErrorReducer('Введите корректные данные'));
                 }
-    }
+    };
 
     const getDateFieldHiddenEnd = (e) => {
         dispatch(deteEndReducer(e.target.value));
             let nowDate = new Date();
             let setDateEnd = new Date(e.target.value+ 'T00:00:00');
-            console.log(setDateEnd)
-            console.log(new Date(dateBegin))
+            
                 if(nowDate >= setDateEnd && setDateEnd >= new Date(dateBegin+ 'T00:00:00')) {
                     dispatch(deteErrorReducer(''));
                 }else {
                     dispatch(deteErrorReducer('Введите корректные данные'));
                 }
+    };
+
+    useEffect(() => {
+        if(innError || deliveryDocError || dateError) {
+            dispatch(validFormSearchReducer(false))
+        }else {
+            dispatch(validFormSearchReducer(true))
+        }
+    }, [innError, deliveryDocError, dateError]);
+    
+    const PostRequestSearch = (e) => {
+        e.preventDefault();
     }
     
     return (
@@ -95,7 +107,7 @@ const SearchPageComponent = () => {
                     <div className={styles.inputSelectFilds}>
 
                         <h2 className={styles.lableTextInn}>ИНН компании <span className={!innError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
-                        <input className={!innError ? styles.input : styles.inputError} value={innField} onChange={(e) => CheckInn(e)} type='text' placeholder='10 цифр'/>
+                        <input className={(innError !== 'Обязательное поле' && innError !== 'Введите корректные данные') ? styles.input : styles.inputError} value={innField} onChange={(e) => CheckInn(e)} type='text' placeholder='10 цифр'/>
                         <div className={styles.textErrorMessage}><h3 className={styles.error}>{innError}</h3></div>
 
                         <h2 className={styles.lableText}>Тональность</h2>
@@ -107,14 +119,14 @@ const SearchPageComponent = () => {
                         <div className={styles.textErrorMessage}></div>
 
                         <h2 className={styles.lableText}>Количество документов в выдаче <span className={!deliveryDocError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
-                        <input className={!deliveryDocError ? styles.input : styles.inputError} value={deliveryDocField} onChange={(e) => CheckDeliveryDoc(e)} type='text' placeholder='От 1 до 1000'/>
+                        <input className={(deliveryDocError !== 'Обязательное поле' && deliveryDocError !== 'Введите корректные данные') ? styles.input : styles.inputError} value={deliveryDocField} onChange={(e) => CheckDeliveryDoc(e)} type='text' placeholder='От 1 до 1000'/>
                         <div className={styles.textErrorMessage}><h3 className={styles.error}>{deliveryDocError}</h3></div>
 
                         <h2 className={styles.lableText}>Диапазон поиска <span className={!dateError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
                         <div className={styles.dateFields}>
-                            <input type='text' value={dateBegin} disabled className={!dateError ? styles.inputDateFake : styles.inputDateError} placeholder='Дата начала'></input>
+                            <input type='text' value={dateBegin} disabled className={dateError !== 'Введите корректные данные' ? styles.inputDateFake : styles.inputDateError} placeholder='Дата начала'></input>
                             <input className={styles.inputDateHidden} onChange={(e) => getDateFieldHiddenBegin(e)} type="date"/>
-                            <input type='text' value={dateEnd} disabled className={!dateError ? styles.inputDateFake : styles.inputDateError} placeholder='Дата конца'></input>
+                            <input type='text' value={dateEnd} disabled className={dateError !== 'Введите корректные данные' ? styles.inputDateFake : styles.inputDateError} placeholder='Дата конца'></input>
                             <input className={styles.inputDateHidden} onChange={(e) => getDateFieldHiddenEnd(e)} type="date"/>
                         </div>
                         <div className={styles.textErrorMessageDate}><h3 className={styles.error}>{dateError}</h3></div>
@@ -122,8 +134,8 @@ const SearchPageComponent = () => {
                     </div>
                     <div className={styles.checkboxButtonSearch}>
                         {listCheckbox.map((checkbox) => <Checkbox key={checkbox.id} name={checkbox.lable} />)}
-                        <div className={styles.buttonModifyReqData}>
-                            <MainButton name={nameButtonSearch} />
+                        <div className={validFormSearch ? styles.buttonModifyReqData : styles.buttonModifyReqDataDisable}>
+                            <MainButton disabled={!validFormSearch} click={PostRequestSearch} name={nameButtonSearch} />
                         </div>
                         <h3 className={styles.textForFieldsRequired}>* Обязательные к заполнению поля</h3>
                     </div>

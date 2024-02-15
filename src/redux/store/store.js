@@ -35,6 +35,7 @@ const reducer = combineReducers({
     deteBeginReducer: histogramsSlice.reducer, 
     deteEndReducer: histogramsSlice.reducer, 
     deteErrorReducer: histogramsSlice.reducer,
+    validFormSearchReducer: histogramsSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);

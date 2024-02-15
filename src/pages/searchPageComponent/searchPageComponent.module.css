@@ -187,21 +187,6 @@
     opacity: 0;
 }
 
-/* .inputDate {
-    padding-left: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 20px 0px #dadada;
-    border: 1px solid #C7C7C7;
-    outline: none;
-    width: 40px;
-    height: 43px;
-    color: black;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-    user-select: none;
-} */
-
 .inputDateError {
     padding: 0px 19px 0px 19px;
     border-radius: 5px;
@@ -256,6 +241,17 @@
     font-weight: 500;
     font-size: 22px;
     background-color: #5970FF;
+}
+
+.buttonModifyReqDataDisable button {
+    margin: 105px 0px 0px 90px;
+    font-family: 'Inter', sans-serif;
+    color: white;
+    width: 305px;
+    height: 59px;
+    font-weight: 500;
+    font-size: 22px;
+    background-color: #95a1f2;
 }
 
 .textForFieldsRequired {
