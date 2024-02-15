@@ -9,10 +9,9 @@ import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonSearch } from '../../dataVariables/variables';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectIsActivated } from '../../redux/selectors/selectors';
-import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer } from '../../redux/slices/histogramsSlice';
-import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError } from '../../redux/selectors/selectors';
+import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer } from '../../redux/slices/histogramsSlice';
+import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError } from '../../redux/selectors/selectors';
 import DisplyedResultSearch from '../../components/displyedResultSearch/DisplyedResultSearch';
-
 
 
 const SearchPageComponent = () => {
@@ -22,8 +21,13 @@ const SearchPageComponent = () => {
     const isActivated = useSelector(selectIsActivated);
     const innField = useSelector(selectInnField);
     const innError = useSelector(selectInnError);
+
     const deliveryDocField = useSelector(selectDeliveryDocField);
     const deliveryDocError = useSelector(selectDeliveryDocError);
+
+    const dateBegin = useSelector(selectDateBegin);
+    const dateEnd = useSelector(selectDateEnd);
+    const dateError = useSelector(selectDateError);
 
     const CheckInn = (e) => {
         dispatch(innReducer(e.target.value));
@@ -54,11 +58,11 @@ const SearchPageComponent = () => {
     };
 
     const getDateFieldHiddenBegin = (e) => {
-        console.log(e.target.value);
+        dispatch(deteBeginReducer(e.target.value));
     }
 
     const getDateFieldHiddenEnd = (e) => {
-        console.log(e.target.value);
+        dispatch(deteEndReducer(e.target.value));
     }
 
     return (
@@ -91,9 +95,9 @@ const SearchPageComponent = () => {
 
                         <h2 className={styles.lableText}>Диапазон поиска <span className={!innError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
                         <div className={styles.dateFields}>
-                            <input type='text' className={!innError ? styles.inputDateFake : styles.inputDateError} placeholder='Дата начала'></input>
+                            <input type='text' value={dateBegin} className={!innError ? styles.inputDateFake : styles.inputDateError} placeholder='Дата начала'></input>
                             <input className={styles.inputDateHidden} onChange={(e) => getDateFieldHiddenBegin(e)} type="date"/>
-                            <input type='text' className={!innError ? styles.inputDateFake : styles.inputDateError} placeholder='Дата конца'></input>
+                            <input type='text' value={dateEnd} className={!innError ? styles.inputDateFake : styles.inputDateError} placeholder='Дата конца'></input>
                             <input className={styles.inputDateHidden} onChange={(e) => getDateFieldHiddenEnd(e)} type="date"/>
                         </div>
                         <div className={styles.textErrorMessageDate}><h3 className={styles.error}>{innError}</h3></div>

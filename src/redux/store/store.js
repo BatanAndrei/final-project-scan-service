@@ -32,6 +32,9 @@ const reducer = combineReducers({
     innErrorReducer: histogramsSlice.reducer,
     deliveryDocReducer: histogramsSlice.reducer, 
     deliveryDocErrorReducer: histogramsSlice.reducer,
+    deteBeginReducer: histogramsSlice.reducer, 
+    deteEndReducer: histogramsSlice.reducer, 
+    deteErrorReducer: histogramsSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);
