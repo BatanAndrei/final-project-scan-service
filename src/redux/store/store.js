@@ -30,6 +30,8 @@ const reducer = combineReducers({
     histogramsExtraReducers: histogramsSlice.reducer,
     innReducer: histogramsSlice.reducer,
     innErrorReducer: histogramsSlice.reducer,
+    deliveryDocReducer: histogramsSlice.reducer, 
+    deliveryDocErrorReducer: histogramsSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);

@@ -12,6 +12,11 @@ export const histogramsSlice = createSlice({
     initialState,
     innField: '',
     innError: '',
+    deliveryDocField: '',
+    deliveryDocError: '',
+    dateBegin: '',
+    dateEnd: '',
+    dateError: '',
     reducers: {   
         innReducer: (state, action) => {
             state.innField = action.payload;
@@ -19,6 +24,26 @@ export const histogramsSlice = createSlice({
 
         innErrorReducer: (state, action) => {
             state.innError = action.payload;
+        },
+
+        deliveryDocReducer: (state, action) => {
+            state.deliveryDocField = action.payload;
+        },
+
+        deliveryDocErrorReducer: (state, action) => {
+            state.deliveryDocError = action.payload;
+        },
+
+        deteBeginReducer: (state, action) => {
+
+        },
+
+        deteEndReducer: (state, action) => {
+            
+        },
+
+        deteErrorReducer: (state, action) => {
+            
         }
     },
 
@@ -47,4 +72,4 @@ export const histogramsSlice = createSlice({
     }
 });
 
-export const { innReducer, innErrorReducer } = histogramsSlice.actions;
+export const { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer } = histogramsSlice.actions;

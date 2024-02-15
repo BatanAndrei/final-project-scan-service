@@ -87,10 +87,10 @@ const AuthPageComponent = () => {
                     </div>
                     <form>
                         <h2 className={styles.titleInputTel}>Логин или номер телефона:</h2>
-                        <input className={loginError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => TelHeandleChange(e)} value={loginField}  type="tel" name="loginField"/>
+                        <input className={loginError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => TelHeandleChange(e)} type="tel" value={loginField}/>
                         <div className={styles.placeError}>{loginError && <p className={styles.errorMessage}>{loginError}</p> || requestError && <p className={styles.errorMessage}>{requestError} логин</p>}</div>
                         <h2 className={styles.titleInputPass}>Пароль:</h2>
-                        <input className={passwordError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => PassHeandleChange(e)} value={passwordField} type="password" name="passwordField"/>
+                        <input className={passwordError !== 'Поле не может быть пустым' ? styles.input : styles.inputError} onChange={e => PassHeandleChange(e)} type="password" value={passwordField}/>
                         <div className={styles.placeError}>{passwordError && <p className={styles.errorMessage}>{passwordError}</p> || requestError && <p className={styles.errorMessage}>{requestError} пароль</p>}</div>
                         <div className={validForm ? styles.buttonModifyLogin : styles.buttonModifyLoginDisable}>
                             <MainButton disabled={!validForm} click={PostRequestAuth} name={nameButtonLogin} />

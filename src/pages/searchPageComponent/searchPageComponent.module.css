@@ -83,7 +83,7 @@
 }
 
 .input {
-    padding-left: 19px;
+    padding: 0px 19px 0px 19px;
     margin: 19px 0px 0px 0px;
     border-radius: 5px;
     box-shadow: 0 0 20px 0px #dadada;
@@ -96,7 +96,7 @@
 }
 
 .inputError {
-    padding-left: 19px;
+    padding: 0px 19px 0px 19px;
     margin: 19px 0px 0px 0px;
     border-radius: 5px;
     box-shadow: 0 0 20px 0px #dadada;
@@ -124,7 +124,7 @@
 .select {
     padding-left: 22px;
     margin: 20px 0px 0px 0px;
-    border-radius: 1px;
+    border-radius: 5px;
     box-shadow: 0 0 20px 0px #dadada;
     border: 1px solid #C7C7C7;
     outline: none;
@@ -147,14 +147,14 @@
 
 .dateFields {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     margin: 20px 0px 0px 0px;
-    width: 372px;
+    width: 394px;
 }
 
-.inputDate {
-    padding-left: 20px;
-    border-radius: 1px;
+.inputDateFake {
+    padding: 0px 19px 0px 19px;
+    border-radius: 5px;
     box-shadow: 0 0 20px 0px #dadada;
     border: 1px solid #C7C7C7;
     outline: none;
@@ -165,11 +165,47 @@
     font-weight: 400;
     font-size: 14px;
     user-select: none;
+
+    appearance: none;
+    background: url('../../Images/arrowForSelect.png');
+    background-repeat: no-repeat, repeat;
+    background-position: right 8px top 50%, 0 0;
 }
 
-.inputDateError {
+.inputDateHidden {
+    padding: 5px;
+    position: relative;
+    left: -30px;
+    border: none;
+    outline: none;
+    width: 170px;
+    height: 40px;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    user-select: none;
+    opacity: 0;
+}
+
+/* .inputDate {
     padding-left: 20px;
-    border-radius: 1px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px 0px #dadada;
+    border: 1px solid #C7C7C7;
+    outline: none;
+    width: 40px;
+    height: 43px;
+    color: black;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    user-select: none;
+} */
+
+.inputDateError {
+    padding: 0px 19px 0px 19px;
+    border-radius: 5px;
     box-shadow: 0 0 20px 0px #dadada;
     border: 1px solid #FF5959;
     color: #FF5959;
@@ -181,6 +217,11 @@
     font-weight: 400;
     font-size: 14px;
     user-select: none;
+
+    appearance: none;
+    background: url('../../Images/arrowForSelect.png');
+    background-repeat: no-repeat, repeat;
+    background-position: right 8px top 50%, 0 0;
 }
 
 .checkboxButtonSearch {

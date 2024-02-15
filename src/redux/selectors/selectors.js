@@ -16,4 +16,7 @@ export const selectTariffBusiness = (state) => state.accountInfoExtraReducer.tar
 
 export const selectInnField = (state) => state.histogramsExtraReducers.innField;
 export const selectInnError = (state) => state.histogramsExtraReducers.innError;
+export const selectDeliveryDocField = (state) => state.deliveryDocReducer.deliveryDocField 
+export const selectDeliveryDocError = (state) => state.deliveryDocErrorReducer.deliveryDocError
+
 

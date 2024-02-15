@@ -12,8 +12,8 @@ export const initialState = {
     isActivated: false,
     loginField: '',
     passwordField: '',
-    loginError: ' ',
-    passwordError: ' ',
+    loginError: '',
+    passwordError: '',
     validForm: false,
 };
 
@@ -31,8 +31,11 @@ export const authSlice = createSlice({
         logOutReducer: (state, action) => {
             state.isActivated = action.payload;
             state.accessToken = '';
+            state.expire = '';
             state.loginField = '';
             state.passwordField = '';
+            state.loginUser.login = '';
+            state.loginUser.password = '';
         },
     
         loginReducer: (state, action) => {
