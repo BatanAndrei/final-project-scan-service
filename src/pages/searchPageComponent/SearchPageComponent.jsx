@@ -32,7 +32,7 @@ const SearchPageComponent = () => {
 
     const CheckInn = (e) => {
         dispatch(innReducer(e.target.value));
-        
+        let result = false;
         if(!e.target.value) {
             dispatch(innErrorReducer('Обязательное поле'));
         }else if (/[^0-9]/.test(e.target.value)) {
@@ -40,8 +40,28 @@ const SearchPageComponent = () => {
         }else if (e.target.value.length > 10) {
             dispatch(innErrorReducer('Введите корректные данные'));
         }else { 
-            dispatch(innErrorReducer(''));                         
-        };                                                      
+            dispatch(innErrorReducer(''));
+            
+            const CheckDigit = (inn, coeff) => {
+                let n = 0;
+                for (let i in coeff) {
+                    n += coeff[i] * inn[i];
+                }
+                return parseInt(n % 11 % 10);
+            };
+            switch (e.target.value.length) {
+                case 10:
+				let n10 = CheckDigit(e.target.value, [2, 4, 10, 3, 5, 9, 4, 6, 8]);
+				if (n10 === parseInt(e.target.value[9])) {
+					result = true;
+				}
+				break;
+            }
+            if (!result) {
+                dispatch(innErrorReducer('Неправильное контрольное число'));
+            }
+        };  
+        return result;                                                    
     };
 
     const CheckDeliveryDoc = (e) => {
