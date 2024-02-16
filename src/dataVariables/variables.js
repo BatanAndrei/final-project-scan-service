@@ -7,31 +7,31 @@ export const nameButtonDispleyMore = 'Показать больше';
 export const nameButtonReadSource = 'Читать в источнике';
 
 export const listCheckbox = [{
-    id: 1,
+    id: 0,
     lable: 'Признак максимальной полноты'
 },
 {
-    id: 2,
+    id: 1,
     lable: 'Упоминания в бизнес-контексте'
 },
 {
-    id: 3,
+    id: 2,
     lable: 'Главная роль в публикации'
 },
 {
-    id: 4,
+    id: 3,
     lable: 'Публикации только с риск-факторами'
 },
 {
-    id: 5,
+    id: 4,
     lable: 'Включать технические новости рынков'
 },
 {
-    id: 6,
+    id: 5,
     lable: 'Включать анонсы и календари'
 },
 {
-    id: 7,
+    id: 6,
     lable: 'Включать сводки новостей'
 },
 ]

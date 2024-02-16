@@ -1,73 +1,13 @@
-.label, .lableChecked {
-    position: relative;
-    margin: 16px 0px 0px 0px;
-    font-weight: 500;
-    font-size: 16px;
-    color: #949494;
-    left: 20px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-}
-
-.lableChecked {
-    color: black;
-}
 
 .checkbox {
     display: none;
 }
 
-.fake, .fakeChecked {
-    position: relative;
-    right: 17px;
-    top: 4px;
-    display: inline-flex;
-    width: 20px;
-    height: 20px;
-    background: white;
-    justify-content: center;
-    border: 1px solid #949494;
-    border-radius: 1px;
-    cursor: pointer;
-} 
-
-.fakeChecked {
-    border: 1px solid black;
-}
-
-.fake::before, .fakeChecked::before {
-    position: absolute;
-    left: -2px;
-    top: 6px;
-    height: 50%;
-    width: 3px;
-    background-color: rgb(12, 211, 12);
-    content: "";
-    transform: translateX(10px) rotate(-45deg);
-    transform-origin: left bottom;
-    opacity: 0;
-}
-
-.fake::after, .fakeChecked::after {
-    position: absolute;
-    left: -2px;
-    top: 12.5px;
-    bottom: 0;
-    height: 3px;
-    width: 70%;
-    background-color: rgb(12, 211, 12);
-    content: "";
-    transform: translateX(10px) rotate(-45deg);
-    transform-origin: left bottom;
-    opacity: 0;
-}
-
-.checkbox:checked + .fake::before, .fakeChecked::before {
+.checkbox:checked {
     opacity: 1;
 }
 
-.checkbox:checked + .fake::after, .fakeChecked::after {
+.checkbox:checked {
     opacity: 1;
 }
 

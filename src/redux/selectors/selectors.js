@@ -22,5 +22,12 @@ export const selectDateBegin = (state) => state.histogramsExtraReducers.dateBegi
 export const selectDateEnd = (state) => state.histogramsExtraReducers.dateEnd;
 export const selectDateError = (state) => state.histogramsExtraReducers.dateError;
 export const selectValidFormSearch = (state) => state.histogramsExtraReducers.validFormSearch;
+export const selectCheckedBox0= (state) => state.histogramsExtraReducers.checkedBox0;
+export const selectCheckedBox1= (state) => state.histogramsExtraReducers.checkedBox1;
+export const selectCheckedBox2= (state) => state.histogramsExtraReducers.checkedBox2;
+export const selectCheckedBox3= (state) => state.histogramsExtraReducers.checkedBox3;
+export const selectCheckedBox4= (state) => state.histogramsExtraReducers.checkedBox4;
+export const selectCheckedBox5= (state) => state.histogramsExtraReducers.checkedBox5;
+export const selectCheckedBox6= (state) => state.histogramsExtraReducers.checkedBox6;
 
 

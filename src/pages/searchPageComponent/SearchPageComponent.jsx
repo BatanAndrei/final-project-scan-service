@@ -9,8 +9,8 @@ import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonSearch } from '../../dataVariables/variables';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectIsActivated } from '../../redux/selectors/selectors';
-import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer } from '../../redux/slices/histogramsSlice';
-import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch } from '../../redux/selectors/selectors';
+import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6 } from '../../redux/slices/histogramsSlice';
+import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch, selectCheckedBox0, selectCheckedBox1, selectCheckedBox2, selectCheckedBox3, selectCheckedBox4, selectCheckedBox5, selectCheckedBox6 } from '../../redux/selectors/selectors';
 import DisplyedResultSearch from '../../components/displyedResultSearch/DisplyedResultSearch';
 
 
@@ -30,6 +30,15 @@ const SearchPageComponent = () => {
     const dateError = useSelector(selectDateError);
     const validFormSearch = useSelector(selectValidFormSearch);
 
+    const checkedBox0 = useSelector(selectCheckedBox0); 
+    const checkedBox1 = useSelector(selectCheckedBox1);
+    const checkedBox2 = useSelector(selectCheckedBox2); 
+    const checkedBox3 = useSelector(selectCheckedBox3);
+    const checkedBox4 = useSelector(selectCheckedBox4); 
+    const checkedBox5 = useSelector(selectCheckedBox5);
+    const checkedBox6 = useSelector(selectCheckedBox6); 
+
+    
     const CheckInn = (e) => {
         dispatch(innReducer(e.target.value));
         let result = false;
@@ -64,6 +73,7 @@ const SearchPageComponent = () => {
         return result;                                                    
     };
 
+
     const CheckDeliveryDoc = (e) => {
         dispatch(deliveryDocReducer(e.target.value));
 
@@ -78,6 +88,7 @@ const SearchPageComponent = () => {
         };                                                                 //             4i2385j
     };
 
+
     const getDateFieldHiddenBegin = (e) => {
         dispatch(deteBeginReducer(e.target.value));
             let nowDate = new Date();
@@ -89,6 +100,7 @@ const SearchPageComponent = () => {
                     dispatch(deteErrorReducer('Введите корректные данные'));
                 }
     };
+
 
     const getDateFieldHiddenEnd = (e) => {
         dispatch(deteEndReducer(e.target.value));
@@ -102,6 +114,7 @@ const SearchPageComponent = () => {
                 }
     };
 
+
     useEffect(() => {
         if(innError || deliveryDocError || dateError) {
             dispatch(validFormSearchReducer(false))
@@ -110,9 +123,73 @@ const SearchPageComponent = () => {
         }
     }, [innError, deliveryDocError, dateError]);
     
+
     const PostRequestSearch = (e) => {
         e.preventDefault();
-    }
+    };
+
+
+    const HeandleCheckBox = (e) => {
+        
+        switch (e.target.dataset.index) {
+
+            case '0':
+                if(e.target.checked === false) {
+                    dispatch(checkedBoxReducer0(true));
+                }else {
+                    dispatch(checkedBoxReducer0(false));
+                }
+                break;
+
+            case '1':
+                if(e.target.checked === false) {
+                    dispatch(checkedBoxReducer1(true));
+                }else {
+                    dispatch(checkedBoxReducer1(false));
+                }
+                break;
+
+            case '2':
+                if(e.target.checked === false) {
+                    dispatch(checkedBoxReducer2(true));
+                }else {
+                    dispatch(checkedBoxReducer2(false));
+                }
+                break;
+
+            case '3':
+                if(e.target.checked === false) {
+                    dispatch(checkedBoxReducer3(true));
+                }else {
+                    dispatch(checkedBoxReducer3(false));
+                }
+                break;
+
+            case '4':
+                if(e.target.checked === false) {
+                    dispatch(checkedBoxReducer4(true));
+                }else {
+                    dispatch(checkedBoxReducer4(false));
+                }
+                break;
+
+            case '5':
+                if(e.target.checked === false) {
+                    dispatch(checkedBoxReducer5(true));
+                }else {
+                    dispatch(checkedBoxReducer5(false));
+                }
+                break;
+
+            case '6':
+                if(e.target.checked === false) {
+                    dispatch(checkedBoxReducer6(true));
+                }else {
+                    dispatch(checkedBoxReducer6(false));
+                }
+                break;
+        }
+    };
     
     return (
         <>
@@ -153,7 +230,41 @@ const SearchPageComponent = () => {
 
                     </div>
                     <div className={styles.checkboxButtonSearch}>
-                        {listCheckbox.map((checkbox) => <Checkbox key={checkbox.id} name={checkbox.lable} />)}
+                        <label className={!checkedBox0 ? styles.label : styles.lableChecked}>
+                            <Checkbox click={HeandleCheckBox} id={listCheckbox[0].id}/>
+                            <span className={!checkedBox0 ? styles.fake : styles.fakeChecked}></span>
+                            <span className={styles.color}>{listCheckbox[0].lable}</span>
+                        </label>
+                        <label className={!checkedBox1 ? styles.label : styles.lableChecked}>
+                            <Checkbox click={HeandleCheckBox} id={listCheckbox[1].id}/>
+                            <span className={!checkedBox1 ? styles.fake : styles.fakeChecked}></span>
+                            <span className={styles.color}>{listCheckbox[1].lable}</span>
+                        </label>
+                        <label className={!checkedBox2 ? styles.label : styles.lableChecked}>
+                            <Checkbox click={HeandleCheckBox} id={listCheckbox[2].id}/>
+                            <span className={!checkedBox2 ? styles.fake : styles.fakeChecked}></span>
+                            <span className={styles.color}>{listCheckbox[2].lable}</span>
+                        </label>
+                        <label className={!checkedBox3 ? styles.label : styles.lableChecked}>
+                            <Checkbox click={HeandleCheckBox} id={listCheckbox[3].id}/>
+                            <span className={!checkedBox3 ? styles.fake : styles.fakeChecked}></span>
+                            <span className={styles.color}>{listCheckbox[3].lable}</span>
+                        </label>
+                        <label className={!checkedBox4 ? styles.label : styles.lableChecked}>
+                            <Checkbox click={HeandleCheckBox} id={listCheckbox[4].id}/>
+                            <span className={!checkedBox4 ? styles.fake : styles.fakeChecked}></span>
+                            <span className={styles.color}>{listCheckbox[4].lable}</span>
+                        </label>
+                        <label className={!checkedBox5 ? styles.label : styles.lableChecked}>
+                            <Checkbox click={HeandleCheckBox} id={listCheckbox[5].id}/>
+                            <span className={!checkedBox5 ? styles.fake : styles.fakeChecked}></span>
+                            <span className={styles.color}>{listCheckbox[5].lable}</span>
+                        </label>
+                        <label className={!checkedBox6 ? styles.label : styles.lableChecked}>
+                            <Checkbox click={HeandleCheckBox} id={listCheckbox[6].id}/>
+                            <span className={!checkedBox6 ? styles.fake : styles.fakeChecked}></span>
+                            <span className={styles.color}>{listCheckbox[6].lable}</span>
+                        </label>     
                         <div className={validFormSearch ? styles.buttonModifyReqData : styles.buttonModifyReqDataDisable}>
                             <MainButton disabled={!validFormSearch} click={PostRequestSearch} name={nameButtonSearch} />
                         </div>

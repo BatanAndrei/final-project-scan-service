@@ -36,6 +36,13 @@ const reducer = combineReducers({
     deteEndReducer: histogramsSlice.reducer, 
     deteErrorReducer: histogramsSlice.reducer,
     validFormSearchReducer: histogramsSlice.reducer,
+    checkedBoxReducer0: histogramsSlice.reducer,
+    checkedBoxReducer1: histogramsSlice.reducer,
+    checkedBoxReducer2: histogramsSlice.reducer,
+    checkedBoxReducer3: histogramsSlice.reducer,
+    checkedBoxReducer4: histogramsSlice.reducer,
+    checkedBoxReducer5: histogramsSlice.reducer,
+    checkedBoxReducer6: histogramsSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);

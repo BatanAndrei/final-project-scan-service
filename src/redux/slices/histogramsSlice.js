@@ -18,6 +18,13 @@ export const histogramsSlice = createSlice({
     dateEnd: '',
     dateError: ' ',
     validFormSearch: false,
+    checkedBox0: false,
+    checkedBox1: false,
+    checkedBox2: false,
+    checkedBox3: false,
+    checkedBox4: false,
+    checkedBox5: false,
+    checkedBox6: false,
     reducers: {   
         innReducer: (state, action) => {
             state.innField = action.payload;
@@ -50,6 +57,34 @@ export const histogramsSlice = createSlice({
         validFormSearchReducer: (state, action) => {
             state.validFormSearch = action.payload;
         },
+
+        checkedBoxReducer0: (state, action) => {
+            state.checkedBox0 = action.payload;
+        },
+
+        checkedBoxReducer1: (state, action) => {
+            state.checkedBox1 = action.payload;
+        },
+
+        checkedBoxReducer2: (state, action) => {
+            state.checkedBox2 = action.payload;
+        },
+
+        checkedBoxReducer3: (state, action) => {
+            state.checkedBox3 = action.payload;
+        },
+
+        checkedBoxReducer4: (state, action) => {
+            state.checkedBox4 = action.payload;
+        },
+
+        checkedBoxReducer5: (state, action) => {
+            state.checkedBox5 = action.payload;
+        },
+
+        checkedBoxReducer6: (state, action) => {
+            state.checkedBox6 = action.payload;
+        },
     },
 
     /*extraReducers: (builder) => {
@@ -77,5 +112,5 @@ export const histogramsSlice = createSlice({
     }*/
 });
 
-export const { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer } = histogramsSlice.actions;
+export const { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6 } = histogramsSlice.actions;
 
