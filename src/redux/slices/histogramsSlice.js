@@ -1,15 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { RequestPostHistograms } from '../../api/RequestPostHistograms';
-//import { RequestGetAccountInfo } from '../../api/RequestGetAccountInfo';
 
 
 export const initialState = {
-    
-};
-
-export const histogramsSlice = createSlice({
-    name: "histograms",
-    initialState,
     innField: '',
     innError: ' ',
     deliveryDocField: '',
@@ -26,7 +19,14 @@ export const histogramsSlice = createSlice({
     checkedBox5: false,
     checkedBox6: false,
     dataHistograms: new Object,
-    accessTokenHistograms: '',
+    paramsPostHistograms: {
+        accessTokenHistograms: '',
+    },
+};
+
+export const histogramsSlice = createSlice({
+    name: "histograms",
+    initialState,
     reducers: {   
         innReducer: (state, action) => {
             state.innField = action.payload;
@@ -89,7 +89,7 @@ export const histogramsSlice = createSlice({
         },
 
         getAccessTokenHistogramsReducer: (state, action) => {
-            state.accessTokenHistograms = action.payload;
+            state.paramsPostHistograms.accessTokenHistograms = action.payload;
         }
 
     },

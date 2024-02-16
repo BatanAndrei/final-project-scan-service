@@ -3,12 +3,12 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const RequestPostHistograms = createAsyncThunk(
     "histograms/postHistogramg", 
-    async (accessToken, thunkApi) => { // объект thunkApi содержит функцию rejectWithValue
+    async ({accessTokenHistograms}, thunkApi) => { // объект thunkApi содержит функцию rejectWithValue
 
         const response = await fetch(`https://gateway.scan-interfax.ru/api/v1/objectsearch/histograms`, {
             method: 'POST',
             headers: {
-                Authorization: `Bearer ${accessToken}`,
+                Authorization: `Bearer ${accessTokenHistograms}`,
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },

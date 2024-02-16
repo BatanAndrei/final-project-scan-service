@@ -20,7 +20,7 @@ const SearchPageComponent = () => {
     const dispatch = useDispatch();
 
     const accessTokenHistograms = useSelector(selectAccessTokenHistograms);
-
+console.log(accessTokenHistograms)
     const isActivated = useSelector(selectIsActivated);
     const innField = useSelector(selectInnField);
     const innError = useSelector(selectInnError);
