@@ -10,7 +10,7 @@ import { nameButtonSearch } from '../../dataVariables/variables';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectIsActivated, selectAccessToken } from '../../redux/selectors/selectors';
 import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6 } from '../../redux/slices/histogramsSlice';
-import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch, selectCheckedBox0, selectCheckedBox1, selectCheckedBox2, selectCheckedBox3, selectCheckedBox4, selectCheckedBox5, selectCheckedBox6 } from '../../redux/selectors/selectors';
+import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch, selectCheckedBox0, selectCheckedBox1, selectCheckedBox2, selectCheckedBox3, selectCheckedBox4, selectCheckedBox5, selectCheckedBox6, selectDataHistograms } from '../../redux/selectors/selectors';
 import { RequestPostHistograms } from '../../api/RequestPostHistograms';
 import DisplyedResultSearch from '../../components/displyedResultSearch/DisplyedResultSearch';
 
@@ -39,8 +39,9 @@ const SearchPageComponent = () => {
     const checkedBox3 = useSelector(selectCheckedBox3);
     const checkedBox4 = useSelector(selectCheckedBox4); 
     const checkedBox5 = useSelector(selectCheckedBox5);
-    const checkedBox6 = useSelector(selectCheckedBox6); 
-
+    const checkedBox6 = useSelector(selectCheckedBox6);
+    const dataHistograms = useSelector(selectDataHistograms);
+console.log(dataHistograms)
     
     const CheckInn = (e) => {
         dispatch(innReducer(e.target.value));

@@ -2,7 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 
 export const RequestPostHistograms = createAsyncThunk(
-    "auth/postAuth", 
+    "histograms/postHistogramg", 
     async (accessToken, thunkApi) => { // объект thunkApi содержит функцию rejectWithValue
 
         const response = await fetch(`https://gateway.scan-interfax.ru/api/v1/objectsearch/histograms`, {
@@ -52,7 +52,7 @@ export const RequestPostHistograms = createAsyncThunk(
         });
 
         const data = await response.json();
-        console.log(data)
+        //console.log(data)
         if (response.status !== 200) {
         
             return thunkApi.rejectWithValue({  //rejectWithValue проверяет и возвращает ошибку при не удачном запросе
