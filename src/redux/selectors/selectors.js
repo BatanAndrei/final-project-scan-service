@@ -14,21 +14,21 @@ export const selectTariffBeginner = (state) => state.accountInfoExtraReducer.tar
 export const selectTariffPro = (state) => state.accountInfoExtraReducer.tariffPro;
 export const selectTariffBusiness = (state) => state.accountInfoExtraReducer.tariffBusiness;
 
-export const selectInnField = (state) => state.histogramsExtraReducers.innField;
+export const selectInnField = (state) => state.histogramsExtraReducers.paramsPostHistograms.innField;
 export const selectInnError = (state) => state.histogramsExtraReducers.innError;
-export const selectDeliveryDocField = (state) => state.histogramsExtraReducers.deliveryDocField;
+export const selectDeliveryDocField = (state) => state.histogramsExtraReducers.paramsPostHistograms.deliveryDocField;
 export const selectDeliveryDocError = (state) => state.histogramsExtraReducers.deliveryDocError;
-export const selectDateBegin = (state) => state.histogramsExtraReducers.dateBegin;
-export const selectDateEnd = (state) => state.histogramsExtraReducers.dateEnd;
+export const selectDateBegin = (state) => state.histogramsExtraReducers.paramsPostHistograms.dateBegin;
+export const selectDateEnd = (state) => state.histogramsExtraReducers.paramsPostHistograms.dateEnd;
 export const selectDateError = (state) => state.histogramsExtraReducers.dateError;
 export const selectValidFormSearch = (state) => state.histogramsExtraReducers.validFormSearch;
-export const selectCheckedBox0= (state) => state.histogramsExtraReducers.checkedBox0;
-export const selectCheckedBox1= (state) => state.histogramsExtraReducers.checkedBox1;
-export const selectCheckedBox2= (state) => state.histogramsExtraReducers.checkedBox2;
-export const selectCheckedBox3= (state) => state.histogramsExtraReducers.checkedBox3;
-export const selectCheckedBox4= (state) => state.histogramsExtraReducers.checkedBox4;
-export const selectCheckedBox5= (state) => state.histogramsExtraReducers.checkedBox5;
-export const selectCheckedBox6= (state) => state.histogramsExtraReducers.checkedBox6;
+export const selectCheckedBox0= (state) => state.histogramsExtraReducers.paramsPostHistograms.checkedBox0;
+export const selectCheckedBox1= (state) => state.histogramsExtraReducers.paramsPostHistograms.checkedBox1;
+export const selectCheckedBox2= (state) => state.histogramsExtraReducers.paramsPostHistograms.checkedBox2;
+export const selectCheckedBox3= (state) => state.histogramsExtraReducers.paramsPostHistograms.checkedBox3;
+export const selectCheckedBox4= (state) => state.histogramsExtraReducers.paramsPostHistograms.checkedBox4;
+export const selectCheckedBox5= (state) => state.histogramsExtraReducers.paramsPostHistograms.checkedBox5;
+export const selectCheckedBox6= (state) => state.histogramsExtraReducers.paramsPostHistograms.checkedBox6;
 export const selectDataHistograms = (state) => state.histogramsExtraReducers.dataHistograms;
 export const selectParamsPostHistograms = (state) => state.histogramsExtraReducers.paramsPostHistograms;
 
