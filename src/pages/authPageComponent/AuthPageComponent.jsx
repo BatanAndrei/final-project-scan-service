@@ -12,6 +12,7 @@ import { useEffect } from 'react';
 import { RequestPostAuth } from '../../api/RequestPostAuth';
 import { useNavigate } from "react-router-dom";
 import { loginReducer, passwordReducer, loginErrorReducer, passwordErrorReducer, validFormReducer, isActivatedReducer, cleanErrorMessageReducer } from '../../redux/slices/authSlice';
+import { getAccessTokenHistogramsReducer } from '../../redux/slices/histogramsSlice';
 import { selectAccessToken, selectLoginError, selectPasswordError, selectLoginField, selectPasswordField, selectValidForm, selectLoginData, selectIsActivated, selectRequestError } from '../../redux/selectors/selectors';
 
 
@@ -68,6 +69,7 @@ const AuthPageComponent = () => {
         if(accessToken) {
             navigate('/');
             dispatch(isActivatedReducer(true));
+            dispatch(getAccessTokenHistogramsReducer(accessToken))
         }
     }, [accessToken]) 
     

@@ -26,6 +26,7 @@ export const histogramsSlice = createSlice({
     checkedBox5: false,
     checkedBox6: false,
     dataHistograms: new Object,
+    accessTokenHistograms: '',
     reducers: {   
         innReducer: (state, action) => {
             state.innField = action.payload;
@@ -86,6 +87,11 @@ export const histogramsSlice = createSlice({
         checkedBoxReducer6: (state, action) => {
             state.checkedBox6 = action.payload;
         },
+
+        getAccessTokenHistogramsReducer: (state, action) => {
+            state.accessTokenHistograms = action.payload;
+        }
+
     },
 
     extraReducers: (builder) => {
@@ -113,5 +119,5 @@ export const histogramsSlice = createSlice({
     }
 });
 
-export const { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6 } = histogramsSlice.actions;
+export const { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, getAccessTokenHistogramsReducer } = histogramsSlice.actions;
 

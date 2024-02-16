@@ -43,6 +43,7 @@ const reducer = combineReducers({
     checkedBoxReducer4: histogramsSlice.reducer,
     checkedBoxReducer5: histogramsSlice.reducer,
     checkedBoxReducer6: histogramsSlice.reducer,
+    getAccessTokenHistogramsReducer: histogramsSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);

@@ -30,5 +30,6 @@ export const selectCheckedBox4= (state) => state.histogramsExtraReducers.checked
 export const selectCheckedBox5= (state) => state.histogramsExtraReducers.checkedBox5;
 export const selectCheckedBox6= (state) => state.histogramsExtraReducers.checkedBox6;
 export const selectDataHistograms = (state) => state.histogramsExtraReducers.dataHistograms;
+export const selectAccessTokenHistograms = (state) => state.histogramsExtraReducers.accessTokenHistograms;
 
 
