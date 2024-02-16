@@ -8,15 +8,18 @@ import { listCheckbox } from '../../dataVariables/variables';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonSearch } from '../../dataVariables/variables';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectIsActivated } from '../../redux/selectors/selectors';
+import { selectIsActivated, selectAccessToken } from '../../redux/selectors/selectors';
 import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6 } from '../../redux/slices/histogramsSlice';
 import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch, selectCheckedBox0, selectCheckedBox1, selectCheckedBox2, selectCheckedBox3, selectCheckedBox4, selectCheckedBox5, selectCheckedBox6 } from '../../redux/selectors/selectors';
+import { RequestPostHistograms } from '../../api/RequestPostHistograms';
 import DisplyedResultSearch from '../../components/displyedResultSearch/DisplyedResultSearch';
 
 
 const SearchPageComponent = () => {
 
     const dispatch = useDispatch();
+
+    const accessToken = useSelector(selectAccessToken);
 
     const isActivated = useSelector(selectIsActivated);
     const innField = useSelector(selectInnField);
@@ -124,11 +127,6 @@ const SearchPageComponent = () => {
     }, [innError, deliveryDocError, dateError]);
     
 
-    const PostRequestSearch = (e) => {
-        e.preventDefault();
-    };
-
-
     const HeandleCheckBox = (e) => {
         switch (e.target.dataset.index) {
             case '0':
@@ -187,6 +185,12 @@ const SearchPageComponent = () => {
                 }
                 break;
         }
+    };
+
+
+    const PostRequestSearch = (e) => {
+        e.preventDefault();
+        dispatch(RequestPostHistograms(accessToken));
     };
     
     return (

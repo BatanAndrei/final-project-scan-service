@@ -25,6 +25,7 @@ export const histogramsSlice = createSlice({
     checkedBox4: false,
     checkedBox5: false,
     checkedBox6: false,
+    dataHistograms: new Object,
     reducers: {   
         innReducer: (state, action) => {
             state.innField = action.payload;
@@ -87,7 +88,7 @@ export const histogramsSlice = createSlice({
         },
     },
 
-    /*extraReducers: (builder) => {
+    extraReducers: (builder) => {
         builder
         .addCase(RequestPostHistograms.pending, (state) => {
 
@@ -98,7 +99,7 @@ export const histogramsSlice = createSlice({
         builder
         .addCase(RequestPostHistograms.fulfilled, 
             (state, { payload }) => { 
-            
+            state.dataHistograms = payload;
             state.status = "idle";
     });
 
@@ -109,7 +110,7 @@ export const histogramsSlice = createSlice({
             if (payload) state.error = payload.message; //В payload.message приходит из fetchBooks => return thunkApi.rejectWithValue({ message: "Неправильный логин или пароль" })
             state.status = "idle";
     })
-    }*/
+    }
 });
 
 export const { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6 } = histogramsSlice.actions;
