@@ -8,7 +8,7 @@ import { listCheckbox } from '../../dataVariables/variables';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonSearch } from '../../dataVariables/variables';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectIsActivated, selectAccessTokenHistograms } from '../../redux/selectors/selectors';
+import { selectIsActivated, selectParamsPostHistograms } from '../../redux/selectors/selectors';
 import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6 } from '../../redux/slices/histogramsSlice';
 import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch, selectCheckedBox0, selectCheckedBox1, selectCheckedBox2, selectCheckedBox3, selectCheckedBox4, selectCheckedBox5, selectCheckedBox6, selectDataHistograms } from '../../redux/selectors/selectors';
 import { RequestPostHistograms } from '../../api/RequestPostHistograms';
@@ -19,8 +19,8 @@ const SearchPageComponent = () => {
 
     const dispatch = useDispatch();
 
-    const accessTokenHistograms = useSelector(selectAccessTokenHistograms);
-console.log(accessTokenHistograms)
+    const paramsPostHistograms = useSelector(selectParamsPostHistograms);
+
     const isActivated = useSelector(selectIsActivated);
     const innField = useSelector(selectInnField);
     const innError = useSelector(selectInnError);
@@ -41,6 +41,7 @@ console.log(accessTokenHistograms)
     const checkedBox5 = useSelector(selectCheckedBox5);
     const checkedBox6 = useSelector(selectCheckedBox6);
     const dataHistograms = useSelector(selectDataHistograms);
+    
 console.log(dataHistograms)
     
     const CheckInn = (e) => {
@@ -191,7 +192,7 @@ console.log(dataHistograms)
 
     const PostRequestSearch = (e) => {
         e.preventDefault();
-        dispatch(RequestPostHistograms(accessTokenHistograms));
+        dispatch(RequestPostHistograms(paramsPostHistograms));
     };
     
     return (
