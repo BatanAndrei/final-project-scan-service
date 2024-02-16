@@ -130,9 +130,7 @@ const SearchPageComponent = () => {
 
 
     const HeandleCheckBox = (e) => {
-        
         switch (e.target.dataset.index) {
-
             case '0':
                 if(e.target.checked === false) {
                     dispatch(checkedBoxReducer0(true));
