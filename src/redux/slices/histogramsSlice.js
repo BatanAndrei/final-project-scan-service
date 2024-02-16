@@ -11,7 +11,7 @@ export const initialState = {
     paramsPostHistograms: {
         accessTokenHistograms: '',
         innField: '',
-        tonalityDataInput: '',
+        tonalityDataInput: 'positive',
         deliveryDocField: '',
         dateBegin: '',
         dateEnd: '',
@@ -35,6 +35,10 @@ export const histogramsSlice = createSlice({
 
         innErrorReducer: (state, action) => {
             state.innError = action.payload;
+        },
+
+        tonalityReducer: (state, action) => {
+            state.paramsPostHistograms.tonalityDataInput = action.payload;
         },
 
         deliveryDocReducer: (state, action) => {
@@ -120,5 +124,5 @@ export const histogramsSlice = createSlice({
     }
 });
 
-export const { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, getAccessTokenHistogramsReducer } = histogramsSlice.actions;
+export const { innReducer, innErrorReducer, tonalityReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, getAccessTokenHistogramsReducer } = histogramsSlice.actions;
 

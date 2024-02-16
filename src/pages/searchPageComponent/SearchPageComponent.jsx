@@ -9,7 +9,7 @@ import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonSearch } from '../../dataVariables/variables';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectIsActivated, selectParamsPostHistograms } from '../../redux/selectors/selectors';
-import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6 } from '../../redux/slices/histogramsSlice';
+import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, tonalityReducer } from '../../redux/slices/histogramsSlice';
 import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch, selectCheckedBox0, selectCheckedBox1, selectCheckedBox2, selectCheckedBox3, selectCheckedBox4, selectCheckedBox5, selectCheckedBox6, selectDataHistograms } from '../../redux/selectors/selectors';
 import { RequestPostHistograms } from '../../api/RequestPostHistograms';
 import DisplyedResultSearch from '../../components/displyedResultSearch/DisplyedResultSearch';
@@ -41,7 +41,7 @@ const SearchPageComponent = () => {
     const checkedBox5 = useSelector(selectCheckedBox5);
     const checkedBox6 = useSelector(selectCheckedBox6);
     const dataHistograms = useSelector(selectDataHistograms);
-    
+
 console.log(dataHistograms)
     
     const CheckInn = (e) => {
@@ -89,8 +89,8 @@ console.log(dataHistograms)
         }else if (e.target.value <= 0 || e.target.value > 1000 ) {
             dispatch(deliveryDocErrorReducer('Введите корректные данные'));
         }else { 
-            dispatch(deliveryDocErrorReducer(''));                         //              sf_student1
-        };                                                                 //             4i2385j
+            dispatch(deliveryDocErrorReducer(''));                        
+        };                                                                 
     };
 
 
@@ -194,6 +194,11 @@ console.log(dataHistograms)
         e.preventDefault();
         dispatch(RequestPostHistograms(paramsPostHistograms));
     };
+
+
+    const HeandleSelect = (e) => {
+        dispatch(tonalityReducer(e.target.value));
+    }
     
     return (
         <>
@@ -212,7 +217,7 @@ console.log(dataHistograms)
                         <div className={styles.textErrorMessage}><h3 className={styles.error}>{innError}</h3></div>
 
                         <h2 className={styles.lableText}>Тональность</h2>
-                        <select name='tonality' className={styles.select}>
+                        <select onClick={(e) => HeandleSelect(e)} name='tonality' className={styles.select}>
                             <option value='positive'>Позитианая</option>
                             <option value='negative'>Негативная</option>
                             <option value='any'>Любая</option> 
