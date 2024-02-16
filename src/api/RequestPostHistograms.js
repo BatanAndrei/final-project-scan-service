@@ -1,6 +1,20 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 
+       /* innField,
+        tonalityDataInput,
+        deliveryDocField,
+        dateBegin,
+        dateEnd,
+        checkedBox0,
+        checkedBox1,
+        checkedBox2,
+        checkedBox3,
+        checkedBox4,
+        checkedBox5,
+        checkedBox6,*/
+
+
 export const RequestPostHistograms = createAsyncThunk(
     "histograms/postHistogramg", 
     async ({accessTokenHistograms}, thunkApi) => { // объект thunkApi содержит функцию rejectWithValue
