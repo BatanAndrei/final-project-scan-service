@@ -42,7 +42,8 @@ const SearchPageComponent = () => {
     const checkedBox6 = useSelector(selectCheckedBox6);
     const dataHistograms = useSelector(selectDataHistograms);
 
-console.log(dataHistograms)
+//console.log(dataHistograms)
+console.log(paramsPostHistograms)
     
     const CheckInn = (e) => {
         dispatch(innReducer(e.target.value));

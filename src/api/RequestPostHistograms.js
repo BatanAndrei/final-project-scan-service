@@ -1,23 +1,10 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 
-       /* innField,
-        tonalityDataInput,
-        deliveryDocField,
-        dateBegin,
-        dateEnd,
-        checkedBox0,
-        checkedBox1,
-        checkedBox2,
-        checkedBox3,
-        checkedBox4,
-        checkedBox5,
-        checkedBox6,*/
-
 
 export const RequestPostHistograms = createAsyncThunk(
     "histograms/postHistogramg", 
-    async ({accessTokenHistograms}, thunkApi) => { // объект thunkApi содержит функцию rejectWithValue
+    async ({ accessTokenHistograms, innField, tonalityDataInput, deliveryDocField, dateBegin, dateEnd, checkedBox0, checkedBox1, checkedBox2, checkedBox3, checkedBox4, checkedBox5, checkedBox6, }, thunkApi) => { 
 
         const response = await fetch(`https://gateway.scan-interfax.ru/api/v1/objectsearch/histograms`, {
             method: 'POST',
@@ -28,8 +15,8 @@ export const RequestPostHistograms = createAsyncThunk(
             },
             body: JSON.stringify({
                 "issueDateInterval": {
-                    "startDate": "2024-02-01T00:00:00+03:00", //поле начало даты
-                    "endDate": "2024-02-15T23:59:59+03:00"   //поле конец даты
+                    "startDate": `${dateBegin}T00:00:00+03:00`,
+                    "endDate": `${dateEnd}T23:59:59+03:00`
                 },
                 "searchContext": {                     
                     "targetSearchEntitiesContext": { 
@@ -38,23 +25,23 @@ export const RequestPostHistograms = createAsyncThunk(
                         "type": "company",
                         "sparkId": null,
                         "entityId": null,
-                        "inn": 7710137066,               //поле ИНН
-                        "maxFullness": true,             //чек признак максимальной полноты !!!
-                        "inBusinessNews": null           //чек упоминание в бизнесс-контексте !!!
+                        "inn": innField,            
+                        "maxFullness": checkedBox0,         
+                        "inBusinessNews": checkedBox1 
                         }
                     ],
-                    "onlyMainRole": true,                 //чек главная роль в публикации !!!
-                    "tonality": "any",                     //поле тоналити
-                    "onlyWithRiskFactors": false,         //чек публикация только с риск факторами !!!
+                    "onlyMainRole": checkedBox2,    
+                    "tonality": tonalityDataInput,             
+                    "onlyWithRiskFactors": checkedBox3,  
                     },
                 },
                 "attributeFilters": {                     
-                    "excludeTechNews": true,         //чек включать технические новости рынков !!!
-                    "excludeAnnouncements": true,    //чек включать анонсы и календари !!!
-                    "excludeDigests": true           //чек включать сводки новостей !!!
+                    "excludeTechNews": checkedBox4,         
+                    "excludeAnnouncements": checkedBox5,   
+                    "excludeDigests": checkedBox6       
                 },
                 "similarMode": "duplicates",
-                "limit": 1000,                        //поле Количество документов в выдаче 
+                "limit": deliveryDocField,           
                 "sortType": "sourceInfluence",
                 "sortDirectionType": "desc",
                 "intervalType": "month",
@@ -66,7 +53,7 @@ export const RequestPostHistograms = createAsyncThunk(
         });
 
         const data = await response.json();
-        //console.log(data)
+        console.log(data)
         if (response.status !== 200) {
         
             return thunkApi.rejectWithValue({  //rejectWithValue проверяет и возвращает ошибку при не удачном запросе
