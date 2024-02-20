@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
 import { RequestGetAccountInfo } from '../../api/RequestGetAccountInfo';
 import { selectAccessToken, selectIsActivated, selectAccountInfo, selectStatusAccountInfo } from '../../redux/selectors/selectors';
+import { innReducer, getAccessTokenHistogramsReducer, deliveryDocReducer, deteBeginReducer, deteEndReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6 } from '../../redux/slices/histogramsSlice';
 import { useEffect } from 'react';
 
 
@@ -20,6 +21,18 @@ const UserInfoHeader = () => {
         dispatch(logOutReducer(false));
         dispatch(loginErrorReducer(' '));
         dispatch(passwordErrorReducer(' '));
+        dispatch(innReducer(''));
+        dispatch(getAccessTokenHistogramsReducer(''));
+        dispatch(deliveryDocReducer(''));
+        dispatch(deteBeginReducer(''));
+        dispatch(deteEndReducer(''));
+        dispatch(checkedBoxReducer0(false));
+        dispatch(checkedBoxReducer1(false));
+        dispatch(checkedBoxReducer2(false));
+        dispatch(checkedBoxReducer3(false));
+        dispatch(checkedBoxReducer4(false));
+        dispatch(checkedBoxReducer5(false));
+        dispatch(checkedBoxReducer6(false));
         navigate('/');
     }
 

@@ -3,9 +3,9 @@ import { RequestPostHistograms } from '../../api/RequestPostHistograms';
 
 
 export const initialState = {
-    innError: '',
-    deliveryDocError: '',
-    dateError: '',
+    innError: ' ',
+    deliveryDocError: ' ',
+    dateError: ' ',
     validFormSearch: false,
     dataHistograms: new Object,
     paramsPostHistograms: {
