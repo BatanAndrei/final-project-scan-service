@@ -32,7 +32,7 @@ export const selectCheckedBox6= (state) => state.histogramsExtraReducers.paramsP
 export const selectDataHistograms = (state) => state.histogramsExtraReducers.dataHistograms;
 export const selectParamsPostHistograms = (state) => state.histogramsExtraReducers.paramsPostHistograms;
 
-
+export const selectDataObjectsearch = (state) => state.objectsearchExtraReducers.dataObjectsearch;
 
 
 

@@ -2,6 +2,7 @@ import { configureStore, combineReducers  } from '@reduxjs/toolkit';
 import { authSlice } from '../slices/authSlice';
 import { accountInfoSlice } from '../slices/accountInfoSlice';
 import { histogramsSlice } from '../slices/histogramsSlice';
+import { objectsearchSlice } from '../slices/objectsearchSlice';
 import storage from 'redux-persist/lib/storage';
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 
@@ -45,6 +46,8 @@ const reducer = combineReducers({
     checkedBoxReducer5: histogramsSlice.reducer,
     checkedBoxReducer6: histogramsSlice.reducer,
     getAccessTokenHistogramsReducer: histogramsSlice.reducer,
+
+    objectsearchExtraReducers: objectsearchSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);

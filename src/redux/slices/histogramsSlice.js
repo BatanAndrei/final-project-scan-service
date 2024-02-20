@@ -110,7 +110,8 @@ export const histogramsSlice = createSlice({
         builder
         .addCase(RequestPostHistograms.fulfilled, 
             (state, { payload }) => { 
-            state.dataHistograms = payload;
+
+            state.dataHistograms = {...payload};
             state.status = "idle";
     });
 

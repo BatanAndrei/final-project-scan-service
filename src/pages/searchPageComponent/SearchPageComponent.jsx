@@ -10,8 +10,9 @@ import { nameButtonSearch } from '../../dataVariables/variables';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectIsActivated, selectParamsPostHistograms } from '../../redux/selectors/selectors';
 import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, tonalityReducer } from '../../redux/slices/histogramsSlice';
-import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch, selectCheckedBox0, selectCheckedBox1, selectCheckedBox2, selectCheckedBox3, selectCheckedBox4, selectCheckedBox5, selectCheckedBox6, selectDataHistograms } from '../../redux/selectors/selectors';
+import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch, selectCheckedBox0, selectCheckedBox1, selectCheckedBox2, selectCheckedBox3, selectCheckedBox4, selectCheckedBox5, selectCheckedBox6, selectDataHistograms, selectDataObjectsearch } from '../../redux/selectors/selectors';
 import { RequestPostHistograms } from '../../api/RequestPostHistograms';
+import { RequestPostObjectsearch } from '../../api/RequestPostObjectsearch';
 import DisplyedResultSearch from '../../components/displyedResultSearch/DisplyedResultSearch';
 
 
@@ -42,8 +43,11 @@ const SearchPageComponent = () => {
     const checkedBox6 = useSelector(selectCheckedBox6);
     const dataHistograms = useSelector(selectDataHistograms);
 
-//console.log(dataHistograms)
-console.log(paramsPostHistograms)
+    const dataObjectsearch = useSelector(selectDataObjectsearch);
+
+//console.log(dataHistograms);
+console.log(dataObjectsearch);
+//console.log(paramsPostHistograms)
     
     const CheckInn = (e) => {
         dispatch(innReducer(e.target.value));
@@ -194,6 +198,7 @@ console.log(paramsPostHistograms)
     const PostRequestSearch = (e) => {
         e.preventDefault();
         dispatch(RequestPostHistograms(paramsPostHistograms));
+        dispatch(RequestPostObjectsearch(paramsPostHistograms))
     };
 
 

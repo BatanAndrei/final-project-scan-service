@@ -1,11 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 
-export const RequestPostHistograms = createAsyncThunk(
-    "histograms/postHistogramg", 
+export const RequestPostObjectsearch = createAsyncThunk(
+    "objectsearch/postObjectsearch", 
     async ({ accessTokenHistograms, innField, tonalityDataInput, deliveryDocField, dateBegin, dateEnd, checkedBox0, checkedBox1, checkedBox2, checkedBox3, checkedBox4, checkedBox5, checkedBox6, }, thunkApi) => { 
 
-        const response = await fetch(`https://gateway.scan-interfax.ru/api/v1/objectsearch/histograms`, {
+        const response = await fetch(`https://gateway.scan-interfax.ru/api/v1/objectsearch`, {
             method: 'POST',
             headers: {
                 Authorization: `Bearer ${accessTokenHistograms}`,
