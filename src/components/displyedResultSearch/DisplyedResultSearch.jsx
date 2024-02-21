@@ -3,7 +3,8 @@ import SimpleSliderResult from '../../components/caoruselResult/CaoruselResult';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonDispleyMore, nameButtonReadSource } from '../../dataVariables/variables';
 import { Link } from 'react-router-dom';
-import { selectDataHistograms, selectDataObjectsearch, selectStatusHistograms, selectDataDocuments, selectParamsDocuments } from '../../redux/selectors/selectors';
+import { selectDataHistograms, selectDataObjectsearch, selectStatusHistograms, selectDataDocuments, selectParamsDocuments, selectListEncodedID } from '../../redux/selectors/selectors';
+import { getEncodedIdReducer } from '../../redux/slices/documentsSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { RequestPostDocuments } from '../../api/RequestPostDocuments';
 import { useEffect } from 'react';
@@ -18,12 +19,14 @@ const DisplyedResultSearch = () => {
     const dataObjectsearch = useSelector(selectDataObjectsearch);
     const dataDocuments = useSelector(selectDataDocuments);
     const paramsDocuments = useSelector(selectParamsDocuments);
+    const listEncodedID = useSelector(selectListEncodedID);
     console.log(dataDocuments)
-    //console.log(dataObjectsearch)
+    //console.log(listEncodedID)
     let infoQuantityOptions = dataHistograms.data?.[0]?.data?.length;
 
     useEffect(() => {
-        dispatch(RequestPostDocuments(paramsDocuments))
+        dispatch(RequestPostDocuments(paramsDocuments));
+        dispatch(getEncodedIdReducer(dataObjectsearch.items?.map((id) => id.encodedId)));
     }, [dataHistograms, dataObjectsearch])
 
     return (

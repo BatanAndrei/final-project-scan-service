@@ -38,6 +38,7 @@ export const selectDataObjectsearch = (state) => state.objectsearchExtraReducers
 
 export const selectDataDocuments = (state) => state.documentsExtraReducers.dataDocuments;
 export const selectParamsDocuments = (state) => state.documentsExtraReducers.paramsPostDocuments;
+export const selectListEncodedID = (state) => state.documentsExtraReducers.paramsPostDocuments.listEncodedId;
 
 
 

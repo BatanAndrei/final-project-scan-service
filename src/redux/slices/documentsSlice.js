@@ -6,6 +6,7 @@ export const initialState = {
     dataDocuments: [],
     paramsPostDocuments: {
         accessTokenDocuments: '',
+        listEncodedId: [],
     }
 };
 
@@ -15,6 +16,10 @@ export const documentsSlice = createSlice({
     reducers: {   
         getAccessTokenDocumentsReducer: (state, action) => {
             state.paramsPostDocuments.accessTokenDocuments = action.payload;
+        },
+
+        getEncodedIdReducer: (state, action) => {
+            state.paramsPostDocuments.listEncodedId = action.payload;
         },
     },
 
@@ -44,5 +49,5 @@ export const documentsSlice = createSlice({
     }
 });
 
-export const { getAccessTokenDocumentsReducer } = documentsSlice.actions;
+export const { getAccessTokenDocumentsReducer, getEncodedIdReducer } = documentsSlice.actions;
 
