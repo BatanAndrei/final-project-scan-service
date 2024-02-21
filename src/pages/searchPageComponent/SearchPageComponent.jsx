@@ -204,91 +204,94 @@ const SearchPageComponent = () => {
     
     return (
         <>
-        {(isActivatedAccount && isActivatedResultPage) && <DisplyedResultSearch /> || (isActivatedAccount && !isActivatedResultPage) && <div className={styles.containerPage}>
-            <div className={styles.blockSearch}>
-                <div className={styles.titleBlockSearch}>
-                    <h1 className={styles.textTitle}>Найдите необходимые<br/> данные в пару кликов.</h1>
-                    <h2 className={styles.textSubTitle}>Задайте параметры поиска.<br/> Чем больше заполните, тем точнее поиск</h2>
+        {
+        (isActivatedAccount && isActivatedResultPage) && 
+            <DisplyedResultSearch /> || 
+                (isActivatedAccount && !isActivatedResultPage) && 
+                <div className={styles.containerPage}>
+                    <div className={styles.blockSearch}>
+                        <div className={styles.titleBlockSearch}>
+                            <h1 className={styles.textTitle}>Найдите необходимые<br/> данные в пару кликов.</h1>
+                            <h2 className={styles.textSubTitle}>Задайте параметры поиска.<br/> Чем больше заполните, тем точнее поиск</h2>
+                        </div>
+                        <form className={styles.formFillData}>
+                            <div className={styles.inputSelectFilds}>
+                                <h2 className={styles.lableTextInn}>ИНН компании <span className={!innError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
+                                <input className={(innError !== 'Обязательное поле' && innError !== 'Введите корректные данные') ? styles.input : styles.inputError} value={innField} onChange={(e) => CheckInn(e)} type='text' placeholder='10 цифр'/>
+                                <div className={styles.textErrorMessage}><h3 className={styles.error}>{innError}</h3></div>
+                                <h2 className={styles.lableText}>Тональность</h2>
+                                <select onClick={(e) => HeandleSelect(e)} name='tonality' className={styles.select}>
+                                    <option value='positive'>Позитианая</option>
+                                    <option value='negative'>Негативная</option>
+                                    <option value='any'>Любая</option> 
+                                </select>
+                                <div className={styles.textErrorMessage}></div>
+                                <h2 className={styles.lableText}>Количество документов в выдаче <span className={!deliveryDocError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
+                                <input className={(deliveryDocError !== 'Обязательное поле' && deliveryDocError !== 'Введите корректные данные') ? styles.input : styles.inputError} value={deliveryDocField} onChange={(e) => CheckDeliveryDoc(e)} type='text' placeholder='От 1 до 1000'/>
+                                <div className={styles.textErrorMessage}>
+                                    <h3 className={styles.error}>{deliveryDocError}</h3>
+                                </div>
+                                <h2 className={styles.lableText}>Диапазон поиска <span className={!dateError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
+                                <div className={styles.dateFields}>
+                                    <input type='text' value={dateBegin} disabled className={dateError !== 'Введите корректные данные' ? styles.inputDateFake : styles.inputDateError} placeholder='Дата начала'></input>
+                                    <input className={styles.inputDateHidden} onChange={(e) => getDateFieldHiddenBegin(e)} type="date"/>
+                                    <input type='text' value={dateEnd} disabled className={dateError !== 'Введите корректные данные' ? styles.inputDateFake : styles.inputDateError} placeholder='Дата конца'></input>
+                                    <input className={styles.inputDateHidden} onChange={(e) => getDateFieldHiddenEnd(e)} type="date"/>
+                                </div>
+                                <div className={styles.textErrorMessageDate}>
+                                    <h3 className={styles.error}>{dateError}</h3>
+                                </div>
+                            </div>
+                            <div className={styles.checkboxButtonSearch}>
+                                <label className={!checkedBox0 ? styles.label : styles.lableChecked}>
+                                    <Checkbox click={HeandleCheckBox} id={listCheckbox[0].id}/>
+                                    <span className={!checkedBox0 ? styles.fake : styles.fakeChecked}></span>
+                                    <span className={styles.color}>{listCheckbox[0].lable}</span>
+                                </label>
+                                <label className={!checkedBox1 ? styles.label : styles.lableChecked}>
+                                    <Checkbox click={HeandleCheckBox} id={listCheckbox[1].id}/>
+                                    <span className={!checkedBox1 ? styles.fake : styles.fakeChecked}></span>
+                                    <span className={styles.color}>{listCheckbox[1].lable}</span>
+                                </label>
+                                <label className={!checkedBox2 ? styles.label : styles.lableChecked}>
+                                    <Checkbox click={HeandleCheckBox} id={listCheckbox[2].id}/>
+                                    <span className={!checkedBox2 ? styles.fake : styles.fakeChecked}></span>
+                                    <span className={styles.color}>{listCheckbox[2].lable}</span>
+                                </label>
+                                <label className={!checkedBox3 ? styles.label : styles.lableChecked}>
+                                    <Checkbox click={HeandleCheckBox} id={listCheckbox[3].id}/>
+                                    <span className={!checkedBox3 ? styles.fake : styles.fakeChecked}></span>
+                                    <span className={styles.color}>{listCheckbox[3].lable}</span>
+                                </label>
+                                <label className={!checkedBox4 ? styles.label : styles.lableChecked}>
+                                    <Checkbox click={HeandleCheckBox} id={listCheckbox[4].id}/>
+                                    <span className={!checkedBox4 ? styles.fake : styles.fakeChecked}></span>
+                                    <span className={styles.color}>{listCheckbox[4].lable}</span>
+                                </label>
+                                <label className={!checkedBox5 ? styles.label : styles.lableChecked}>
+                                    <Checkbox click={HeandleCheckBox} id={listCheckbox[5].id}/>
+                                    <span className={!checkedBox5 ? styles.fake : styles.fakeChecked}></span>
+                                    <span className={styles.color}>{listCheckbox[5].lable}</span>
+                                </label>
+                                <label className={!checkedBox6 ? styles.label : styles.lableChecked}>
+                                    <Checkbox click={HeandleCheckBox} id={listCheckbox[6].id}/>
+                                    <span className={!checkedBox6 ? styles.fake : styles.fakeChecked}></span>
+                                    <span className={styles.color}>{listCheckbox[6].lable}</span>
+                                </label>     
+                                <div className={validFormSearch ? styles.buttonModifyReqData : styles.buttonModifyReqDataDisable}>
+                                    <MainButton disabled={!validFormSearch} click={PostRequestSearch} name={nameButtonSearch} />
+                                </div>
+                                <h3 className={styles.textForFieldsRequired}>* Обязательные к заполнению поля</h3>
+                            </div>
+                        </form>
+                    </div>
+                    <div className={styles.blockImages}>
+                        <img className={styles.documentImg} src={documentPng}></img>
+                        <img className={styles.foldersImg} src={foldersPng}></img>
+                        <img className={styles.manRocketImg} src={manRocketPng}></img>
+                    </div>
                 </div>
-                <form className={styles.formFillData}>
-                    <div className={styles.inputSelectFilds}>
-
-                        <h2 className={styles.lableTextInn}>ИНН компании <span className={!innError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
-                        <input className={(innError !== 'Обязательное поле' && innError !== 'Введите корректные данные') ? styles.input : styles.inputError} value={innField} onChange={(e) => CheckInn(e)} type='text' placeholder='10 цифр'/>
-                        <div className={styles.textErrorMessage}><h3 className={styles.error}>{innError}</h3></div>
-
-                        <h2 className={styles.lableText}>Тональность</h2>
-                        <select onClick={(e) => HeandleSelect(e)} name='tonality' className={styles.select}>
-                            <option value='positive'>Позитианая</option>
-                            <option value='negative'>Негативная</option>
-                            <option value='any'>Любая</option> 
-                        </select>
-                        <div className={styles.textErrorMessage}></div>
-
-                        <h2 className={styles.lableText}>Количество документов в выдаче <span className={!deliveryDocError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
-                        <input className={(deliveryDocError !== 'Обязательное поле' && deliveryDocError !== 'Введите корректные данные') ? styles.input : styles.inputError} value={deliveryDocField} onChange={(e) => CheckDeliveryDoc(e)} type='text' placeholder='От 1 до 1000'/>
-                        <div className={styles.textErrorMessage}><h3 className={styles.error}>{deliveryDocError}</h3></div>
-
-                        <h2 className={styles.lableText}>Диапазон поиска <span className={!dateError ? styles.starRequired : styles.starRequiredRed}>*</span></h2>
-                        <div className={styles.dateFields}>
-                            <input type='text' value={dateBegin} disabled className={dateError !== 'Введите корректные данные' ? styles.inputDateFake : styles.inputDateError} placeholder='Дата начала'></input>
-                            <input className={styles.inputDateHidden} onChange={(e) => getDateFieldHiddenBegin(e)} type="date"/>
-                            <input type='text' value={dateEnd} disabled className={dateError !== 'Введите корректные данные' ? styles.inputDateFake : styles.inputDateError} placeholder='Дата конца'></input>
-                            <input className={styles.inputDateHidden} onChange={(e) => getDateFieldHiddenEnd(e)} type="date"/>
-                        </div>
-                        <div className={styles.textErrorMessageDate}><h3 className={styles.error}>{dateError}</h3></div>
-
-                    </div>
-                    <div className={styles.checkboxButtonSearch}>
-                        <label className={!checkedBox0 ? styles.label : styles.lableChecked}>
-                            <Checkbox click={HeandleCheckBox} id={listCheckbox[0].id}/>
-                            <span className={!checkedBox0 ? styles.fake : styles.fakeChecked}></span>
-                            <span className={styles.color}>{listCheckbox[0].lable}</span>
-                        </label>
-                        <label className={!checkedBox1 ? styles.label : styles.lableChecked}>
-                            <Checkbox click={HeandleCheckBox} id={listCheckbox[1].id}/>
-                            <span className={!checkedBox1 ? styles.fake : styles.fakeChecked}></span>
-                            <span className={styles.color}>{listCheckbox[1].lable}</span>
-                        </label>
-                        <label className={!checkedBox2 ? styles.label : styles.lableChecked}>
-                            <Checkbox click={HeandleCheckBox} id={listCheckbox[2].id}/>
-                            <span className={!checkedBox2 ? styles.fake : styles.fakeChecked}></span>
-                            <span className={styles.color}>{listCheckbox[2].lable}</span>
-                        </label>
-                        <label className={!checkedBox3 ? styles.label : styles.lableChecked}>
-                            <Checkbox click={HeandleCheckBox} id={listCheckbox[3].id}/>
-                            <span className={!checkedBox3 ? styles.fake : styles.fakeChecked}></span>
-                            <span className={styles.color}>{listCheckbox[3].lable}</span>
-                        </label>
-                        <label className={!checkedBox4 ? styles.label : styles.lableChecked}>
-                            <Checkbox click={HeandleCheckBox} id={listCheckbox[4].id}/>
-                            <span className={!checkedBox4 ? styles.fake : styles.fakeChecked}></span>
-                            <span className={styles.color}>{listCheckbox[4].lable}</span>
-                        </label>
-                        <label className={!checkedBox5 ? styles.label : styles.lableChecked}>
-                            <Checkbox click={HeandleCheckBox} id={listCheckbox[5].id}/>
-                            <span className={!checkedBox5 ? styles.fake : styles.fakeChecked}></span>
-                            <span className={styles.color}>{listCheckbox[5].lable}</span>
-                        </label>
-                        <label className={!checkedBox6 ? styles.label : styles.lableChecked}>
-                            <Checkbox click={HeandleCheckBox} id={listCheckbox[6].id}/>
-                            <span className={!checkedBox6 ? styles.fake : styles.fakeChecked}></span>
-                            <span className={styles.color}>{listCheckbox[6].lable}</span>
-                        </label>     
-                        <div className={validFormSearch ? styles.buttonModifyReqData : styles.buttonModifyReqDataDisable}>
-                            <MainButton disabled={!validFormSearch} click={PostRequestSearch} name={nameButtonSearch} />
-                        </div>
-                        <h3 className={styles.textForFieldsRequired}>* Обязательные к заполнению поля</h3>
-                    </div>
-                    
-                </form>
-            </div>
-            <div className={styles.blockImages}>
-                <img className={styles.documentImg} src={documentPng}></img>
-                <img className={styles.foldersImg} src={foldersPng}></img>
-                <img className={styles.manRocketImg} src={manRocketPng}></img>
-            </div>
-    </div>}
+                }
         </>
     )
 };

@@ -19,18 +19,25 @@ const DisplyedResultSearch = () => {
         <div className={styles.containerResult}>
             <div className={styles.infoAboutSearch}>
                 <div className={styles.infoTitle}>
-                    {statusHistograms !== 'loading' ? <div><h1 className={styles.textModifySearchSoon}>Поиск завершён</h1>
-                    <h2 className={styles.textModifyWaitTime}>Резулультат в общей сводке.</h2></div> :
-                    <div><h1 className={styles.textModifySearchSoon}>Ищем. Скоро<br/> будут результаты</h1>
-                    <h2 className={styles.textModifyWaitTime}>Поиск может занять некоторое время,<br/> просим сохранять терпение.</h2></div>}
+                    {
+                    statusHistograms !== 'loading' ? 
+                    <div>
+                        <h1 className={styles.textModifySearchSoon}>Поиск завершён</h1>
+                        <h2 className={styles.textModifyWaitTime}>Резулультат в общей сводке.</h2></div> :
+                    <div>
+                        <h1 className={styles.textModifySearchSoon}>Ищем. Скоро<br/> будут результаты</h1>
+                        <h2 className={styles.textModifyWaitTime}>Поиск может занять некоторое время,<br/> просим сохранять терпение.</h2>
+                    </div>
+                    }
                 </div>
                 <div className={styles.infoImage}></div>
             </div>
             <div className={styles.wrapperSlider}>
                 <h2 className={styles.textModifyGeneralSummary}>Общая сводка</h2>
                 <h3 className={styles.textModifyOptionsFound}>{`Найдено ${infoQuantityOptions ? infoQuantityOptions : 0} вариантов`}</h3>
-                
-                {statusHistograms === 'loading' && <div className={styles.sliderBeforeLoad}>   
+                {
+                statusHistograms === 'loading' && 
+                <div className={styles.sliderBeforeLoad}>   
                     <div className={styles.arrowPrevDecoration}></div>
                     <div className={styles.blockTitleDataSlider}>
                         <h3 className={styles.texModifyTitleSlider}>Период</h3>
@@ -42,21 +49,20 @@ const DisplyedResultSearch = () => {
                         <h3 className={styles.textModifyLoadData}>Загружаем данные</h3>
                     </div>
                     <div className={styles.arrowNextDecoration}></div>
-                    </div> || 
-
-                !infoQuantityOptions && <div className={styles.sliderBeforeLoad}>   
-                <div className={styles.arrowPrevDecoration}></div>
-                <div className={styles.blockTitleDataSlider}>
-                    <h3 className={styles.texModifyTitleSlider}>Период</h3>
-                    <h3 className={styles.texModifyTitleSlider}>Всего</h3>
-                    <h3 className={styles.texModifyTitleSlider}>Риски</h3>
-                </div>
-                <div className={styles.bodySlider}>
-                    <h3 className={styles.textModifyEmptyResult}>Результат не найден</h3>
-                </div>
-                <div className={styles.arrowNextDecoration}></div>
+                </div> || 
+                !infoQuantityOptions && 
+                <div className={styles.sliderBeforeLoad}>   
+                    <div className={styles.arrowPrevDecoration}></div>
+                    <div className={styles.blockTitleDataSlider}>
+                        <h3 className={styles.texModifyTitleSlider}>Период</h3>
+                        <h3 className={styles.texModifyTitleSlider}>Всего</h3>
+                        <h3 className={styles.texModifyTitleSlider}>Риски</h3>
+                    </div>
+                    <div className={styles.bodySlider}>
+                        <h3 className={styles.textModifyEmptyResult}>Результат не найден</h3>
+                    </div>
+                    <div className={styles.arrowNextDecoration}></div>
                 </div> ||
-
                 dataHistograms &&
                 <div className={styles.sliderAfterLoad}>           
                     <div className={styles.blockTitleDataSlider}>
@@ -69,7 +75,6 @@ const DisplyedResultSearch = () => {
                     </div>
                 </div> 
                 }
-
             </div>
             <h2 className={styles.textModifyListDoc}>Список документов</h2>
             <div className={styles.wrapperDocuments}>
