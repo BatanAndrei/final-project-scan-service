@@ -3,9 +3,16 @@ import SimpleSliderResult from '../../components/caoruselResult/CaoruselResult';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonDispleyMore, nameButtonReadSource } from '../../dataVariables/variables';
 import { Link } from 'react-router-dom';
+import { selectDataHistograms, selectDataObjectsearch } from '../../redux/selectors/selectors';
+import { useSelector } from 'react-redux';
 
 
 const DisplyedResultSearch = () => {
+
+    const dataHistograms = useSelector(selectDataHistograms); 
+    const dataObjectsearch = useSelector(selectDataObjectsearch);
+    
+    let infoQuantityOptions = dataHistograms.data[0].data.length;
 
     return (
         <div className={styles.containerResult}>
@@ -20,7 +27,7 @@ const DisplyedResultSearch = () => {
             </div>
             <div className={styles.wrapperSlider}>
                 <h2 className={styles.textModifyGeneralSummary}>Общая сводка</h2>
-                <h3 className={styles.textModifyOptionsFound}>Найдено 4 221 вариантов</h3>
+                <h3 className={styles.textModifyOptionsFound}>Найдено {infoQuantityOptions} вариантов</h3>
                 
                 {/* <div className={styles.sliderBeforeLoad}>   
                     <div className={styles.arrowPrevDecoration}></div>
