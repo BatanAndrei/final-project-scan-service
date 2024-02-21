@@ -1,9 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 
-    //       sf_student1
-    //       4i2385j
-    
 
 export const RequestPostAuth = createAsyncThunk(
     "auth/postAuth", 
