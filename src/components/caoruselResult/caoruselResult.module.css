@@ -14,11 +14,24 @@
     font-size: 18px;
 }
 
-.textModifyDataResultAll {
-    margin: 28px 0px 0px 65px;
+.textModifyDataResultTotal {
+    margin: 27px 0px 0px 0px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 18px;
+}
+
+.textModifyDataResultRisck {
+    margin: 27px 0px 0px 0px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.positionDataCaorusel {
+    display: flex;
+    justify-content: center;
+    margin: auto;
 }
 
 .arrow {

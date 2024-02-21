@@ -10,7 +10,7 @@ import { nameButtonSearch } from '../../dataVariables/variables';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectIsActivated, selectParamsPostHistograms } from '../../redux/selectors/selectors';
 import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, tonalityReducer } from '../../redux/slices/histogramsSlice';
-import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch, selectCheckedBox0, selectCheckedBox1, selectCheckedBox2, selectCheckedBox3, selectCheckedBox4, selectCheckedBox5, selectCheckedBox6, selectDataHistograms, selectDataObjectsearch } from '../../redux/selectors/selectors';
+import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch, selectCheckedBox0, selectCheckedBox1, selectCheckedBox2, selectCheckedBox3, selectCheckedBox4, selectCheckedBox5, selectCheckedBox6 } from '../../redux/selectors/selectors';
 import { RequestPostHistograms } from '../../api/RequestPostHistograms';
 import { RequestPostObjectsearch } from '../../api/RequestPostObjectsearch';
 import DisplyedResultSearch from '../../components/displyedResultSearch/DisplyedResultSearch';
@@ -41,13 +41,7 @@ const SearchPageComponent = () => {
     const checkedBox4 = useSelector(selectCheckedBox4); 
     const checkedBox5 = useSelector(selectCheckedBox5);
     const checkedBox6 = useSelector(selectCheckedBox6);
-    const dataHistograms = useSelector(selectDataHistograms);
-
-    const dataObjectsearch = useSelector(selectDataObjectsearch);
-
-//console.log(dataHistograms);
-console.log(dataObjectsearch);
-//console.log(paramsPostHistograms)
+    
     
     const CheckInn = (e) => {
         dispatch(innReducer(e.target.value));
@@ -208,8 +202,8 @@ console.log(dataObjectsearch);
     
     return (
         <>
-        {/* <DisplyedResultSearch /> */}
-        {isActivated && <div className={styles.containerPage}>
+        <DisplyedResultSearch />
+        {/*isActivated && <div className={styles.containerPage}>
             <div className={styles.blockSearch}>
                 <div className={styles.titleBlockSearch}>
                     <h1 className={styles.textTitle}>Найдите необходимые<br/> данные в пару кликов.</h1>
@@ -293,7 +287,7 @@ console.log(dataObjectsearch);
                 <img className={styles.foldersImg} src={foldersPng}></img>
                 <img className={styles.manRocketImg} src={manRocketPng}></img>
             </div>
-        </div>}
+    </div>*/}
         </>
     )
 };

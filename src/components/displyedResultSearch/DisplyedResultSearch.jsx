@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 const DisplyedResultSearch = () => {
+
     return (
         <div className={styles.containerResult}>
             <div className={styles.infoAboutSearch}>

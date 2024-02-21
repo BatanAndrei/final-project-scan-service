@@ -3,6 +3,8 @@ import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Slider from "react-slick";
 import styles from './caoruselResult.module.css';
+import { useSelector } from 'react-redux';
+import { selectDataHistograms, selectDataObjectsearch } from '../../redux/selectors/selectors';
 
 
 function ArrowPrev(props) {
@@ -31,6 +33,15 @@ function ArrowNext(props) {
 
 export default function SimpleSliderResult() {
 
+    const dataHistograms = useSelector(selectDataHistograms);
+    const dataObjectsearch = useSelector(selectDataObjectsearch);
+
+    let totalData = dataHistograms.data[0].data;
+    let risckData = dataHistograms.data[1].data;
+
+    let newPropRisckData = risckData.map((prop) => ({risckValue: prop.value}));
+    let resultDataCaorusel = totalData.map((item, index) => ({...item, ...newPropRisckData[index]}));
+
     let settings = {
         dots: false,
         infinite: true,
@@ -51,46 +62,11 @@ export default function SimpleSliderResult() {
 
     return (
         <Slider {...settings}>
-            <div className={styles.cardInfo}>
-                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
-                <h3 className={styles.textModifyDataResultAll}>5</h3>
-                <h3 className={styles.textModifyDataResultAll}>0</h3>
-            </div>
-            <div className={styles.cardInfo}>
-                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
-                <h3 className={styles.textModifyDataResultAll}>5</h3>
-                <h3 className={styles.textModifyDataResultAll}>0</h3>
-            </div>
-            <div className={styles.cardInfo}>
-                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
-                <h3 className={styles.textModifyDataResultAll}>5</h3>
-                <h3 className={styles.textModifyDataResultAll}>0</h3>
-            </div>
-            <div className={styles.cardInfo}>
-                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
-                <h3 className={styles.textModifyDataResultAll}>5</h3>
-                <h3 className={styles.textModifyDataResultAll}>0</h3>
-            </div>    
-            <div className={styles.cardInfo}>
-                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
-                <h3 className={styles.textModifyDataResultAll}>5</h3>
-                <h3 className={styles.textModifyDataResultAll}>0</h3>
-            </div>
-            <div className={styles.cardInfo}>
-                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
-                <h3 className={styles.textModifyDataResultAll}>5</h3>
-                <h3 className={styles.textModifyDataResultAll}>0</h3>
-            </div>
-            <div className={styles.cardInfo}>
-                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
-                <h3 className={styles.textModifyDataResultAll}>5</h3>
-                <h3 className={styles.textModifyDataResultAll}>0</h3>
-            </div>
-            <div className={styles.cardInfo}>
-                <h3 className={styles.textModifyDataResultDate}>10.09.2021</h3>
-                <h3 className={styles.textModifyDataResultAll}>5</h3>
-                <h3 className={styles.textModifyDataResultAll}>0</h3>
-            </div>  
+            {resultDataCaorusel.map((data, index) => <div key={index} className={styles.cardInfo}>
+                <h3 className={styles.textModifyDataResultDate}>{data.date?.split('T')[0]}</h3>
+                <div className={styles.positionDataCaorusel}><h3 className={styles.textModifyDataResultTotal}>{data.value}</h3></div>
+                <div className={styles.positionDataCaorusel}><h3 className={styles.textModifyDataResultRisck}>{data.risckValue}</h3></div>
+            </div>)}
         </Slider>
     );
 }
