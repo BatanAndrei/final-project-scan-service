@@ -18,18 +18,18 @@ const DisplyedResultSearch = () => {
         <div className={styles.containerResult}>
             <div className={styles.infoAboutSearch}>
                 <div className={styles.infoTitle}>
-                    {/* <h1 className={styles.textModifySearchSoon}>Поиск завершён</h1>
-                    <h2 className={styles.textModifyWaitTime}>Резулультат в общей сводке.</h2> */}
-                    <h1 className={styles.textModifySearchSoon}>Ищем. Скоро<br/> будут результаты</h1>
-                    <h2 className={styles.textModifyWaitTime}>Поиск может занять некоторое время,<br/> просим сохранять терпение.</h2>
+                    {infoQuantityOptions ? <div><h1 className={styles.textModifySearchSoon}>Поиск завершён</h1>
+                    <h2 className={styles.textModifyWaitTime}>Резулультат в общей сводке.</h2></div> :
+                    <div><h1 className={styles.textModifySearchSoon}>Ищем. Скоро<br/> будут результаты</h1>
+                    <h2 className={styles.textModifyWaitTime}>Поиск может занять некоторое время,<br/> просим сохранять терпение.</h2></div>}
                 </div>
                 <div className={styles.infoImage}></div>
             </div>
             <div className={styles.wrapperSlider}>
                 <h2 className={styles.textModifyGeneralSummary}>Общая сводка</h2>
-                <h3 className={styles.textModifyOptionsFound}>Найдено {infoQuantityOptions} вариантов</h3>
+                <h3 className={styles.textModifyOptionsFound}>{`Найдено ${infoQuantityOptions ? infoQuantityOptions : 0} вариантов`}</h3>
                 
-                {/* <div className={styles.sliderBeforeLoad}>   
+                {!infoQuantityOptions ? <div className={styles.sliderBeforeLoad}>   
                     <div className={styles.arrowPrevDecoration}></div>
                     <div className={styles.blockTitleDataSlider}>
                         <h3 className={styles.texModifyTitleSlider}>Период</h3>
@@ -41,7 +41,7 @@ const DisplyedResultSearch = () => {
                         <h3 className={styles.textModifyLoadData}>Загружаем данные</h3>
                     </div>
                     <div className={styles.arrowNextDecoration}></div>
-                </div> */}
+                </div> :
 
                 <div className={styles.sliderAfterLoad}>           
                     <div className={styles.blockTitleDataSlider}>
@@ -52,7 +52,7 @@ const DisplyedResultSearch = () => {
                     <div className={styles.bodySlider}>
                         <SimpleSliderResult />
                     </div>
-                </div>
+                </div>}
 
             </div>
             <h2 className={styles.textModifyListDoc}>Список документов</h2>
