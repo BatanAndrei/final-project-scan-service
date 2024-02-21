@@ -3,12 +3,13 @@ import SimpleSliderResult from '../../components/caoruselResult/CaoruselResult';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonDispleyMore, nameButtonReadSource } from '../../dataVariables/variables';
 import { Link } from 'react-router-dom';
-import { selectDataHistograms, selectDataObjectsearch } from '../../redux/selectors/selectors';
+import { selectDataHistograms, selectDataObjectsearch, selectStatusHistograms } from '../../redux/selectors/selectors';
 import { useSelector } from 'react-redux';
 
 
 const DisplyedResultSearch = () => {
 
+    const statusHistograms = useSelector(selectStatusHistograms)
     const dataHistograms = useSelector(selectDataHistograms); 
     const dataObjectsearch = useSelector(selectDataObjectsearch);
     
@@ -18,7 +19,7 @@ const DisplyedResultSearch = () => {
         <div className={styles.containerResult}>
             <div className={styles.infoAboutSearch}>
                 <div className={styles.infoTitle}>
-                    {infoQuantityOptions ? <div><h1 className={styles.textModifySearchSoon}>Поиск завершён</h1>
+                    {statusHistograms !== 'loading' ? <div><h1 className={styles.textModifySearchSoon}>Поиск завершён</h1>
                     <h2 className={styles.textModifyWaitTime}>Резулультат в общей сводке.</h2></div> :
                     <div><h1 className={styles.textModifySearchSoon}>Ищем. Скоро<br/> будут результаты</h1>
                     <h2 className={styles.textModifyWaitTime}>Поиск может занять некоторое время,<br/> просим сохранять терпение.</h2></div>}
@@ -29,7 +30,7 @@ const DisplyedResultSearch = () => {
                 <h2 className={styles.textModifyGeneralSummary}>Общая сводка</h2>
                 <h3 className={styles.textModifyOptionsFound}>{`Найдено ${infoQuantityOptions ? infoQuantityOptions : 0} вариантов`}</h3>
                 
-                {!infoQuantityOptions ? <div className={styles.sliderBeforeLoad}>   
+                {statusHistograms === 'loading' && <div className={styles.sliderBeforeLoad}>   
                     <div className={styles.arrowPrevDecoration}></div>
                     <div className={styles.blockTitleDataSlider}>
                         <h3 className={styles.texModifyTitleSlider}>Период</h3>
@@ -41,8 +42,22 @@ const DisplyedResultSearch = () => {
                         <h3 className={styles.textModifyLoadData}>Загружаем данные</h3>
                     </div>
                     <div className={styles.arrowNextDecoration}></div>
-                </div> :
+                    </div> || 
 
+                !infoQuantityOptions && <div className={styles.sliderBeforeLoad}>   
+                <div className={styles.arrowPrevDecoration}></div>
+                <div className={styles.blockTitleDataSlider}>
+                    <h3 className={styles.texModifyTitleSlider}>Период</h3>
+                    <h3 className={styles.texModifyTitleSlider}>Всего</h3>
+                    <h3 className={styles.texModifyTitleSlider}>Риски</h3>
+                </div>
+                <div className={styles.bodySlider}>
+                    <h3 className={styles.textModifyEmptyResult}>Результат не найден</h3>
+                </div>
+                <div className={styles.arrowNextDecoration}></div>
+                </div> ||
+
+                dataHistograms &&
                 <div className={styles.sliderAfterLoad}>           
                     <div className={styles.blockTitleDataSlider}>
                         <h3 className={styles.texModifyTitleSlider}>Период</h3>
@@ -52,7 +67,8 @@ const DisplyedResultSearch = () => {
                     <div className={styles.bodySlider}>
                         <SimpleSliderResult />
                     </div>
-                </div>}
+                </div> 
+                }
 
             </div>
             <h2 className={styles.textModifyListDoc}>Список документов</h2>

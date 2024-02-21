@@ -139,6 +139,13 @@
     font-size: 18px;
 }
 
+.textModifyEmptyResult {
+    margin: 41px 0px 0px 460px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
 .textModifyListDoc {
     margin: 107px 0px 0px 0px;
     font-family: 'Ferry', sans-serif;

@@ -56,7 +56,7 @@ export const RequestPostHistograms = createAsyncThunk(
         if (response.status !== 200) {
         
             return thunkApi.rejectWithValue({  //rejectWithValue проверяет и возвращает ошибку при не удачном запросе
-            message: "Неправильный " 
+            message: "Ошибка загрузки" 
             });
         }
     
