@@ -3,7 +3,7 @@ import { RequestPostDocuments } from '../../api/RequestPostDocuments';
 
 
 export const initialState = {
-    dataDocuments: new Object,
+    dataDocuments: [],
     paramsPostDocuments: {
         accessTokenDocuments: '',
     }
@@ -30,7 +30,7 @@ export const documentsSlice = createSlice({
         .addCase(RequestPostDocuments.fulfilled, 
             (state, { payload }) => { 
 
-            state.dataDocuments = {...payload};
+            state.dataDocuments = [...payload];
             state.status = "idle";
     });
 
