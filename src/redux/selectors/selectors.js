@@ -36,5 +36,8 @@ export const selectParamsPostHistograms = (state) => state.histogramsExtraReduce
 
 export const selectDataObjectsearch = (state) => state.objectsearchExtraReducers.dataObjectsearch;
 
+export const selectDataDocuments = (state) => state.documentsExtraReducers.dataDocuments;
+export const selectParamsDocuments = (state) => state.documentsExtraReducers.paramsPostDocuments;
+
 
 

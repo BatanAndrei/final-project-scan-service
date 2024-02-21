@@ -3,6 +3,7 @@ import { authSlice } from '../slices/authSlice';
 import { accountInfoSlice } from '../slices/accountInfoSlice';
 import { histogramsSlice } from '../slices/histogramsSlice';
 import { objectsearchSlice } from '../slices/objectsearchSlice';
+import { documentsSlice } from '../slices/documentsSlice';
 import storage from 'redux-persist/lib/storage';
 import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER } from 'redux-persist';
 
@@ -49,6 +50,9 @@ const reducer = combineReducers({
     getAccessTokenHistogramsReducer: histogramsSlice.reducer,
 
     objectsearchExtraReducers: objectsearchSlice.reducer,
+
+    documentsExtraReducers: documentsSlice.reducer,
+    getAccessTokenDocumentsReducer: documentsSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);

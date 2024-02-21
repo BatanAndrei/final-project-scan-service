@@ -3,17 +3,28 @@ import SimpleSliderResult from '../../components/caoruselResult/CaoruselResult';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonDispleyMore, nameButtonReadSource } from '../../dataVariables/variables';
 import { Link } from 'react-router-dom';
-import { selectDataHistograms, selectDataObjectsearch, selectStatusHistograms } from '../../redux/selectors/selectors';
-import { useSelector } from 'react-redux';
+import { selectDataHistograms, selectDataObjectsearch, selectStatusHistograms, selectDataDocuments, selectParamsDocuments } from '../../redux/selectors/selectors';
+import { useSelector, useDispatch } from 'react-redux';
+import { RequestPostDocuments } from '../../api/RequestPostDocuments';
+import { useEffect } from 'react';
 
 
 const DisplyedResultSearch = () => {
 
-    const statusHistograms = useSelector(selectStatusHistograms)
+    const dispatch = useDispatch();
+
+    const statusHistograms = useSelector(selectStatusHistograms);
     const dataHistograms = useSelector(selectDataHistograms); 
     const dataObjectsearch = useSelector(selectDataObjectsearch);
-    
+    const dataDocuments = useSelector(selectDataDocuments);
+    const paramsDocuments = useSelector(selectParamsDocuments);
+    console.log(dataDocuments)
+    //console.log(dataObjectsearch)
     let infoQuantityOptions = dataHistograms.data?.[0]?.data?.length;
+
+    useEffect(() => {
+        dispatch(RequestPostDocuments(paramsDocuments))
+    }, [dataHistograms, dataObjectsearch])
 
     return (
         <div className={styles.containerResult}>
