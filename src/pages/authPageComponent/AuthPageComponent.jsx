@@ -75,7 +75,9 @@ const AuthPageComponent = () => {
     
     return (
         <>
-        {!isActivated && <div className={styles.containerAuthPage}>
+        {
+        !isActivated && 
+        <div className={styles.containerAuthPage}>
             <div className={styles.infoForSubscription}>
                 <h1 className={styles.titleInfo}>Для оформления подписки<br/> на тариф, необходимо<br/> авторизоваться.</h1>
                 <img className={styles.positionPicture} src={picturePageAuth} alt='картинка на тему авторизации'></img>
@@ -107,7 +109,8 @@ const AuthPageComponent = () => {
                     </div>
                 </div>
             </div>
-        </div>}
+        </div>
+        }
         </>
     )
 };
