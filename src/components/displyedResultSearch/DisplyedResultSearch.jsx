@@ -12,7 +12,7 @@ const DisplyedResultSearch = () => {
     const dataHistograms = useSelector(selectDataHistograms); 
     const dataObjectsearch = useSelector(selectDataObjectsearch);
     
-    let infoQuantityOptions = dataHistograms.data[0].data.length;
+    let infoQuantityOptions = dataHistograms.data?.[0]?.data?.length;
 
     return (
         <div className={styles.containerResult}>

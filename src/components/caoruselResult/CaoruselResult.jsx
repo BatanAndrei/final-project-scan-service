@@ -35,17 +35,17 @@ export default function SimpleSliderResult() {
 
     const dataHistograms = useSelector(selectDataHistograms);
 
-    let totalDocData = dataHistograms.data[0].data;
-    let risckDocData = dataHistograms.data[1].data;
+    let totalDocData = dataHistograms.data?.[0]?.data;
+    let risckDocData = dataHistograms.data?.[1]?.data;
 
-    let newRisckDocData = risckDocData.map((prop) => ({risckValue: prop.value}));
-    let resultDataCaorusel = totalDocData.map((totaldata, index) => ({...totaldata, ...newRisckDocData[index]}));
+    let newRisckDocData = risckDocData?.map((prop) => ({risckValue: prop.value}));
+    let resultDataCaorusel = totalDocData?.map((totaldata, index) => ({...totaldata, ...newRisckDocData[index]}));
 
     let settings = {
         dots: false,
-        infinite: resultDataCaorusel.length > 1 ? true : false,
+        infinite: resultDataCaorusel?.length > 1 ? true : false,
         speed: 500,
-        slidesToShow: resultDataCaorusel.length <= 8 ? resultDataCaorusel.length : 8,
+        slidesToShow: resultDataCaorusel?.length <= 8 ? resultDataCaorusel?.length : 8,
         nextArrow: <ArrowNext />,
         prevArrow: <ArrowPrev />,
         slidesToScroll: 1,
@@ -61,7 +61,7 @@ export default function SimpleSliderResult() {
 
     return (
         <Slider {...settings}>
-            {resultDataCaorusel && resultDataCaorusel.map((data, index) => <div key={index} className={styles.cardInfo}>
+            {resultDataCaorusel && resultDataCaorusel?.map((data, index) => <div key={index} className={styles.cardInfo}>
             <div className={styles.positionDataCaorusel}><h3 className={styles.textModifyDataResultDate}>{data.date?.split('T')[0]}</h3></div>
                 <div className={styles.positionDataCaorusel}><h3 className={styles.textModifyDataResultTotal}>{data.value}</h3></div>
                 <div className={styles.positionDataCaorusel}><h3 className={styles.textModifyDataResultRisck}>{data.risckValue}</h3></div>
