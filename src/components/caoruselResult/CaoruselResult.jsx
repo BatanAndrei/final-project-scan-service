@@ -38,8 +38,8 @@ export default function SimpleSliderResult() {
     let totalData = dataHistograms.data[0].data;
     let risckData = dataHistograms.data[1].data;
 
-    let newPropRisckData = risckData.map((prop) => ({risckValue: prop.value}));
-    let resultDataCaorusel = totalData.map((item, index) => ({...item, ...newPropRisckData[index]}));
+    let newPropertyRisckData = risckData.map((prop) => ({risckValue: prop.value}));
+    let resultDataCaorusel = totalData.map((totaldata, index) => ({...totaldata, ...newPropertyRisckData[index]}));
 
     let settings = {
         dots: false,
