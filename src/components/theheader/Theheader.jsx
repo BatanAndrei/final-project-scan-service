@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import RegistrationPanelLogin from '../registrationPanelLogin/RegistrationPanelLogin';
 import UserInfoHeader from '../../components/userInfoHeader/UserInfoHeader';
 import { selectIsActivated } from '../../redux/selectors/selectors';
-import { innReducer, deliveryDocReducer, deteBeginReducer, deteEndReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6 } from '../../redux/slices/histogramsSlice';
+import { innReducer, deliveryDocReducer, deteBeginReducer, deteEndReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, isActivateResultPageReducer } from '../../redux/slices/histogramsSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 
@@ -13,7 +13,8 @@ const Theheader = () => {
     const isActivated = useSelector(selectIsActivated);
     const dispatch = useDispatch();
 
-    const resetDataFilterSearch = () => {
+    const resetFieldsFilterSearch = () => {
+        dispatch(isActivateResultPageReducer(false))
         dispatch(innReducer(''))
         dispatch(deliveryDocReducer(''));
         dispatch(deteBeginReducer(''));
@@ -33,7 +34,7 @@ const Theheader = () => {
                 <LogoHeader />
             </div>
             <ul className={styles.navigationPages}>
-                <li className={styles.list}><Link onClick={resetDataFilterSearch} className={styles.link} to='/'>Главная</Link></li>
+                <li className={styles.list}><Link onClick={resetFieldsFilterSearch} className={styles.link} to='/'>Главная</Link></li>
                 <li className={styles.list}><Link className={styles.link} to='#'>Тарифы</Link></li>
                 <li className={styles.list}><Link className={styles.link} to='#'>FAQ</Link></li>
             </ul>

@@ -9,8 +9,8 @@ import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonSearch } from '../../dataVariables/variables';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectIsActivated, selectParamsPostHistograms } from '../../redux/selectors/selectors';
-import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, tonalityReducer } from '../../redux/slices/histogramsSlice';
-import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch, selectCheckedBox0, selectCheckedBox1, selectCheckedBox2, selectCheckedBox3, selectCheckedBox4, selectCheckedBox5, selectCheckedBox6 } from '../../redux/selectors/selectors';
+import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, tonalityReducer, isActivateResultPageReducer } from '../../redux/slices/histogramsSlice';
+import { selectInnError, selectInnField, selectDeliveryDocField, selectDeliveryDocError, selectDateBegin, selectDateEnd, selectDateError, selectValidFormSearch, selectCheckedBox0, selectCheckedBox1, selectCheckedBox2, selectCheckedBox3, selectCheckedBox4, selectCheckedBox5, selectCheckedBox6, selectIsActivatedResultPage } from '../../redux/selectors/selectors';
 import { RequestPostHistograms } from '../../api/RequestPostHistograms';
 import { RequestPostObjectsearch } from '../../api/RequestPostObjectsearch';
 import DisplyedResultSearch from '../../components/displyedResultSearch/DisplyedResultSearch';
@@ -22,10 +22,11 @@ const SearchPageComponent = () => {
 
     const paramsPostHistograms = useSelector(selectParamsPostHistograms);
 
-    const isActivated = useSelector(selectIsActivated);
+    const isActivatedAccount = useSelector(selectIsActivated);
+    const isActivatedResultPage = useSelector(selectIsActivatedResultPage);
     const innField = useSelector(selectInnField);
     const innError = useSelector(selectInnError);
-
+    
     const deliveryDocField = useSelector(selectDeliveryDocField);
     const deliveryDocError = useSelector(selectDeliveryDocError);
 
@@ -192,7 +193,8 @@ const SearchPageComponent = () => {
     const PostRequestSearch = (e) => {
         e.preventDefault();
         dispatch(RequestPostHistograms(paramsPostHistograms));
-        dispatch(RequestPostObjectsearch(paramsPostHistograms))
+        dispatch(RequestPostObjectsearch(paramsPostHistograms));
+        dispatch(isActivateResultPageReducer(true));
     };
 
 
@@ -202,8 +204,7 @@ const SearchPageComponent = () => {
     
     return (
         <>
-        <DisplyedResultSearch />
-        {/*isActivated && <div className={styles.containerPage}>
+        {(isActivatedAccount && isActivatedResultPage) && <DisplyedResultSearch /> || (isActivatedAccount && !isActivatedResultPage) && <div className={styles.containerPage}>
             <div className={styles.blockSearch}>
                 <div className={styles.titleBlockSearch}>
                     <h1 className={styles.textTitle}>Найдите необходимые<br/> данные в пару кликов.</h1>
@@ -287,7 +288,7 @@ const SearchPageComponent = () => {
                 <img className={styles.foldersImg} src={foldersPng}></img>
                 <img className={styles.manRocketImg} src={manRocketPng}></img>
             </div>
-    </div>*/}
+    </div>}
         </>
     )
 };

@@ -3,6 +3,7 @@ import { RequestPostHistograms } from '../../api/RequestPostHistograms';
 
 
 export const initialState = {
+    isActivatedResulPage: false,
     innError: ' ',
     deliveryDocError: ' ',
     dateError: ' ',
@@ -29,6 +30,10 @@ export const histogramsSlice = createSlice({
     name: "histograms",
     initialState,
     reducers: {   
+        isActivateResultPageReducer: (state, action) => {
+            state.isActivatedResulPage = action.payload;
+        },
+
         innReducer: (state, action) => {
             state.paramsPostHistograms.innField = action.payload;
         },
@@ -125,5 +130,5 @@ export const histogramsSlice = createSlice({
     }
 });
 
-export const { innReducer, innErrorReducer, tonalityReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, getAccessTokenHistogramsReducer } = histogramsSlice.actions;
+export const { innReducer, innErrorReducer, tonalityReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, getAccessTokenHistogramsReducer, isActivateResultPageReducer } = histogramsSlice.actions;
 

@@ -14,6 +14,7 @@ export const selectTariffBeginner = (state) => state.accountInfoExtraReducer.tar
 export const selectTariffPro = (state) => state.accountInfoExtraReducer.tariffPro;
 export const selectTariffBusiness = (state) => state.accountInfoExtraReducer.tariffBusiness;
 
+export const selectIsActivatedResultPage = (state) => state.histogramsExtraReducers.isActivatedResulPage;
 export const selectInnField = (state) => state.histogramsExtraReducers.paramsPostHistograms.innField;
 export const selectInnError = (state) => state.histogramsExtraReducers.innError;
 export const selectDeliveryDocField = (state) => state.histogramsExtraReducers.paramsPostHistograms.deliveryDocField;

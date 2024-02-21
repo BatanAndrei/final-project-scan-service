@@ -24,7 +24,7 @@ const HomePageComponent = () => {
 
     const dispatch = useDispatch();
 
-    const setDefaultSpaceInError = () => {
+    const setDefaultData = () => {
         dispatch(innErrorReducer(' '));
         dispatch(deliveryDocErrorReducer(' '));
         dispatch(deteErrorReducer(' '));
@@ -50,7 +50,7 @@ const HomePageComponent = () => {
                         <h1 className={styles.titleMainAboutSite}>сервис по поиску<br/> публикаций<br/> о компании<br/> по его инн</h1>
                         <h2 className={styles.subtitleMainAboutSite}>Комплексный анализ публикаций, получение данных<br/> в формате PDF на электронную почту.</h2>
                         {isActivated && <div className={styles.buttonModifyReqData}>
-                            <Link to='/search'><MainButton click={setDefaultSpaceInError} name={nameButtonReqData} /></Link>
+                            <Link to='/search'><MainButton click={setDefaultData} name={nameButtonReqData} /></Link>
                         </div>}
                     </div>
                     <div className={styles.mainAboutSitePicture}>

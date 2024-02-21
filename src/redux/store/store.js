@@ -29,6 +29,7 @@ const reducer = combineReducers({
     tariffBusinessReducer: accountInfoSlice.reducer,
 
     histogramsExtraReducers: histogramsSlice.reducer,
+    isActivateResultPageReducer: histogramsSlice.reducer,
     innReducer: histogramsSlice.reducer,
     innErrorReducer: histogramsSlice.reducer,
     tonalityReducer: histogramsSlice.reducer,

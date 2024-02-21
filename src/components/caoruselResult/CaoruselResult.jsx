@@ -61,7 +61,7 @@ export default function SimpleSliderResult() {
 
     return (
         <Slider {...settings}>
-            {resultDataCaorusel.map((data, index) => <div key={index} className={styles.cardInfo}>
+            {resultDataCaorusel && resultDataCaorusel.map((data, index) => <div key={index} className={styles.cardInfo}>
             <div className={styles.positionDataCaorusel}><h3 className={styles.textModifyDataResultDate}>{data.date?.split('T')[0]}</h3></div>
                 <div className={styles.positionDataCaorusel}><h3 className={styles.textModifyDataResultTotal}>{data.value}</h3></div>
                 <div className={styles.positionDataCaorusel}><h3 className={styles.textModifyDataResultRisck}>{data.risckValue}</h3></div>
