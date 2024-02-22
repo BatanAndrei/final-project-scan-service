@@ -11,6 +11,7 @@ import { persistStore, persistReducer, FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, 
 const persistConfig = {
     key: 'root',
     storage,
+    whitelist: ['authExtraReducer']
 }
 
 const reducer = combineReducers({
