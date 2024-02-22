@@ -21,7 +21,7 @@ const DisplyedResultSearch = () => {
     const paramsDocuments = useSelector(selectParamsDocuments);
     const listEncodedID = useSelector(selectListEncodedID);
 
-    console.log(dataDocuments)
+    console.log(dataDocuments[3].ok.url)
     
     let infoQuantityOptions = dataHistograms.data?.[0]?.data?.length;
 
@@ -101,11 +101,11 @@ const DisplyedResultSearch = () => {
 
                 {dataDocuments?.map((card, index) => <div key={index} className={styles.cardDoc}>
                     <div className={styles.dateWithSource}>
-                        <h3 className={styles.infoDate}>13.09.2021</h3>
-                        <h3 className={styles.textLinkSource}><Link className={styles.linkSource} to='#'>Комсомольская правда KP.RU</Link></h3>
+                        <h3 className={styles.infoDate}>{card.ok.issueDate.split('T')[0].replace(/\-/g, '.')}</h3>
+                        <h3 className={styles.textLinkSource}><Link className={styles.linkSource} target="_blank" to={card.ok.url}>{card.ok.source.name}</Link></h3>
                     </div>
-                    <h2 className={styles.titleNameDoc}>Скиллфэктори - лучшая онлайн-школа<br/> для будущих айтишников</h2>
-                    <div className={styles.badgeCategoryDoc}><h2 className={styles.textBadge}>Технические новости</h2></div>
+                    <h2 className={styles.titleNameDoc}>{card.ok.title.text.length > 73 ? card.ok.title.text.slice(0, 73) + '. . .' : card.ok.title.text}</h2>
+                    <div className={(card.ok.attributes.isTechNews || card.ok.attributes.isAnnouncement || card.ok.attributes.isDigest) ? styles.badgeCategoryDoc : styles.badgeCategoryDocOpacity}><h2 className={styles.textBadge}>{card.ok.attributes.isTechNews && 'технические новости' || card.ok.attributes.isAnnouncement && 'Анонсы и события' || card.ok.attributes.isDigest && 'Сводки новостей'}</h2></div>
                     <div className={styles.imageDoc}></div>
                     <p className={styles.textParagrafDoc}>SkillFactory — школа для всех, кто хочет изменить свою карьеру и жизнь. С 2016 года обучение прошли 20 000+ человек из 40 стран с 4 континентов, самому взрослому студенту сейчас 86 лет. Выпускники работают в Сбере, Cisco, Bayer, Nvidia, МТС, Ростелекоме, Mail.ru, Яндексе, Ozon и других топовых компаниях.
                     <br/>
@@ -115,7 +115,7 @@ const DisplyedResultSearch = () => {
                         <div className={styles.buttonModifyReadSource}>
                             <MainButton name={nameButtonReadSource} />
                         </div>
-                        <h3 className={styles.quantityWords}>2 543 слова</h3>
+                        <h3 className={styles.quantityWords}>{card.ok.attributes.wordCount} слова</h3>
                     </div>
                 </div>)}
             </div>
