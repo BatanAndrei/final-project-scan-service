@@ -20,9 +20,16 @@ const DisplyedResultSearch = () => {
     const dataDocuments = useSelector(selectDataDocuments);
     const paramsDocuments = useSelector(selectParamsDocuments);
     const listEncodedID = useSelector(selectListEncodedID);
+    let rsultText;
 
-    console.log(dataDocuments[3].ok.url)
-    
+    const textParagraffFormat = (card) => {
+        let html = card.ok.content.markup;
+            let div = document.createElement("div");
+                div.innerHTML = html;
+                    let text = div.textContent || div.innerText || "";
+                        return rsultText = text.replace(/<\/?("[^"]*"|'[^']*'|[^>])*(>|$)/g, "").length > 730 ? text.replace(/<\/?("[^"]*"|'[^']*'|[^>])*(>|$)/g, "").slice(0, 730) + ' . . .' : text.replace(/<\/?("[^"]*"|'[^']*'|[^>])*(>|$)/g, "");
+                    };
+
     let infoQuantityOptions = dataHistograms.data?.[0]?.data?.length;
 
     useEffect(() => {
@@ -107,10 +114,7 @@ const DisplyedResultSearch = () => {
                     <h2 className={styles.titleNameDoc}>{card.ok.title.text.length > 73 ? card.ok.title.text.slice(0, 73) + '. . .' : card.ok.title.text}</h2>
                     <div className={(card.ok.attributes.isTechNews || card.ok.attributes.isAnnouncement || card.ok.attributes.isDigest) ? styles.badgeCategoryDoc : styles.badgeCategoryDocOpacity}><h2 className={styles.textBadge}>{card.ok.attributes.isTechNews && 'технические новости' || card.ok.attributes.isAnnouncement && 'Анонсы и события' || card.ok.attributes.isDigest && 'Сводки новостей'}</h2></div>
                     <div className={styles.imageDoc}></div>
-                    <p className={styles.textParagrafDoc}>SkillFactory — школа для всех, кто хочет изменить свою карьеру и жизнь. С 2016 года обучение прошли 20 000+ человек из 40 стран с 4 континентов, самому взрослому студенту сейчас 86 лет. Выпускники работают в Сбере, Cisco, Bayer, Nvidia, МТС, Ростелекоме, Mail.ru, Яндексе, Ozon и других топовых компаниях.
-                    <br/>
-                    <br/>
-                    Принципы SkillFactory: акцент на практике, забота о студентах и ориентир на трудоустройство. 80% обучения — выполнение упражнений и реальных проектов. Каждого студента поддерживают менторы, 2 саппорт-линии и комьюнити курса. А карьерный центр помогает составить резюме, подготовиться к собеседованиям и познакомиться с IT-рекрутерами.</p>
+                    <p className={styles.textParagrafDoc}>{textParagraffFormat(card)}</p>
                     <div className={styles.footerDoc}>
                         <div className={styles.buttonModifyReadSource}>
                             <MainButton name={nameButtonReadSource} />
