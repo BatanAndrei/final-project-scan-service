@@ -21,6 +21,11 @@ export const documentsSlice = createSlice({
         getEncodedIdReducer: (state, action) => {
             state.paramsPostDocuments.listEncodedId = action.payload;
         },
+
+        resetDataDocumentsReducer: (state, action) => {
+            state.dataDocuments = [];
+            state.paramsPostDocuments.listEncodedId = [];
+        },
     },
 
     extraReducers: (builder) => {
@@ -49,5 +54,5 @@ export const documentsSlice = createSlice({
     }
 });
 
-export const { getAccessTokenDocumentsReducer, getEncodedIdReducer } = documentsSlice.actions;
+export const { getAccessTokenDocumentsReducer, getEncodedIdReducer, resetDataDocumentsReducer } = documentsSlice.actions;
 

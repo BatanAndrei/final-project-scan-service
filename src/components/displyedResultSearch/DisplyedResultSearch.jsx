@@ -21,13 +21,18 @@ const DisplyedResultSearch = () => {
     const paramsDocuments = useSelector(selectParamsDocuments);
     const listEncodedID = useSelector(selectListEncodedID);
     console.log(dataDocuments)
-    //console.log(listEncodedID)
+    //console.log(paramsDocuments)
     let infoQuantityOptions = dataHistograms.data?.[0]?.data?.length;
 
     useEffect(() => {
-        dispatch(RequestPostDocuments(paramsDocuments));
         dispatch(getEncodedIdReducer(dataObjectsearch.items?.map((id) => id.encodedId)));
-    }, [dataHistograms, dataObjectsearch])
+    }, [dataHistograms, dataObjectsearch]);
+
+    useEffect(() => {
+        if(listEncodedID) {
+            dispatch(RequestPostDocuments(paramsDocuments));
+        }
+    }, [listEncodedID]);
 
     return (
         <div className={styles.containerResult}>

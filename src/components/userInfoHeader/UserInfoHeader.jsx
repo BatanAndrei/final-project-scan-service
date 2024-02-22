@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { RequestGetAccountInfo } from '../../api/RequestGetAccountInfo';
 import { selectAccessToken, selectIsActivated, selectAccountInfo, selectStatusAccountInfo } from '../../redux/selectors/selectors';
 import { innReducer, getAccessTokenHistogramsReducer, deliveryDocReducer, deteBeginReducer, deteEndReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, isActivateResultPageReducer } from '../../redux/slices/histogramsSlice';
+import { resetDataDocumentsReducer } from '../../redux/slices/documentsSlice';
 import { useEffect } from 'react';
 
 
@@ -34,6 +35,7 @@ const UserInfoHeader = () => {
         dispatch(checkedBoxReducer4(false));
         dispatch(checkedBoxReducer5(false));
         dispatch(checkedBoxReducer6(false));
+        dispatch(resetDataDocumentsReducer());
         navigate('/');
     }
 

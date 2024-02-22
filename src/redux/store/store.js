@@ -54,6 +54,7 @@ const reducer = combineReducers({
     documentsExtraReducers: documentsSlice.reducer,
     getAccessTokenDocumentsReducer: documentsSlice.reducer,
     getEncodedIdReducer: documentsSlice.reducer, 
+    resetDataDocumentsReducer: documentsSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);
