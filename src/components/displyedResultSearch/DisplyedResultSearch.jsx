@@ -20,7 +20,7 @@ const DisplyedResultSearch = () => {
     const dataDocuments = useSelector(selectDataDocuments);
     const paramsDocuments = useSelector(selectParamsDocuments);
     const listEncodedID = useSelector(selectListEncodedID);
-    
+
     console.log(dataDocuments)
     
     let infoQuantityOptions = dataHistograms.data?.[0]?.data?.length;
@@ -98,7 +98,8 @@ const DisplyedResultSearch = () => {
             </div>
             <h2 className={styles.textModifyListDoc}>Список документов</h2>
             <div className={styles.wrapperDocuments}>
-                <div className={styles.cardDoc}>
+
+                {dataDocuments?.map((card, index) => <div key={index} className={styles.cardDoc}>
                     <div className={styles.dateWithSource}>
                         <h3 className={styles.infoDate}>13.09.2021</h3>
                         <h3 className={styles.textLinkSource}><Link className={styles.linkSource} to='#'>Комсомольская правда KP.RU</Link></h3>
@@ -116,7 +117,7 @@ const DisplyedResultSearch = () => {
                         </div>
                         <h3 className={styles.quantityWords}>2 543 слова</h3>
                     </div>
-                </div>
+                </div>)}
             </div>
             <div className={styles.buttonModifyDispleyMore}>
                 <MainButton name={nameButtonDispleyMore} />

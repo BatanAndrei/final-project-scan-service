@@ -4,8 +4,8 @@ import { RequestPostAuth } from '../../api/RequestPostAuth';
 
 export const initialState = {
     loginUser: {
-        login: 'sf_student1',  //убрать
-        password: '4i2385j'    //убрать
+        login: 'sf_student1',  //убрать sf_student1
+        password: '4i2385j'    //убрать  4i2385j
     },
     accessToken: '',
     expire: '',
