@@ -4,7 +4,7 @@ import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonDispleyMore, nameButtonReadSource } from '../../dataVariables/variables';
 import { Link } from 'react-router-dom';
 import { selectDataHistograms, selectDataObjectsearch, selectStatusHistograms, selectDataDocuments, selectParamsDocuments, selectListEncodedID } from '../../redux/selectors/selectors';
-import { getEncodedIdReducer } from '../../redux/slices/documentsSlice';
+import { getEncodedIdReducer, resetDataDocumentsReducer } from '../../redux/slices/documentsSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { RequestPostDocuments } from '../../api/RequestPostDocuments';
 import { useEffect } from 'react';
@@ -20,8 +20,9 @@ const DisplyedResultSearch = () => {
     const dataDocuments = useSelector(selectDataDocuments);
     const paramsDocuments = useSelector(selectParamsDocuments);
     const listEncodedID = useSelector(selectListEncodedID);
+    
     console.log(dataDocuments)
-    //console.log(paramsDocuments)
+    
     let infoQuantityOptions = dataHistograms.data?.[0]?.data?.length;
 
     useEffect(() => {
@@ -29,7 +30,7 @@ const DisplyedResultSearch = () => {
     }, [dataHistograms, dataObjectsearch]);
 
     useEffect(() => {
-        if(listEncodedID) {
+        if(listEncodedID?.length) {
             dispatch(RequestPostDocuments(paramsDocuments));
         }
     }, [listEncodedID]);
