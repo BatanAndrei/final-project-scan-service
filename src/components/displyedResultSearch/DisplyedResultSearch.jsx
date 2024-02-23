@@ -109,7 +109,7 @@ const DisplyedResultSearch = () => {
                 {dataDocuments?.map((card, index) => <div key={index} className={styles.cardDoc}>
                     <div className={styles.dateWithSource}>
                         <h3 className={styles.infoDate}>{card.ok.issueDate.split('T')[0].replace(/\-/g, '.')}</h3>
-                        <h3 className={styles.textLinkSource}><Link className={styles.linkSource} target="_blank" to={card.ok.url}>{card.ok.source.name}</Link></h3>
+                        <h3 className={styles.textLinkSource}><Link className={styles.linkSource} target="_blank" to={card.ok.url === '' ? 'https://nicepage.com/ru/ht/307440/zona-stroitelstva-sayta-html-shablon?sscid=21k8_r9ua4&' : card.ok.url}>{card.ok.source.name}</Link></h3>
                     </div>
                     <h2 className={styles.titleNameDoc}>{card.ok.title.text.length > 73 ? card.ok.title.text.slice(0, 73) + '. . .' : card.ok.title.text}</h2>
                     <div className={(card.ok.attributes.isTechNews || card.ok.attributes.isAnnouncement || card.ok.attributes.isDigest) ? styles.badgeCategoryDoc : styles.badgeCategoryDocOpacity}><h2 className={styles.textBadge}>{card.ok.attributes.isTechNews && 'технические новости' || card.ok.attributes.isAnnouncement && 'Анонсы и события' || card.ok.attributes.isDigest && 'Сводки новостей'}</h2></div>
@@ -117,7 +117,7 @@ const DisplyedResultSearch = () => {
                     <p className={styles.textParagrafDoc}>{textParagraffFormat(card)}</p>
                     <div className={styles.footerDoc}>
                         <div className={styles.buttonModifyReadSource}>
-                            <Link target="_blank" to={card.ok.url}><MainButton name={nameButtonReadSource} /></Link>
+                            <Link target="_blank" to={card.ok.url === '' ? 'https://nicepage.com/ru/ht/307440/zona-stroitelstva-sayta-html-shablon?sscid=21k8_r9ua4&' : card.ok.url}><MainButton name={nameButtonReadSource} /></Link>
                         </div>
                         <h3 className={styles.quantityWords}>{card.ok.attributes.wordCount} слова</h3>
                     </div>
