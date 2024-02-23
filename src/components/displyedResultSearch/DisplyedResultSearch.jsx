@@ -117,7 +117,7 @@ const DisplyedResultSearch = () => {
                     <p className={styles.textParagrafDoc}>{textParagraffFormat(card)}</p>
                     <div className={styles.footerDoc}>
                         <div className={styles.buttonModifyReadSource}>
-                            <MainButton name={nameButtonReadSource} />
+                            <Link target="_blank" to={card.ok.url}><MainButton name={nameButtonReadSource} /></Link>
                         </div>
                         <h3 className={styles.quantityWords}>{card.ok.attributes.wordCount} слова</h3>
                     </div>
