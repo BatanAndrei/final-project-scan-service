@@ -4,7 +4,7 @@ import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonDispleyMore, nameButtonReadSource } from '../../dataVariables/variables';
 import { Link } from 'react-router-dom';
 import { selectDataHistograms, selectDataObjectsearch, selectStatusHistograms, selectDataDocuments, selectParamsDocuments, selectListEncodedID } from '../../redux/selectors/selectors';
-import { getEncodedIdReducer, resetDataDocumentsReducer } from '../../redux/slices/documentsSlice';
+import { getEncodedIdReducer } from '../../redux/slices/documentsSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { RequestPostDocuments } from '../../api/RequestPostDocuments';
 import { useEffect } from 'react';
@@ -21,7 +21,8 @@ const DisplyedResultSearch = () => {
     const paramsDocuments = useSelector(selectParamsDocuments);
     const listEncodedID = useSelector(selectListEncodedID);
     let rsultText;
-
+    
+console.log(dataDocuments[8])
     const textParagraffFormat = (card) => {
         let html = card.ok.content.markup;
             let div = document.createElement("div");

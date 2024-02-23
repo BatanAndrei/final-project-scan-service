@@ -20,7 +20,7 @@ const SearchPageComponent = () => {
     const dispatch = useDispatch();
 
     const paramsPostHistograms = useSelector(selectParamsPostHistograms);
-
+    
     const isActivatedAccount = useSelector(selectIsActivated);
     const isActivatedResultPage = useSelector(selectIsActivatedResultPage);
     const innField = useSelector(selectInnField);
