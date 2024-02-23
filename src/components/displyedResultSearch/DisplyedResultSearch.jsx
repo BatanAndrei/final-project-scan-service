@@ -22,7 +22,8 @@ const DisplyedResultSearch = () => {
     const listEncodedID = useSelector(selectListEncodedID);
     let rsultText;
     
-console.log(dataDocuments[8])
+console.log(dataDocuments[5].ok.source.name);
+
     const textParagraffFormat = (card) => {
         let html = card.ok.content.markup;
             let div = document.createElement("div");
@@ -110,11 +111,11 @@ console.log(dataDocuments[8])
                 {dataDocuments?.map((card, index) => <div key={index} className={styles.cardDoc}>
                     <div className={styles.dateWithSource}>
                         <h3 className={styles.infoDate}>{card.ok.issueDate.split('T')[0].replace(/\-/g, '.')}</h3>
-                        <h3 className={styles.textLinkSource}><Link className={styles.linkSource} target="_blank" to={card.ok.url === '' ? 'https://nicepage.com/ru/ht/307440/zona-stroitelstva-sayta-html-shablon?sscid=21k8_r9ua4&' : card.ok.url}>{card.ok.source.name}</Link></h3>
+                        <h3 className={styles.textLinkSource}><Link className={styles.linkSource} target="_blank" to={card.ok.url === '' ? 'https://nicepage.com/ru/ht/307440/zona-stroitelstva-sayta-html-shablon?sscid=21k8_r9ua4&' : card.ok.url}>{card.ok.source.name.length > 45 ? card.ok.source.name.slice(0, 45) + ' . . .' : card.ok.source.name}</Link></h3>
                     </div>
                     <h2 className={styles.titleNameDoc}>{card.ok.title.text.length > 73 ? card.ok.title.text.slice(0, 73) + '. . .' : card.ok.title.text}</h2>
                     <div className={(card.ok.attributes.isTechNews || card.ok.attributes.isAnnouncement || card.ok.attributes.isDigest) ? styles.badgeCategoryDoc : styles.badgeCategoryDocOpacity}><h2 className={styles.textBadge}>{card.ok.attributes.isTechNews && 'технические новости' || card.ok.attributes.isAnnouncement && 'Анонсы и события' || card.ok.attributes.isDigest && 'Сводки новостей'}</h2></div>
-                    <div className={styles.imageDoc}></div>
+                    <img className={styles.imageDoc} src={card.ok.content.markup.match(/https(.*?)">(.*?)/)?.[0] ? card.ok.content.markup.match(/https(.*?)">(.*?)/)?.[0] : 'https://media.istockphoto.com/id/1478408446/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80-%D0%BD%D0%B0%D1%81%D1%82%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0-%D1%81-%D0%BC%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%BC-%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE-%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0-%D1%81%D1%82%D0%BE%D1%8F%D1%89%D0%B8%D0%B9-%D0%BD%D0%B0-%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D1%8F%D0%BD%D0%BD%D0%BE%D0%BC-%D1%81%D1%82%D0%BE%D0%BB%D0%B5-%D1%81.jpg?s=612x612&w=0&k=20&c=hlgj1WeJubuZTUwoG-TFZPWTb6vm4LKfJy1b5wzhISk='} alt='Картинка документа'></img>
                     <p className={styles.textParagrafDoc}>{textParagraffFormat(card)}</p>
                     <div className={styles.footerDoc}>
                         <div className={styles.buttonModifyReadSource}>

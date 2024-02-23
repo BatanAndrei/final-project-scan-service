@@ -244,7 +244,8 @@
     width: 581px;
     height: 158px;
     border-radius: 10px;
-    background-image: url('../../Images/imageDoc.png');
+    object-fit: cover;
+    /* background-image: url('../../Images/imageDoc.png'); */
 }
 
 .textParagrafDoc {
