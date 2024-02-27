@@ -38,7 +38,7 @@ const DisplyedResultSearch = () => {
             let getLink = xml?.match(/https:\/\/[^\s\Z]+/i)?.[0]?.split('"')[0];
             let linkExtension = getLink?.match(/\.([^.]+)$|$/)[1];
             console.log(linkExtension)
-                return getLink && (linkExtension == 'jpg' || linkExtension == 'webp' || linkExtension == 'jpeg' || linkExtension == 'png'   ) ? resultImage = getLink : 'https://img.razrisyika.ru/kart/62/245105-gazeta-13.jpg';
+                return getLink && (linkExtension == 'jpg' || linkExtension == 'webp' || linkExtension == 'jpeg' || linkExtension == 'png') ? resultImage = getLink : 'https://img.razrisyika.ru/kart/62/245105-gazeta-13.jpg';
     };
 
     const textParagraffFormat = (card) => {

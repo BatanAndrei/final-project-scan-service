@@ -36,7 +36,7 @@ const UserInfoHeader = () => {
         dispatch(checkedBoxReducer4(false));
         dispatch(checkedBoxReducer5(false));
         dispatch(checkedBoxReducer6(false));
-        dispatch(resetDataDocumentsReducer());
+        dispatch(resetDataDocumentsReducer([]));
         navigate('/');
     }
 

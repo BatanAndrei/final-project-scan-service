@@ -22,8 +22,8 @@ export const documentsSlice = createSlice({
             state.paramsPostDocuments.listEncodedId = action.payload;
         },
 
-        resetDataDocumentsReducer: (state) => {
-            state.dataDocuments = [];
+        resetDataDocumentsReducer: (state, action) => {
+            state.dataDocuments = action.payload;
             state.paramsPostDocuments.listEncodedId = [];
         },
     },
