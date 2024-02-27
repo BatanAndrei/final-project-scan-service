@@ -239,13 +239,18 @@
     color: black;
 }
 
+.sizeImageDoc {
+    width: 581px;
+    height: 158px;
+    border-radius: 10px;
+}
+
 .imageDoc {
     margin: 14px 0px 0px 0px;
     width: 581px;
     height: 158px;
     border-radius: 10px;
     object-fit: cover;
-    /* background-image: url('../../Images/imageDoc.png'); */
 }
 
 .textParagrafDoc {
@@ -295,6 +300,18 @@
     font-size: 22px;
     color: #FFFFFF;
 }
+
+.buttonModifyDispleyMoreDisabled button {
+    margin: 38px 0px 0px 508px;
+    width: 305px;
+    height: 59px;
+    background-color: #95a1f2;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #FFFFFF;
+    cursor: default;
+}   
 
 .buttonModifyDispleyMore button:hover {
     font-size: 23px;
