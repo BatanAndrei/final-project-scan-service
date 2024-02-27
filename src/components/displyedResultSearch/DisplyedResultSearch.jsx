@@ -22,20 +22,29 @@ const DisplyedResultSearch = () => {
     const paramsDocuments = useSelector(selectParamsDocuments);
     const listEncodedID = useSelector(selectListEncodedID);
     let rsultText;
+    let resultImage;
         
-    let url = '<?xml version=\"1.0\" encoding=\"utf-8\"?><scandoc><sentence><entity type=\"theme\" local-id=\"1\"><entity type=\"theme\" local-id=\"5\">Медведь напал на жителя <entity type=\"location\" local-id=\"6\">Приморья</entity>, пострадавший госпитализирован, - сообщает \"Вести: Приморье\" со ссылкой на <entity type=\"company\" local-id=\"0\">\"Интерфакс-Дальний Восток\"</entity>. </entity></entity></sentence><sentence>Сотрудники полиции проводят проверку по факту инцидента, связанного с нападением медведя на жителя <entity type=\"location\" local-id=\"7\">Уссурийска </entity>в лесу, в окрестностях <entity type=\"location\" local-id=\"8\">села Яконовка</entity>. </sentence><sentence><entity type=\"theme\" local-id=\"2\">Пострадавшего госпитализировали в реанимационное отделение городской больницы.</p>\r\n\r\n<p></entity></sentence><sentence>По данным медиков, он прооперирован, сейчас его жизни ничто не угрожает. </sentence><sentence><entity type=\"theme\" local-id=\"4\">Полицейские установили, что у мужчины есть разрешение на охоту, оружие должным образом зарегистрировано. </entity></sentence><sentence>Обстоятельства случившегося выясняются.</p>\r\n\r\n<p></sentence><sentence><entity type=\"theme\" local-id=\"3\">Напомним, ранее сообщалось, что в минувшие выходные в окрестностях <entity type=\"location\" local-id=\"7\">Уссурийска</entity>, в районе <entity type=\"location\" local-id=\"9\">села Кроуновка </entity>на охотника напал тигр, пострадавший госпитализирован.</p>\r\n</div>\r\n                                                    <div></entity></sentence><sentence>Текст:\r\n                                            ГТРК \"Владивосток\"\r\n                                        </div>\r\n                \r\n                \r\n                <div>\r\n\r\n                    \r\n                    \r\n                    \r\n                </div>\r\n            </div>\r\n</data>\r\n\r\n</sentence><br><img src=\"https://storage.scan-interfax.ru/images/1%3A0JPQqdGM0JNWCdCzf2Jt0LHQotGV0ZUh0ZbRlBXCt0Je0JHQruKAnDcUXkZQ0YvQscKn0KjQlsKu0K%2FSkdGXfOKAsF3QkjrRnCRmGCFFBybQoNGL0ZMhEFkC4oCYaNC9a9GO0KFYwqwOeNGO0JdUDGzihKJXTNC%2B0ZzRinE%3D\"></scandoc>';
+   //let test = url.match(/https(.*?)">(.*?)/)?.[0];
 
-    let test = url.match(/https(.*?)">(.*?)/)?.[0];
+    //let news = dataDocuments[23].ok.content.markup;
 
-    let news = dataDocuments[9].ok.content.markup;
+    //let good = news.match(/https:\/\/[^\s\Z]+/i)?.[0]; //(/https:\/\/[^\s\Z]+/i)?.[0]
 
-    let good = news.match(/https:\/\/[^\s\Z]+/i)?.[0];
-    console.log(good)
+    //let check = good.match(/\.([^.]+)$|$/)[1].split('"')[0]
+    //console.log(check)
+    
+    const getImageFromXml = (card) => {
+        let xml = card?.ok.content.markup;
+            let getLink = xml?.match(/https:\/\/[^\s\Z]+/i)?.[0]?.split('"')[0];
+            let linkExtension = getLink?.match(/\.([^.]+)$|$/)[1];
+            console.log(linkExtension)
+                return getLink && (linkExtension == 'jpg' || linkExtension == 'webp' || linkExtension == 'jpeg' || linkExtension == 'png'   ) ? resultImage = getLink : 'https://img.razrisyika.ru/kart/62/245105-gazeta-13.jpg';
+    };
 
     const textParagraffFormat = (card) => {
-        let html = card.ok.content.markup;
+        let xml = card.ok.content.markup;
             let div = document.createElement("div");
-                div.innerHTML = html;
+                div.innerHTML = xml;
                     let text = div.textContent || div.innerText || "";
                         return rsultText = text.replace(/<\/?("[^"]*"|'[^']*'|[^>])*(>|$)/g, "").length > 730 ? text.replace(/<\/?("[^"]*"|'[^']*'|[^>])*(>|$)/g, "").slice(0, 730) + ' . . .' : text.replace(/<\/?("[^"]*"|'[^']*'|[^>])*(>|$)/g, "");
                     };
@@ -123,7 +132,7 @@ const DisplyedResultSearch = () => {
                     </div>
                     <h2 className={styles.titleNameDoc}>{card.ok.title.text.length > 73 ? card.ok.title.text.slice(0, 73) + '. . .' : card.ok.title.text}</h2>
                     <div className={(card.ok.attributes.isTechNews || card.ok.attributes.isAnnouncement || card.ok.attributes.isDigest) ? styles.badgeCategoryDoc : styles.badgeCategoryDocOpacity}><h2 className={styles.textBadge}>{card.ok.attributes.isTechNews && 'технические новости' || card.ok.attributes.isAnnouncement && 'Анонсы и события' || card.ok.attributes.isDigest && 'Сводки новостей'}</h2></div>  
-                    <div className={styles.sizeImageDoc}><img className={styles.imageDoc} src={card.ok.content.markup.match(/https:\/\/[^\s\Z]+/i)?.[0] ? card.ok.content.markup.match(/https:\/\/[^\s\Z]+/i)?.[0] : 'https://media.istockphoto.com/id/1478408446/ru/%D1%84%D0%BE%D1%82%D0%BE/%D0%BC%D0%BE%D0%BD%D0%B8%D1%82%D0%BE%D1%80-%D0%BD%D0%B0%D1%81%D1%82%D0%BE%D0%BB%D1%8C%D0%BD%D0%BE%D0%B3%D0%BE-%D0%BA%D0%BE%D0%BC%D0%BF%D1%8C%D1%8E%D1%82%D0%B5%D1%80%D0%B0-%D1%81-%D0%BC%D0%B0%D0%BA%D0%B5%D1%82%D0%BE%D0%BC-%D0%B7%D0%B5%D0%BB%D0%B5%D0%BD%D0%BE%D0%B3%D0%BE-%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0-%D1%81%D1%82%D0%BE%D1%8F%D1%89%D0%B8%D0%B9-%D0%BD%D0%B0-%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D1%8F%D0%BD%D0%BD%D0%BE%D0%BC-%D1%81%D1%82%D0%BE%D0%BB%D0%B5-%D1%81.jpg?s=612x612&w=0&k=20&c=hlgj1WeJubuZTUwoG-TFZPWTb6vm4LKfJy1b5wzhISk='} alt='Фото новости'></img></div>
+                    <div className={styles.sizeImageDoc}><img className={styles.imageDoc} src={getImageFromXml(card)} alt='Фото новости'></img></div>
                     <p className={styles.textParagrafDoc}>{textParagraffFormat(card)}</p>
                     <div className={styles.footerDoc}>
                         <div className={styles.buttonModifyReadSource}>
