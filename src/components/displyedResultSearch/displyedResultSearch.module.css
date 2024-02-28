@@ -290,6 +290,11 @@
     color: #949494;
 }
 
+.placeButton {
+    width: 305px;
+    height: 59px;
+}
+
 .buttonModifyDispleyMore button {
     margin: 38px 0px 0px 508px;
     width: 305px;

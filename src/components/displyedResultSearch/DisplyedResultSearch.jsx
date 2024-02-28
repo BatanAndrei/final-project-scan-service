@@ -141,9 +141,9 @@ console.log(displayInPartsDocuments?.length)
                     </div>
                 </div>)}
             </div>
-            <div className={statusDocuments === 'loading' ? styles.buttonModifyDispleyMoreDisabled : styles.buttonModifyDispleyMore}>
+            <div className={styles.placeButton}><div className={statusDocuments === 'loading' ? styles.buttonModifyDispleyMoreDisabled : styles.buttonModifyDispleyMore}>
                 {(dataDocuments?.length !== displayInPartsDocuments?.length) && <MainButton disabled={statusDocuments === 'loading'} click={makeDocParts} name={nameButtonDispleyMore} />}
-            </div>
+            </div></div>
         </div>
     )
 };
