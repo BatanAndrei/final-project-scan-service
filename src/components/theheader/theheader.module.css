@@ -51,6 +51,7 @@
 }
 
 @media (min-width: 359px) and (max-width: 1235px) {
+    
     .headerContainer {
         width: 375px;
         height: 93px;
@@ -82,7 +83,9 @@
     }
 
     .buttonBurger {
-        border: none;
+        display: block;
+        width: 30px;
+        height: 25px;
         opacity: 0;
     }
 } 

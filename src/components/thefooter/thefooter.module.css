@@ -33,3 +33,18 @@
 .marginTop {
     margin-top: 25px;
 }
+
+@media (min-width: 359px) and (max-width: 1235px) {
+
+    .footerContainer {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 18px 0px 18px;
+        margin: auto;
+        width: 375px;
+        height: 137px;
+        background-color: #029491;
+        margin-bottom: 50px;
+    }
+
+}

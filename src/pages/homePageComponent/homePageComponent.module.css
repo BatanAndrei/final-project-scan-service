@@ -254,6 +254,12 @@
 }
 
 @media (min-width: 359px) and (max-width: 1235px) {
+
+    .homeContainer {
+        width: 375px;
+        max-height: 3230px;
+        margin: auto;
+    }
     
     .blockMainAboutSite {
         display: flex;
@@ -298,13 +304,13 @@
 
     .marginMobileWhyUs {
         margin: auto;
-        width: 278px;
+        width: 250px;
         height: 68px;
     }
 
     .textTitleBlockName {
         font-family: 'Ferry', sans-serif;
-        margin: 55px 0px 0px 0px;
+        margin: 55px 0px 0px -27px;
         font-weight: 900;
         font-size: 28px;
         Line-height: 33.6px;
@@ -314,6 +320,7 @@
         margin: 32px auto;
         width: 298px;
         height: 188px;
+        border-radius: 10px;
     }
 
     .blockPictureUnderCarousel {
@@ -343,9 +350,9 @@
         flex-direction: column;
         align-items: center;
         row-gap: 43px;
-        margin: 110px 0px 118px 60px;
-        width: 1320px;
-        height: 540px;
+        margin: 110px 0px 43px 0px;
+        width: 375px;
+        height: 100%;
     }
 
     .tariffItem {
@@ -433,8 +440,12 @@
         width: 286px;
         height: 59px;
         font-weight: 400;
-        font-size: 20px;
+        font-size: 18px;
         background-color: #D2D2D2;
+    }
+
+    .buttonModifyPersonalArea button:hover {
+        font-size: 19px;
     }
 
     .buttonModifyMoreDetail button {
@@ -444,8 +455,12 @@
         width: 286px;
         height: 59px;
         font-weight: 400;
-        font-size: 20px;
+        font-size: 18px;
         background-color: #5970FF;
+    }
+
+    .buttonModifyMoreDetail button:hover {
+        font-size: 19px;
     }
 }
 

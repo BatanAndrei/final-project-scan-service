@@ -13,7 +13,20 @@
     height: 100%;
 }
 
+@media (min-width: 359px) and (max-width: 1235px) {
 
+    .main {
+        height: 100%;
+    }
+
+    .app {
+        margin: auto;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 375px;
+    }
+}
 
 
 
