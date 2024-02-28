@@ -141,7 +141,7 @@ const DisplyedResultSearch = () => {
                 </div>)}
             </div>
             <div className={styles.placeButton}><div className={statusDocuments === 'loading' ? styles.buttonModifyDispleyMoreDisabled : styles.buttonModifyDispleyMore}>
-                {(dataDocuments?.length !== displayInPartsDocuments?.length) && <MainButton disabled={statusDocuments === 'loading'} click={makeDocParts} name={nameButtonDispleyMore} />}
+                {(dataDocuments?.length !== displayInPartsDocuments?.length) && <MainButton disabled={statusDocuments === 'loading'} click={makeDocParts} name={statusDocuments === 'loading' ? 'Загрузка ...' : nameButtonDispleyMore} />}
             </div></div>
         </div>
     )
