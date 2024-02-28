@@ -57,14 +57,14 @@ const HomePageComponent = () => {
                         <img className={styles.sizeImage} src={imageAboutSite} alt='Картинка о сайте'></img>
                     </div>
                 </div>
-                <div className={styles.marginMobile}><h2 className={styles.textTitleBlockName}>ПОЧЕМУ ИМЕННО МЫ</h2></div>
+                <div className={styles.marginMobileWhyUs}><h2 className={styles.textTitleBlockName}>ПОЧЕМУ ИМЕННО МЫ</h2></div>
                 <div className={styles.blockCarousel}>
                     <SimpleSliderHome />
                 </div>
                 <div className={styles.blockPictureUnderCarousel}>
                     <img className={styles.sizeImageUnderCaorusel} src={pictureUnderCarousel} alt='Картинка о сайте'></img>
                 </div>
-                <h2 className={styles.textTitleBlockName}>НАШИ ТАРИФЫ</h2>
+                <div className={styles.marginMobileOurRates}><h2 className={styles.textTitleBlockName}>НАШИ ТАРИФЫ</h2></div>
                 <div className={styles.blockTariffs}>
                     <div className={styles.tariffItem} onClick={ChooseTariffBeginner}>
                         <div className={styles.headTariffItem+' '+styles.beginner}>

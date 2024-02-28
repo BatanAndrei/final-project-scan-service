@@ -296,7 +296,7 @@
         margin: 32px 0px 24px 0px;
     }
 
-    .marginMobile {
+    .marginMobileWhyUs {
         margin: auto;
         width: 278px;
         height: 68px;
@@ -329,6 +329,121 @@
         height: 392px;
         object-fit: contain; 
         background-image: url('../../Images/imageMobileUnderCaorusel.png');
+    }
+
+    .marginMobileOurRates {
+        padding-top: 50px;
+        margin: auto;
+        width: 278px;
+        height: 68px;
+    }
+
+    .blockTariffs {
+        display: flex;
+        justify-content: space-between;
+        margin: 70px 0px 118px 60px;
+        width: 1320px;
+        height: 540px;
+    }
+
+    .tariffItem {
+        width: 335px;
+        height: 512px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 0px #dadada;
+        cursor: pointer;
+    }
+
+    .headTariffItem {
+        padding: 0px 0px 0px 20px;
+        display: flex;
+        justify-content: space-between;
+        width: 335px;
+        height: 132px;
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    .mainTariffItem {
+        padding-left: 20px;
+        width: 335px;
+        height: 380px;
+        border-radius: 0px 0px 10px 10px;
+    }
+    
+
+    .marginIconLamp {
+        margin: 15px 0px 0px -50px;
+        width: 59px;
+        height: 53px;
+    }
+
+    .marginIconLaptop {
+        margin: 15px 0px 0px -65px;
+        width: 73px;
+        height: 60px;
+    }
+    
+    .marginIconTarget {
+        margin: 0px 0px 0px -60px;
+        width: 68px;
+        height: 75px;
+    }
+
+    .descriptionTariffText {
+        width: 300px;
+        margin-top: 10px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    .containerBadge {
+        display: none;
+    }
+
+    .price {
+        margin: 15px 0px 0px 0px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 30px;
+    }
+
+    .styleTextMainDesc {
+        width: 300px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    .tariffIncludes {
+        margin: 36px 0px 10px 0px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 18px;
+        color: #000000;
+        width: 300px;
+    }
+
+    .buttonModifyPersonalArea button {
+        margin: 37px 0px 0px 0px;
+        font-family: 'Inter', sans-serif;
+        color: black;
+        width: 286px;
+        height: 59px;
+        font-weight: 400;
+        font-size: 20px;
+        background-color: #D2D2D2;
+    }
+
+    .buttonModifyMoreDetail button {
+        margin: 37px 0px 0px 0px;
+        font-family: 'Inter', sans-serif;
+        color: white;
+        width: 286px;
+        height: 59px;
+        font-weight: 400;
+        font-size: 20px;
+        background-color: #5970FF;
     }
 }
 
