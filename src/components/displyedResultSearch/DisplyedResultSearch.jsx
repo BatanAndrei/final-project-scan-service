@@ -26,8 +26,7 @@ const DisplyedResultSearch = () => {
     let resultImage;
 
     let displayInPartsDocuments = dataDocuments.slice(0, makeDocumentsParts);
-console.log(dataDocuments?.length)
-console.log(displayInPartsDocuments?.length)
+
     const makeDocParts = () => {
         dispatch(mekeDocumentsPartsReducer(10));
     };
