@@ -34,7 +34,7 @@ export default function SimpleSliderHome() {
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 375,
+                breakpoint: 1235,
                 settings: {
                     slidesToShow: 1,
             }

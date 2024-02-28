@@ -253,4 +253,83 @@
     border: 2px solid;
 }
 
+@media (min-width: 359px) and (max-width: 1235px) {
+    
+    .blockMainAboutSite {
+        display: flex;
+        flex-direction: column;
+        width: 375px;
+        height: 620px;
+    }
+
+    .mainAboutSiteText {
+        padding-left: 14px;
+        width: 375px;
+        height: 620px;
+    }
+    
+    .mainAboutSitePicture {
+        width: 347px;
+        height: 327px;
+    }
+
+    .titleMainAboutSite {
+        margin: 0;
+        font-family: 'Ferry', sans-serif;
+        font-weight: 900;
+        font-size: 28px;
+    }
+    
+    .subtitleMainAboutSite {
+        margin-top: 20px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    .sizeImage{
+        width: 347px;
+        height: 327px;
+    }
+
+    .buttonModifyReqData button {
+        margin: 32px 0px 24px 0px;
+    }
+
+    .marginMobile {
+        margin: auto;
+        width: 278px;
+        height: 68px;
+    }
+
+    .textTitleBlockName {
+        font-family: 'Ferry', sans-serif;
+        margin: 55px 0px 0px 0px;
+        font-weight: 900;
+        font-size: 28px;
+        Line-height: 33.6px;
+    }
+    
+    .blockCarousel{
+        margin: 32px auto;
+        width: 298px;
+        height: 188px;
+    }
+
+    .blockPictureUnderCarousel {
+        margin: auto;
+        width: 350px;
+        height: 392px;
+    }
+
+    .sizeImageUnderCaorusel {
+        padding-top: 400px;
+        margin: 50px 0px 0px 0px;
+        width: 350px;
+        height: 392px;
+        object-fit: contain; 
+        background-image: url('../../Images/imageMobileUnderCaorusel.png');
+    }
+}
+
 

@@ -54,15 +54,15 @@ const HomePageComponent = () => {
                         </div>}
                     </div>
                     <div className={styles.mainAboutSitePicture}>
-                        <img src={imageAboutSite} alt='Картинка о сайте'></img>
+                        <img className={styles.sizeImage} src={imageAboutSite} alt='Картинка о сайте'></img>
                     </div>
                 </div>
-                <h2 className={styles.textTitleBlockName}>ПОЧЕМУ ИМЕННО МЫ</h2>
+                <div className={styles.marginMobile}><h2 className={styles.textTitleBlockName}>ПОЧЕМУ ИМЕННО МЫ</h2></div>
                 <div className={styles.blockCarousel}>
                     <SimpleSliderHome />
                 </div>
                 <div className={styles.blockPictureUnderCarousel}>
-                    <img src={pictureUnderCarousel} alt='Картинка о сайте'></img>
+                    <img className={styles.sizeImageUnderCaorusel} src={pictureUnderCarousel} alt='Картинка о сайте'></img>
                 </div>
                 <h2 className={styles.textTitleBlockName}>НАШИ ТАРИФЫ</h2>
                 <div className={styles.blockTariffs}>

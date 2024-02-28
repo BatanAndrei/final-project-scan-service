@@ -37,6 +37,29 @@
     font-size: 18px;
 }
 
+@media (min-width: 359px) and (max-width: 1235px) {
+
+    .cardInfo {
+        padding: 22px 0px 0px 19px;
+        width: 298px;
+        height: 188px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 0px #dadada;
+        cursor: pointer;
+    }
+
+    .paragraf {
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 16px;
+    }
+
+    .marginItem {
+        margin: 4px 0px 0px 0px;
+        height: 192px;
+    }
+}
+
 
 
 

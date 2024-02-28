@@ -36,6 +36,7 @@ const Theheader = () => {
             <div className={styles.logo}>
                 <LogoHeader />
             </div>
+            <div className={styles.burgerMenu}><button className={styles.buttonBurger}></button></div>
             <ul className={styles.navigationPages}>
                 <li className={styles.list}><Link onClick={resetFieldsFilterSearch} className={styles.link} to='/'>Главная</Link></li>
                 <li className={styles.list}><Link className={styles.link} to='#'>Тарифы</Link></li>

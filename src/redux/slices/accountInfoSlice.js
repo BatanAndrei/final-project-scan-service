@@ -4,7 +4,7 @@ import { RequestGetAccountInfo } from '../../api/RequestGetAccountInfo';
 
 export const initialState = {
     accountInfo: new Object(),
-    tariffBeginner: false,
+    tariffBeginner: true,
     tariffPro: false,
     tariffBusiness: false,
 };

@@ -22,6 +22,8 @@
 }
 
 .userInfo {
+    display: flex;
+    justify-content: flex-end;
     margin-left: 128px;
     width: 414px;
     height: 63px;
@@ -44,7 +46,39 @@
     text-decoration: underline;
 }
 
-.userInfo {
-    display: flex;
-    justify-content: flex-end;
-}
+@media (min-width: 359px) and (max-width: 1235px) {
+    .headerContainer {
+        width: 375px;
+        height: 93px;
+    }
+
+    .userInfo {
+        display: none;
+    }
+
+    .navigationPages {
+        display: none;
+    }
+
+    .link {
+        display: none;
+    }
+
+    .logo {
+        margin-left: 14px;
+        width: 111px;
+        height: 93px;
+    }
+
+    .burgerMenu {
+        margin-left: 194px;
+        width: 30px;
+        height: 25px;
+        background-image: url('../../Images/hamburgerMenu.png');
+    }
+
+    .buttonBurger {
+        border: none;
+        opacity: 0;
+    }
+} 
