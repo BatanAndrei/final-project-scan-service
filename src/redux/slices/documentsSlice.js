@@ -4,6 +4,7 @@ import { RequestPostDocuments } from '../../api/RequestPostDocuments';
 
 export const initialState = {
     dataDocuments: [],
+    makeDocumentsParts: 10,
     paramsPostDocuments: {
         accessTokenDocuments: '',
         listEncodedId: [],
@@ -25,6 +26,14 @@ export const documentsSlice = createSlice({
         resetDataDocumentsReducer: (state, action) => {
             state.dataDocuments = action.payload;
             state.paramsPostDocuments.listEncodedId = [];
+        },
+
+        mekeDocumentsPartsReducer: (state, action) => {
+            state.makeDocumentsParts += action.payload;
+        },
+
+        resetDocumentsPartsReducer: (state) => {
+            state.makeDocumentsParts = 10;
         },
     },
 
@@ -54,5 +63,5 @@ export const documentsSlice = createSlice({
     }
 });
 
-export const { getAccessTokenDocumentsReducer, getEncodedIdReducer, resetDataDocumentsReducer } = documentsSlice.actions;
+export const { getAccessTokenDocumentsReducer, getEncodedIdReducer, resetDataDocumentsReducer, mekeDocumentsPartsReducer, resetDocumentsPartsReducer } = documentsSlice.actions;
 

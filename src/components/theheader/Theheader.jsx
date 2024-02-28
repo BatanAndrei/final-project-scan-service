@@ -5,7 +5,7 @@ import RegistrationPanelLogin from '../registrationPanelLogin/RegistrationPanelL
 import UserInfoHeader from '../../components/userInfoHeader/UserInfoHeader';
 import { selectIsActivated } from '../../redux/selectors/selectors';
 import { innReducer, deliveryDocReducer, deteBeginReducer, deteEndReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, isActivateResultPageReducer } from '../../redux/slices/histogramsSlice';
-import { resetDataDocumentsReducer } from '../../redux/slices/documentsSlice';
+import { resetDataDocumentsReducer, resetDocumentsPartsReducer } from '../../redux/slices/documentsSlice';
 import { useSelector, useDispatch } from 'react-redux';
 
 
@@ -28,6 +28,7 @@ const Theheader = () => {
         dispatch(checkedBoxReducer5(false));
         dispatch(checkedBoxReducer6(false));
         dispatch(resetDataDocumentsReducer([]));
+        dispatch(resetDocumentsPartsReducer());
     }
 
     return (

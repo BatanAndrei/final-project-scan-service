@@ -3,8 +3,8 @@ import SimpleSliderResult from '../../components/caoruselResult/CaoruselResult';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonDispleyMore, nameButtonReadSource } from '../../dataVariables/variables';
 import { Link } from 'react-router-dom';
-import { selectDataHistograms, selectDataObjectsearch, selectStatusHistograms, selectDataDocuments, selectParamsDocuments, selectListEncodedID, selectStatusDocuments } from '../../redux/selectors/selectors';
-import { getEncodedIdReducer } from '../../redux/slices/documentsSlice';
+import { selectDataHistograms, selectDataObjectsearch, selectStatusHistograms, selectDataDocuments, selectParamsDocuments, selectListEncodedID, selectStatusDocuments, selectMakeDocumentsParts } from '../../redux/selectors/selectors';
+import { getEncodedIdReducer, mekeDocumentsPartsReducer } from '../../redux/slices/documentsSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { RequestPostDocuments } from '../../api/RequestPostDocuments';
 import { useEffect } from 'react';
@@ -21,18 +21,17 @@ const DisplyedResultSearch = () => {
     const dataDocuments = useSelector(selectDataDocuments);
     const paramsDocuments = useSelector(selectParamsDocuments);
     const listEncodedID = useSelector(selectListEncodedID);
+    const makeDocumentsParts = useSelector(selectMakeDocumentsParts);
     let rsultText;
     let resultImage;
-        
-   //let test = url.match(/https(.*?)">(.*?)/)?.[0];
 
-    //let news = dataDocuments[23].ok.content.markup;
+    let displayInPartsDocuments = dataDocuments.slice(0, makeDocumentsParts);
+console.log(dataDocuments?.length)
+console.log(displayInPartsDocuments?.length)
+    const makeDocParts = () => {
+        dispatch(mekeDocumentsPartsReducer(10));
+    };
 
-    //let good = news.match(/https:\/\/[^\s\Z]+/i)?.[0]; //(/https:\/\/[^\s\Z]+/i)?.[0]
-
-    //let check = good.match(/\.([^.]+)$|$/)[1].split('"')[0]
-    //console.log(check)
-    
     const getImageFromXml = (card) => {
         let xml = card?.ok.content.markup;
             let getLink = xml?.match(/https:\/\/[^\s\Z]+/i)?.[0]?.split('"')[0];
@@ -125,7 +124,7 @@ const DisplyedResultSearch = () => {
             <h2 className={styles.textModifyListDoc}>Список документов</h2>
             <div className={styles.wrapperDocuments}>
 
-                {dataDocuments?.map((card, index) => <div key={index} className={styles.cardDoc}>
+                {displayInPartsDocuments?.map((card, index) => <div key={index} className={styles.cardDoc}>
                     <div className={styles.dateWithSource}>
                         <h3 className={styles.infoDate}>{card.ok.issueDate.split('T')[0].replace(/\-/g, '.')}</h3>
                         <h3 className={styles.textLinkSource}><Link className={styles.linkSource} target="_blank" to={card.ok.url === '' ? 'https://nicepage.com/ru/ht/307440/zona-stroitelstva-sayta-html-shablon?sscid=21k8_r9ua4&' : card.ok.url}>{card.ok.source.name.length > 45 ? card.ok.source.name.slice(0, 45) + ' . . .' : card.ok.source.name}</Link></h3>
@@ -143,7 +142,7 @@ const DisplyedResultSearch = () => {
                 </div>)}
             </div>
             <div className={statusDocuments === 'loading' ? styles.buttonModifyDispleyMoreDisabled : styles.buttonModifyDispleyMore}>
-                <MainButton disabled={statusDocuments === 'loading'} name={nameButtonDispleyMore} />
+                {(dataDocuments?.length !== displayInPartsDocuments?.length) && <MainButton disabled={statusDocuments === 'loading'} click={makeDocParts} name={nameButtonDispleyMore} />}
             </div>
         </div>
     )

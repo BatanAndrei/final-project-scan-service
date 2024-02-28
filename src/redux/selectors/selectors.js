@@ -40,6 +40,7 @@ export const selectStatusDocuments = (state) => state.documentsExtraReducers.sta
 export const selectDataDocuments = (state) => state.documentsExtraReducers.dataDocuments;
 export const selectParamsDocuments = (state) => state.documentsExtraReducers.paramsPostDocuments;
 export const selectListEncodedID = (state) => state.documentsExtraReducers.paramsPostDocuments.listEncodedId;
+export const selectMakeDocumentsParts = (state) => state.documentsExtraReducers.makeDocumentsParts;
 
 
 
