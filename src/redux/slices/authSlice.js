@@ -15,6 +15,7 @@ export const initialState = {
     loginError: '',    //пробел
     passwordError: '',  //пробел
     validForm: false,
+    isActivatedBurgerMenu: false,
 };
 
 export const authSlice = createSlice({
@@ -62,7 +63,11 @@ export const authSlice = createSlice({
 
         cleanErrorMessageReducer: (state, action) => {
             state.error = action.payload;
-        }
+        },
+
+        isActivatedBurgerMenuReducer: (state, action) => {
+            state.isActivatedBurgerMenu = action.payload;
+        },
     },
 
     extraReducers: (builder) => {
@@ -92,4 +97,4 @@ export const authSlice = createSlice({
     }
 });
 
-export const { loginReducer, passwordReducer, loginErrorReducer, passwordErrorReducer, validFormReducer, isActivatedReducer, logOutReducer, cleanErrorMessageReducer } = authSlice.actions;
+export const { loginReducer, passwordReducer, loginErrorReducer, passwordErrorReducer, validFormReducer, isActivatedReducer, logOutReducer, cleanErrorMessageReducer, isActivatedBurgerMenuReducer } = authSlice.actions;

@@ -10,6 +10,10 @@
     display: none;
 }
 
+.burgerMenu {
+    display: none;
+}
+
 .logo {
     margin-left: 60px;
     width: 141px;
@@ -51,7 +55,7 @@
 }
 
 @media (min-width: 359px) and (max-width: 1235px) {
-    
+
     .headerContainer {
         width: 375px;
         height: 93px;
@@ -76,6 +80,7 @@
     }
 
     .burgerMenu {
+        display: block;
         margin-left: 194px;
         width: 30px;
         height: 25px;

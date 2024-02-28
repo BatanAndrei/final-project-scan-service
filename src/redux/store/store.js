@@ -58,6 +58,7 @@ const reducer = combineReducers({
     resetDataDocumentsReducer: documentsSlice.reducer,
     mekeDocumentsPartsReducer: documentsSlice.reducer,
     resetDocumentsPartsReducer: documentsSlice.reducer,
+    isActivatedBurgerMenuReducer: documentsSlice.reducer,
 })
 
 const persistedReducer = persistReducer(persistConfig, reducer);
