@@ -55,7 +55,7 @@ const UserInfoHeader = () => {
             </div>
             <div className={styles.avatarHeaderLogout}>
                 <div className={styles.userNameLogoutButton}>
-                    <h3 className={styles.textUameUser}>Алексей А.</h3>
+                    <h3 className={styles.textNameUser}>Алексей А.</h3>
                     <button className={styles.buttonLogout} onClick={HeandleClickLogout}>Выйти</button>
                 </div>
                 <div className={styles.avatarImage}></div>

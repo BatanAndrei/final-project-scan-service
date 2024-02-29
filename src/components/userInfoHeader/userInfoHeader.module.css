@@ -45,7 +45,7 @@
     align-items: flex-end;
 }
 
-.textUameUser {
+.textNameUser {
     margin: 0px;
     font-family: 'Inter', sans-serif;
     font-weight: 400;
@@ -94,6 +94,62 @@
     font-weight: 700;
     font-size: 14px;
     color: #8AC540;
+}
+
+@media (min-width: 359px) and (max-width: 1235px) {
+
+    .container {
+        display: flex;
+        justify-content: space-between;
+        width: 132px;
+        height: 75px;
+    }
+
+    .loader {
+        margin: 18px 0px 0px 53px;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-image: url('../../Images/loaderFoto25.png');
+        animation: loader 1.3s linear infinite;
+    }
+
+    .avatarHeaderLogout {
+        display: none;
+    }
+
+    .infoByComponies {
+        padding-top: 5px;
+        display: flex;
+        flex-direction: column;
+        
+        width: 132px;
+        height: 75px;
+        border-radius: 5px;
+        background-color: #D9D9D9;
+    }
+
+    .textUsedCompanies {
+        width: 99px;
+        margin-left: 10px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 8px;
+        color: #949494;
+    }
+
+    .textLimitCompanies {
+        width: 85px;
+        margin-left: 10px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+        font-size: 8px;
+        color: #949494;
+    }
+
+    .styleQuantityUsed, .styleQuantityLimit {
+        margin: 2px 0px 0px 0px;
+    }
 }
 
 

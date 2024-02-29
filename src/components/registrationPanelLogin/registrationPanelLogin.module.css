@@ -7,6 +7,7 @@
     cursor: pointer;
 }
 
+
 .link:hover {
     text-decoration: underline;
 }
@@ -21,4 +22,19 @@
 
 .buttonMargin {
     margin: 16px 0px 0px 18px;
+}
+
+@media (min-width: 359px) and (max-width: 1235px) {
+
+    .textMargin {
+        display: none;
+    }
+
+    .verticalOr {
+        display: none;
+    }
+
+    .buttonMargin {
+        display: none;
+    }
 }

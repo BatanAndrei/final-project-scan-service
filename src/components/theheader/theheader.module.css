@@ -62,7 +62,14 @@
     }
 
     .userInfo {
-        display: none;
+        position: relative;
+        top: -6px;
+        left: -184px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: flex-end;
+        width: 414px;
+        height: 63px;
     }
 
     .navigationPages {
@@ -74,14 +81,14 @@
     }
 
     .logo {
-        margin-left: 14px;
+        margin-left: 10px;
         width: 111px;
         height: 93px;
     }
 
     .burgerMenu {
         display: block;
-        margin-left: 194px;
+        margin-left: 200px;
         width: 30px;
         height: 25px;
         background-image: url('../../Images/hamburgerMenu.png');
