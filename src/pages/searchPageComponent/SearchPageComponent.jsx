@@ -42,7 +42,6 @@ const SearchPageComponent = () => {
     const checkedBox5 = useSelector(selectCheckedBox5);
     const checkedBox6 = useSelector(selectCheckedBox6);
     
-    
     const CheckInn = (e) => {
         dispatch(innReducer(e.target.value));
         let result = false;
@@ -77,7 +76,6 @@ const SearchPageComponent = () => {
         return result;                                                    
     };
 
-
     const CheckDeliveryDoc = (e) => {
         dispatch(deliveryDocReducer(e.target.value));
 
@@ -92,7 +90,6 @@ const SearchPageComponent = () => {
         };                                                                 
     };
 
-
     const getDateFieldHiddenBegin = (e) => {
         dispatch(deteBeginReducer(e.target.value));
             let nowDate = new Date();
@@ -104,7 +101,6 @@ const SearchPageComponent = () => {
                     dispatch(deteErrorReducer('Введите корректные данные'));
                 }
     };
-
 
     const getDateFieldHiddenEnd = (e) => {
         dispatch(deteEndReducer(e.target.value));
@@ -118,7 +114,6 @@ const SearchPageComponent = () => {
                 }
     };
 
-
     useEffect(() => {
         if(innError || deliveryDocError || dateError) {
             dispatch(validFormSearchReducer(false))
@@ -127,7 +122,6 @@ const SearchPageComponent = () => {
         }
     }, [innError, deliveryDocError, dateError]);
     
-
     const HeandleCheckBox = (e) => {
         switch (e.target.dataset.index) {
             case '0':
@@ -188,14 +182,12 @@ const SearchPageComponent = () => {
         }
     };
 
-
     const PostRequestSearch = (e) => {
         e.preventDefault();
         dispatch(RequestPostHistograms(paramsPostHistograms));
         dispatch(RequestPostObjectsearch(paramsPostHistograms));
         dispatch(isActivateResultPageReducer(true));
     };
-
 
     const HeandleSelect = (e) => {
         dispatch(tonalityReducer(e.target.value));
