@@ -200,3 +200,130 @@
     border: none;
     cursor: pointer;
 }
+
+@media (min-width: 359px) and (max-width: 1235px) {
+
+    .containerAuthPage {
+        display: block;
+        width: 375px;
+        height: 1250px;
+        margin: auto;
+        padding: 0px 14px 0px 14px;
+    }
+
+    .titleInfo {
+        margin: 31px 0px 0px 0px;
+        width: 370px;
+        font-family: 'Ferry', sans-serif;
+        font-weight: 900;
+        font-size: 22px;
+        Line-height: 26.4px;
+    }
+
+    .positionPicture {
+        position: relative;
+        top: 700px;
+        margin: 0px 0px 0px 0px;
+    }
+
+    .formForAuth {
+        position: relative;
+        top: -880px;
+        width: 335px;
+        height: 585px;
+    }
+
+    .containerForm {
+        position: relative;
+        top: 0px;
+        left: 0px;
+        width: 335px;
+        height: 523px;
+    }
+
+    .infoForSubscription {
+        width: 330px;
+        height: 1000px;
+    }
+
+    .input {
+        margin: 15px 0px 0px 15px;
+        width: 305px;
+        height: 43px;
+        font-size: 16px;
+    }
+
+    .buttonModifyLoginDisable button {
+        margin: 10px 0px 0px 15px;
+        width: 305px;
+        font-size: 20px;
+    }
+    
+    .buttonModifyLogin button {
+        margin: 10px 0px 0px 15px;
+        width: 305px;
+        font-size: 20px;
+    }
+    
+    .buttonModifyLogin button:hover {
+        font-size: 21px;
+    }
+
+    .titleInputTel {
+        margin: 20px 0px 0px 15px;
+        font-size: 14px;
+    }
+    
+    .titleInputPass {
+        margin: 0px 0px 0px 15px;
+        font-size: 14px;
+    }
+
+    .headerForm {
+        margin: 0px 25px 40px 15px;
+        width: 305px;
+        height: 60px;
+    }
+
+    .loginTab {
+        width: 103px;
+        height: 29px;
+        font-size: 14px;
+    }
+
+    .registerTab {
+        width: 182px;
+        height: 29px;
+        font-size: 14px;
+    }
+
+    .link {
+        margin: 10px 0px 0px 92px;
+    }
+
+    .loginVia {
+        margin: 25px 0px 0px 15px;
+    }
+
+    .blockLoginLinks {
+        margin: 15px 0px 0px 15px;
+    }
+
+    .zamok {
+        top: 18px;
+        left: 80px;
+    }
+
+    .placeError {
+        margin: 6px 0px 0px 15px;
+        width: 305px;
+        height: 20px;
+    }
+
+    .inputError {
+        margin: 15px 0px 0px 15px;
+        width: 305px;
+        height: 43px;
+        font-size: 16px;
+    }
+}
