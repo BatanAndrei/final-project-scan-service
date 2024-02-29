@@ -397,6 +397,10 @@
         width: 335px;
         height: 59px;
     }
+
+    .buttonModifyReqData, .buttonModifyReqDataDisable {
+        width: 305px;
+    }
     
     .buttonModifyReqDataDisable button {
         position: relative;
@@ -464,6 +468,7 @@
     .textErrorMessageDate {
         position: relative;
         top: -16px;
+        width: 335px;
     }
 
     .documentImg {
@@ -482,6 +487,7 @@
         position: relative;
         top: -33px;
         margin: 0px 0px 0px 10px;
+        width: 335px;
     }
 
     .inputDateError {
