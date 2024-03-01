@@ -335,7 +335,8 @@
 @media (min-width: 359px) and (max-width: 1235px) {
 
     .containerResult {
-        padding: 20px 43px 125px 14px;
+        padding-bottom: 97px;
+        padding-left: 14px;
         margin: auto;
         width: 375px;
         height: 100%;
@@ -344,18 +345,20 @@
     .textModifySearchSoon {
         margin: 0px;
         font-size: 28px;
+        width: 350px;
     }
 
     .textModifyWaitTime {
         margin: 21px 0px 0px 0px;
         font-size: 18px;
+        width: 350px;
     }
 
     .infoAboutSearch {
         display: flex;
         flex-direction: column;
         padding: 0px 60px 0px 9px;
-        width: 375px;
+        width: 350px;
         height: 100%;
     }
 
@@ -366,17 +369,19 @@
     }
 
     .infoTitle {
-        width: 375px;
+        width: 350px;
         height: 131px;
     }
 
     .textModifyGeneralSummary {
         margin: 59px 0px 10px 0px;
         font-size: 28px;
+        width: 350px;
     }
 
     .textModifyOptionsFound {
         margin: 0px;
+        width: 350px;
     }
 
     .bodySlider {
@@ -437,7 +442,7 @@
     }
 
     .wrapperSlider {
-        width: 375px;
+        width: 350px;
         height: 260px;
     }
 
@@ -477,6 +482,92 @@
         height: 40px;
         background-image: url('../../Images/arrowRight.png');
         background-repeat: no-repeat;
+    }
+
+    .textModifyListDoc {
+        margin: 57px 0px 0px 0px;
+        width: 335px;
+        font-size: 28px;
+    }
+
+    .wrapperDocuments {
+        margin: 58px 0px 0px 0px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 36px;
+        width: 335px;
+        height: 100%;
+    }
+
+    .buttonModifyDispleyMore button {
+        margin: 36px 0px 0px 0px;
+        width: 335px;
+        height: 59px;
+        font-size: 20px;
+    
+    }
+    
+    .buttonModifyDispleyMoreDisabled button {
+        margin: 36px 0px 0px 0px;
+        width: 335px;
+        height: 59px;
+        font-size: 20px;
+    } 
+
+    .buttonModifyDispleyMore button:hover {
+        font-size: 21px;
+    }
+
+    .cardDoc {
+        padding: 19px 14px 36px 24px;
+        width: 335px;
+        height: 694px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 0 #dadada;
+    }
+
+    .imageDoc {
+        width: 297px;
+        height: 158px;
+    }
+
+    .sizeImageDoc {
+        width: 297px;
+        height: 158px;
+    }
+
+    .infoDate {
+        font-size: 14px;
+    }
+
+    .linkSource {
+        font-size: 14px;
+    }
+
+    .titleNameDoc {
+        height: 69px;
+        margin: 21px 0px 0px 0px;
+        font-size: 19px;
+    }
+
+    .buttonModifyReadSource button {
+        margin: 25px 0px 0px 0px;
+        font-size: 14px;
+        width: 195px;
+        height: 40px;
+    }
+    
+    .buttonModifyReadSource button:hover {
+        font-size: 15px;
+    }
+
+    .badgeCategoryDoc {
+        margin: 20px 0px 0px 0px;
+    }
+
+    .quantityWords {
+        margin: 49px 0px 0px 0px;
+        font-size: 14px;
     }
 }
 

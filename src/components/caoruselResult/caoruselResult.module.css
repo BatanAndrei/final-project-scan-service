@@ -96,11 +96,12 @@
 
     .slick_prev {
         top: 15px;
-        left: -45px;
+        left: -40px;
     }
 
     .slick_next {
         top: 15px;
+        left: 295px;
     }
     
 }
