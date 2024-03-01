@@ -58,5 +58,52 @@
     right: -45px;
 }
 
+@media (min-width: 359px) and (max-width: 1235px) {
+
+    .cardInfo {
+        width: 298px;
+        height: 65px;
+        border-right: none;
+    }
+
+    .positionDataCaorusel {
+        width: 110px;
+        margin: 0px;
+    }
+
+    .textModifyDataResultDate {
+        position: relative;
+        top: 3px;
+        margin-left: 9px;
+        font-size: 16px;
+    }
+    
+    .textModifyDataResultTotal {
+        position: relative;
+        top: -17px;
+        left: 100px;
+        margin: 0px;
+        font-size: 16px;
+    }
+    
+    .textModifyDataResultRisck {
+        position: relative;
+        top: -37px;
+        left: 197px;
+        margin: 0px;
+        font-size: 16px;
+    }
+
+    .slick_prev {
+        top: 15px;
+        left: -45px;
+    }
+
+    .slick_next {
+        top: 15px;
+    }
+    
+}
+
 
 

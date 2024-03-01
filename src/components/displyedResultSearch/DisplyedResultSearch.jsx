@@ -3,6 +3,7 @@ import SimpleSliderResult from '../../components/caoruselResult/CaoruselResult';
 import MainButton from '../../components/mainButton/mainButton';
 import { nameButtonDispleyMore, nameButtonReadSource } from '../../dataVariables/variables';
 import { Link } from 'react-router-dom';
+import searchImageTarget from '../../Images/searchImageTarget.png';
 import { selectDataHistograms, selectDataObjectsearch, selectStatusHistograms, selectDataDocuments, selectParamsDocuments, selectListEncodedID, selectStatusDocuments, selectMakeDocumentsParts } from '../../redux/selectors/selectors';
 import { getEncodedIdReducer, mekeDocumentsPartsReducer } from '../../redux/slices/documentsSlice';
 import { useSelector, useDispatch } from 'react-redux';
@@ -74,16 +75,16 @@ const DisplyedResultSearch = () => {
                     </div>
                     }
                 </div>
-                <div className={styles.infoImage}></div>
+                <img src={searchImageTarget} className={styles.infoImage}/>
             </div>
             <div className={styles.wrapperSlider}>
                 <h2 className={styles.textModifyGeneralSummary}>Общая сводка</h2>
                 <h3 className={styles.textModifyOptionsFound}>{`Найдено ${infoQuantityOptions ? infoQuantityOptions : 0} вариантов`}</h3>
                 {
-                statusHistograms === 'loading' && 
+                statusHistograms !== 'loading' && 
                 <div className={styles.sliderBeforeLoad}>   
                     <div className={styles.arrowPrevDecoration}></div>
-                    <div className={styles.blockTitleDataSlider}>
+                    <div className={styles.blockTitleDataSliderEmpty}>
                         <h3 className={styles.texModifyTitleSlider}>Период</h3>
                         <h3 className={styles.texModifyTitleSlider}>Всего</h3>
                         <h3 className={styles.texModifyTitleSlider}>Риски</h3>
@@ -97,7 +98,7 @@ const DisplyedResultSearch = () => {
                 !infoQuantityOptions && 
                 <div className={styles.sliderBeforeLoad}>   
                     <div className={styles.arrowPrevDecoration}></div>
-                    <div className={styles.blockTitleDataSlider}>
+                    <div className={styles.blockTitleDataSliderEmpty}>
                         <h3 className={styles.texModifyTitleSlider}>Период</h3>
                         <h3 className={styles.texModifyTitleSlider}>Всего</h3>
                         <h3 className={styles.texModifyTitleSlider}>Риски</h3>

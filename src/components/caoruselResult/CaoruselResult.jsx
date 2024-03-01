@@ -51,7 +51,7 @@ export default function SimpleSliderResult() {
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 375,
+                breakpoint: 1235,
                 settings: {
                     slidesToShow: 1,
             }

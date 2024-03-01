@@ -35,7 +35,6 @@
 .infoImage {
     width: 553px;
     height: 369px;
-    background-image: url('../../Images/searchImageTarget.png');
 }
 
 .wrapperSlider {
@@ -100,6 +99,17 @@
     border-radius: 10px 0px 0px 10px;
     background-color: #029491;
 } 
+
+.blockTitleDataSliderEmpty {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 17px 0px 17px 28px;
+    width: 133px;
+    height: 158px;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #029491;
+}
 
 .texModifyTitleSlider {
     margin: 0px;
@@ -320,6 +330,153 @@
 
 .buttonModifyDispleyMore button:hover {
     font-size: 23px;
+}
+
+@media (min-width: 359px) and (max-width: 1235px) {
+
+    .containerResult {
+        padding: 20px 43px 125px 14px;
+        margin: auto;
+        width: 375px;
+        height: 100%;
+    }
+
+    .textModifySearchSoon {
+        margin: 0px;
+        font-size: 28px;
+    }
+
+    .textModifyWaitTime {
+        margin: 21px 0px 0px 0px;
+        font-size: 18px;
+    }
+
+    .infoAboutSearch {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 60px 0px 9px;
+        width: 375px;
+        height: 100%;
+    }
+
+    .infoImage {
+        margin-top: 21px;
+        width: 350px;
+        height: 233px;
+    }
+
+    .infoTitle {
+        width: 375px;
+        height: 131px;
+    }
+
+    .textModifyGeneralSummary {
+        margin: 59px 0px 10px 0px;
+        font-size: 28px;
+    }
+
+    .textModifyOptionsFound {
+        margin: 0px;
+    }
+
+    .bodySlider {
+        position: relative;
+        top: 1px;
+        left: 0px;
+        border-radius: 0px 0px 10px 10px;
+        border: none;
+        width: 298px;
+        height: 65px;
+    }
+
+    .blockTitleDataSlider {
+        display: flex;
+        flex-direction: row;
+        padding: 23px 18px 23px 15px;
+        width: 298px;
+        height: 75px;
+        border-radius: 10px 10px 0px 0px;
+        background-color: #029491;
+    } 
+
+    .blockTitleDataSliderEmpty {
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        top: -68px;
+        padding: 23px 18px 23px 15px;
+        width: 298px;
+        height: 75px;
+        border-radius: 10px 10px 0px 0px;
+        background-color: #029491;
+    }
+
+    .sliderAfterLoad {
+        display: flex;
+        flex-direction: column;
+        margin: 34px 0px 0px 24px;
+        width: 298px;
+        height: 140px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 0px #dadada;
+    }
+
+    .sliderBeforeLoad {
+        display: flex;
+        flex-direction: column-reverse;
+        margin: 34px 0px 0px 24px;
+        width: 298px;
+        height: 140px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px 0px #dadada;
+    }
+
+    .texModifyTitleSlider {
+        font-size: 18px;
+    }
+
+    .wrapperSlider {
+        width: 375px;
+        height: 260px;
+    }
+
+    .textModifyEmptyResult {
+        margin: 70px 0px 0px 55px;
+    }
+
+    .textModifyLoadData {
+        display: none;
+    }
+
+    .loader {
+        margin: 65px 0px 0px 130px;
+        background-image: url('../../Images/loaderFoto36.png');
+        width: 36px;
+        height: 36px;
+    }
+
+    .arrowPrevDecoration {
+        position: relative;
+        top: 1px;
+        left: -49px;
+        margin: 0px;
+        width: 40px;
+        height: 158px;
+        background-image: url('../../Images/arrowLeft.png');
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+    
+    .arrowNextDecoration {
+        position: relative;
+        top: 1px;
+        left: -49px;
+        margin: 0px;
+        width: 40px;
+        height: 158px;
+        background-image: url('../../Images/arrowRight.png');
+        background-repeat: no-repeat;
+    }
 }
 
 
