@@ -81,7 +81,9 @@ const DisplyedResultSearch = () => {
                 <h2 className={styles.textModifyGeneralSummary}>Общая сводка</h2>
                 <h3 className={styles.textModifyOptionsFound}>{`Найдено ${infoQuantityOptions ? infoQuantityOptions : 0} вариантов`}</h3>
                 {
-                statusHistograms !== 'loading' && 
+                statusHistograms === 'loading' && 
+                <div>
+                <div className={styles.arrowPrevDecorationMobile}></div>    
                 <div className={styles.sliderBeforeLoad}>   
                     <div className={styles.arrowPrevDecoration}></div>
                     <div className={styles.blockTitleDataSliderEmpty}>
@@ -94,8 +96,12 @@ const DisplyedResultSearch = () => {
                         <h3 className={styles.textModifyLoadData}>Загружаем данные</h3>
                     </div>
                     <div className={styles.arrowNextDecoration}></div>
+                </div>
+                <div className={styles.arrowNextDecorationMobile}></div>
                 </div> || 
                 !infoQuantityOptions && 
+                <di>
+                <div className={styles.arrowPrevDecorationMobile}></div>    
                 <div className={styles.sliderBeforeLoad}>   
                     <div className={styles.arrowPrevDecoration}></div>
                     <div className={styles.blockTitleDataSliderEmpty}>
@@ -107,7 +113,9 @@ const DisplyedResultSearch = () => {
                         <h3 className={styles.textModifyEmptyResult}>Результат не найден</h3>
                     </div>
                     <div className={styles.arrowNextDecoration}></div>
-                </div> ||
+                </div>
+                <div className={styles.arrowNextDecorationMobile}></div>
+                </di> ||
                 dataHistograms &&
                 <div className={styles.sliderAfterLoad}>           
                     <div className={styles.blockTitleDataSlider}>
