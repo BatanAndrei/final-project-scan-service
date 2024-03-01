@@ -1,5 +1,6 @@
 import styles from './theheader.module.css';
 import LogoHeader from '../../iconComponnents/logoHeader/LogoHeader';
+import LogoFooter from '../../iconComponnents/logoFooter/LogoFooter';
 import { Link } from 'react-router-dom';
 import RegistrationPanelLogin from '../registrationPanelLogin/RegistrationPanelLogin';
 import UserInfoHeader from '../../components/userInfoHeader/UserInfoHeader';
@@ -34,15 +35,20 @@ const Theheader = () => {
     };
 
     const displayedBurgerMenu = () => {
-        dispatch(isActivatedBurgerMenuReducer(true));
+        if(!isActivatedBurgerMenu){
+            dispatch(isActivatedBurgerMenuReducer(true));
+        }else {
+            dispatch(isActivatedBurgerMenuReducer(false));
+        }
+        
     };
 console.log(isActivatedBurgerMenu)
     return (
-        <header className={styles.headerContainer}>
-            <div className={styles.logo}>
-                <LogoHeader />
+        <header className={!isActivatedBurgerMenu ? styles.headerContainer : styles.burgerMenuOpened}>
+            <div className={!isActivatedBurgerMenu ? styles.logo : styles.logoFooter}>
+                {!isActivatedBurgerMenu ? <LogoHeader /> : <LogoFooter />}
             </div>
-            <div className={styles.burgerMenu}><button onClick={displayedBurgerMenu} className={styles.buttonBurger}></button></div>
+            <div className={!isActivatedBurgerMenu ? styles.burgerMenu : styles.cross}><button onClick={displayedBurgerMenu} className={styles.buttonBurger}></button></div>
             <ul className={styles.navigationPages}>
                 <li className={styles.list}><Link onClick={resetFieldsFilterSearch} className={styles.link} to='/'>Главная</Link></li>
                 <li className={styles.list}><Link className={styles.link} to='#'>Тарифы</Link></li>

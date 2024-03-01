@@ -86,12 +86,39 @@
         height: 93px;
     }
 
+    .logoFooter {
+        position: relative;
+        top: -197px;
+        left: 12px;
+    }
+
     .burgerMenu {
         display: block;
         margin-left: 200px;
         width: 30px;
         height: 25px;
         background-image: url('../../Images/hamburgerMenu.png');
+    }
+
+    .cross {
+        position: relative;
+        top: -200px;
+        right: 15px;
+        display: block;
+        margin-left: 200px;
+        width: 25px;
+        height: 25px;
+        background-image: url('../../Images/cross.png');
+    }
+
+    .burgerMenuOpened {
+        display: flex;
+        align-items: center;
+        width: 375px;
+        height: 494px;
+        margin: auto;
+        background-color: #029491;
+        z-index: 1;
     }
 
     .buttonBurger {
