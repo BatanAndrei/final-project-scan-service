@@ -9,6 +9,7 @@ import { innReducer, deliveryDocReducer, deteBeginReducer, deteEndReducer, check
 import { resetDataDocumentsReducer, resetDocumentsPartsReducer } from '../../redux/slices/documentsSlice';
 import { isActivatedBurgerMenuReducer } from '../../redux/slices/authSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import LoginButton from '../../components/loginButton/LoginButton';
 
 
 const Theheader = () => {
@@ -32,6 +33,7 @@ const Theheader = () => {
         dispatch(checkedBoxReducer6(false));
         dispatch(resetDataDocumentsReducer([]));
         dispatch(resetDocumentsPartsReducer());
+        dispatch(isActivatedBurgerMenuReducer(false));
     };
 
     const displayedBurgerMenu = () => {
@@ -39,16 +41,35 @@ const Theheader = () => {
             dispatch(isActivatedBurgerMenuReducer(true));
         }else {
             dispatch(isActivatedBurgerMenuReducer(false));
-        }
-        
+        }    
     };
-console.log(isActivatedBurgerMenu)
+
+    const enterInAuthorizationMobile = () => {
+        dispatch(isActivatedBurgerMenuReducer(false));
+    };
+
     return (
-        <header className={!isActivatedBurgerMenu ? styles.headerContainer : styles.burgerMenuOpened}>
-            <div className={!isActivatedBurgerMenu ? styles.logo : styles.logoFooter}>
-                {!isActivatedBurgerMenu ? <LogoHeader /> : <LogoFooter />}
+        <header className={styles.headerContainer}>
+            <div className={styles.logo}>
+                <LogoHeader />
             </div>
-            <div className={!isActivatedBurgerMenu ? styles.burgerMenu : styles.cross}><button onClick={displayedBurgerMenu} className={styles.buttonBurger}></button></div>
+            <div className={styles.burgerMenu}><button onClick={displayedBurgerMenu} className={styles.buttonBurger}></button></div>
+            {isActivatedBurgerMenu && <div className={styles.burgerMenuOpened}>
+                <div className={styles.logoFooter}>
+                    <LogoFooter />
+                </div>
+                <div className={styles.cross}><button onClick={displayedBurgerMenu} className={styles.buttonBurger}></button></div>
+                <ul className={styles.navigationPagesMobile}>
+                    <li className={styles.listMobile}><Link onClick={resetFieldsFilterSearch} className={styles.linkMobile} to='/'>Главная</Link></li>
+                    <li className={styles.listMobile}><Link className={styles.linkMobile} to='#'>Тарифы</Link></li>
+                    <li className={styles.listMobile}><Link className={styles.linkMobile} to='#'>FAQ</Link></li>
+                </ul>
+                <h2 className={styles.textPosition}><Link className={styles.linkMobileOpacity} to='#'>Зарегистрироваться</Link></h2>
+                <div className={styles.positionButtonMobile}>
+                    <LoginButton click={enterInAuthorizationMobile}/>
+                </div>
+            </div>
+            }
             <ul className={styles.navigationPages}>
                 <li className={styles.list}><Link onClick={resetFieldsFilterSearch} className={styles.link} to='/'>Главная</Link></li>
                 <li className={styles.list}><Link className={styles.link} to='#'>Тарифы</Link></li>
