@@ -1,15 +1,12 @@
 .alert-enter {
     opacity: 0;
     width: 0px;
-    /* transform: scale(0.9); */
 }
 
 .alert-enter-active {
     opacity: 1;
     width: 375px;
-    transition: width 400ms, opacity 400ms;
-    /* transform: translateX(0);
-    transition: opacity 400ms, transform 400ms; */
+    transition: width 400ms;
 }
 
 .alert-exit {
@@ -21,6 +18,4 @@
     opacity: 0;
     width: 0px;
     transition: width 400ms, opacity 400ms;
-    /* transform: scale(0.9);
-    transition: opacity 400ms, transform 400ms; */
 }
