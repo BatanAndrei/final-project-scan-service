@@ -10,6 +10,8 @@ import { resetDataDocumentsReducer, resetDocumentsPartsReducer } from '../../red
 import { isActivatedBurgerMenuReducer } from '../../redux/slices/authSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import LoginButton from '../../components/loginButton/LoginButton';
+import { CSSTransition } from 'react-transition-group';
+import './theheader.css';
 
 
 const Theheader = () => {
@@ -54,7 +56,7 @@ const Theheader = () => {
                 <LogoHeader />
             </div>
             <div className={styles.burgerMenu}><button onClick={displayedBurgerMenu} className={styles.buttonBurger}></button></div>
-            {isActivatedBurgerMenu && <div className={styles.burgerMenuOpened}>
+            <CSSTransition in={isActivatedBurgerMenu} timeout={300} classNames='alert' unmountOnExit><div className={styles.burgerMenuOpened}>
                 <div className={styles.logoFooter}>
                     <LogoFooter />
                 </div>
@@ -69,7 +71,8 @@ const Theheader = () => {
                     <LoginButton click={enterInAuthorizationMobile}/>
                 </div>
             </div>
-            }
+            </CSSTransition>
+            
             <ul className={styles.navigationPages}>
                 <li className={styles.list}><Link onClick={resetFieldsFilterSearch} className={styles.link} to='/'>Главная</Link></li>
                 <li className={styles.list}><Link className={styles.link} to='#'>Тарифы</Link></li>
