@@ -12,7 +12,6 @@ import { PersistGate } from 'redux-persist/es/integration/react';
 
 function App() {
 
-    //const isActivated = store.getState().authExtraReducer.isActivated;
 
     return (
         <div className="app">
