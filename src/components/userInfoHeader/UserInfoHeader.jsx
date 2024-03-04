@@ -7,10 +7,11 @@ import { selectAccessToken, selectIsActivated, selectAccountInfo, selectStatusAc
 import { innReducer, getAccessTokenHistogramsReducer, deliveryDocReducer, deteBeginReducer, deteEndReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, isActivateResultPageReducer } from '../../redux/slices/histogramsSlice';
 import { resetDataDocumentsReducer, getAccessTokenDocumentsReducer, resetDocumentsPartsReducer } from '../../redux/slices/documentsSlice';
 import { useEffect } from 'react';
+import LogoutButton from '../../components/logoutButton/LogoutButton';
 
 
 const UserInfoHeader = () => {
-
+    
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const accessToken = useSelector(selectAccessToken);
@@ -56,7 +57,7 @@ const UserInfoHeader = () => {
             <div className={styles.avatarHeaderLogout}>
                 <div className={styles.userNameLogoutButton}>
                     <h3 className={styles.textNameUser}>Алексей А.</h3>
-                    <button className={styles.buttonLogout} onClick={HeandleClickLogout}>Выйти</button>
+                    <LogoutButton click={HeandleClickLogout} />
                 </div>
                 <div className={styles.avatarImage}></div>
             </div>

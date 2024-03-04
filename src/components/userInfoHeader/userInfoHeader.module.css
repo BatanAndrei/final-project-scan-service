@@ -52,13 +52,6 @@
     font-size: 14px;
 }
 
-.buttonLogout {
-    margin-top: 3px;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
 .avatarImage {
     width: 32px;
     height: 32px;

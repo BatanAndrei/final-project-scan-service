@@ -218,4 +218,13 @@
         height: 25px;
         opacity: 0;
     }
+
+    .positionLogoutMobile button {
+        position: relative;
+        top: -40px;
+        left: 275px;
+        width: 0px;
+        height: 0px;
+        color: white;
+    }
 } 
