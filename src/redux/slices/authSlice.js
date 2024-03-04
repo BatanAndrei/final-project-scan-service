@@ -4,16 +4,16 @@ import { RequestPostAuth } from '../../api/RequestPostAuth';
 
 export const initialState = {
     loginUser: {
-        login: 'sf_student2',  //убрать sf_student2
-        password: 'lV8xjCH'    //убрать  lV8xjCH
+        login: '',  
+        password: ''   
     },
     accessToken: '',
     expire: '',
     isActivated: false,
     loginField: '',
     passwordField: '',
-    loginError: '',    //пробел
-    passwordError: '',  //пробел
+    loginError: ' ',   
+    passwordError: ' ', 
     validForm: false,
     isActivatedBurgerMenu: false,
 };
