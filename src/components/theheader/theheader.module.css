@@ -142,12 +142,17 @@
 
     .positionButtonMobile {
         display: block;
+        position: relative;
+        top: 155px;
+        left: -552px;
+        width: 295px;
+        height: 52px;
     }
 
     .positionButtonMobile button {
         position: relative;
-        top: 155px;
-        left: -552px;
+        top: 0px;
+        left: 0px;
         width: 295px;
         height: 52px;
     }
