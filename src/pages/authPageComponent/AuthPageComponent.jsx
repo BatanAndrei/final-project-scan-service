@@ -1,7 +1,7 @@
 import styles from './authPageComponent.module.css';
 import picturePageAuth from '../../Images/picturePageAuth.png';
 import zamok from '../../Images/zamok.png';
-import MainButton from '../../components/mainButton/mainButton';
+import MainButton from '../../components/mainButton/MainButton';
 import { nameButtonLogin } from '../../dataVariables/variables';
 import { Link } from 'react-router-dom';
 import linkViaGoogle from '../../Images/linkViaGoogle.png';

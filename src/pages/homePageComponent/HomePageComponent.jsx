@@ -1,7 +1,7 @@
 import styles from './homePageComponent.module.css';
 import imageAboutSite from '../../Images/imageAboutSite.jpg';
 import pictureUnderCarousel from '../../Images/pictureUnderCarousel.jpg';
-import MainButton from '../../components/mainButton/mainButton';
+import MainButton from '../../components/mainButton/MainButton';
 import { nameButtonReqData, nameButtonMoreDetail, nameButtonPersonalArea } from '../../dataVariables/variables';
 import SimpleSliderHome from '../../components/carouselHome/CarouselHome';
 import lamp from '../../Images/lamp.png';

@@ -1,6 +1,6 @@
 import styles from './displyedResultSearch.module.css';
 import SimpleSliderResult from '../../components/caoruselResult/CaoruselResult';
-import MainButton from '../../components/mainButton/mainButton';
+import MainButton from '../mainButton/MainButton';
 import { nameButtonDispleyMore, nameButtonReadSource } from '../../dataVariables/variables';
 import { Link } from 'react-router-dom';
 import searchImageTarget from '../../Images/searchImageTarget.png';

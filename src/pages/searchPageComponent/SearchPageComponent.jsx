@@ -5,7 +5,7 @@ import foldersPng from '../../Images/foldersPng.png';
 import manRocketPng from '../../Images/manRocketPng.png';
 import Checkbox from '../../components/checkbox/Checkbox';
 import { listCheckbox } from '../../dataVariables/variables';
-import MainButton from '../../components/mainButton/mainButton';
+import MainButton from '../../components/mainButton/MainButton';
 import { nameButtonSearch } from '../../dataVariables/variables';
 import { useSelector, useDispatch } from 'react-redux';
 import { innReducer, innErrorReducer, deliveryDocReducer, deliveryDocErrorReducer, deteBeginReducer, deteEndReducer, deteErrorReducer, validFormSearchReducer, checkedBoxReducer0, checkedBoxReducer1, checkedBoxReducer2, checkedBoxReducer3, checkedBoxReducer4, checkedBoxReducer5, checkedBoxReducer6, tonalityReducer, isActivateResultPageReducer } from '../../redux/slices/histogramsSlice';
