@@ -541,11 +541,15 @@
     }
 
     .linkSource {
-        white-space: nowrap;
-        overflow: hidden; 
-        text-overflow: ellipsis;
         font-size: 14px;
-        width: 100px;
+        width: 220px;
+    }
+
+    .widthLinkSource {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 220px;
     }
 
     .titleNameDoc {
