@@ -541,19 +541,11 @@
     }
 
     .linkSource {
-        white-space: nowrap;
         overflow: hidden; 
         text-overflow: ellipsis;
         font-size: 14px;
-    }
-
-    .widthLinkSource {
         width: 100px;
     }
-
-   /*  .textLinkSource {
-        width: 100px;
-    } */
 
     .titleNameDoc {
         height: 69px;
