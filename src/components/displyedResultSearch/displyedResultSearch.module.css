@@ -541,11 +541,14 @@
     }
 
     .linkSource {
-        width: 60px;
         white-space: nowrap;
         overflow: hidden; 
         text-overflow: ellipsis;
         font-size: 14px;
+    }
+
+    .textLinkSource {
+        width: 100px;
     }
 
     .titleNameDoc {
