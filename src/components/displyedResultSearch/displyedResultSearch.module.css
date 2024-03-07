@@ -547,9 +547,13 @@
         font-size: 14px;
     }
 
-    .textLinkSource {
+    .widthLinkSource {
         width: 100px;
     }
+
+   /*  .textLinkSource {
+        width: 100px;
+    } */
 
     .titleNameDoc {
         height: 69px;
